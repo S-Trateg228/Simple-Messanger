@@ -24,6 +24,9 @@ class Session():
         self.key = (sent_message ** answer) % MOD
 
 
-
 Session('localhost', '2289').connect()
-        
+
+'''
+login:...
+password:hash(...)
+'''

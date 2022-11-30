@@ -1,0 +1,44 @@
+#:kivy 2.1.0
+<LoginScreen>:
+    name: "login"
+    login_label: login_label
+    login: login
+    password_label: password_label
+    password: password
+    AnchorLayout:
+        GridLayout:
+            rows: 2
+            size: 200, 200
+            size_hint_x: None
+            size_hint_y: None
+            GridLayout:
+                cols: 2
+                Label:
+                    id: login_label
+                    size_hint_x: None
+                    width: 80
+                    text: "Login:"
+                TextInput:
+                    id: login
+                Label:
+                    id: password_label
+                    size_hint_x: None
+                    width: 80
+                    text: "Password:"
+                TextInput:
+                    id: password
+                    password: True
+            Button:
+                id: button
+                size_hint_y: None
+                height: 50
+                text: "Submit!"
+                on_press: root.sign_in()
+                
+
+<MainMenuScreen>:
+    name: "main_menu"
+    label: label
+    Label:
+        id: label
+        text: "You're logined!!!!!!"
