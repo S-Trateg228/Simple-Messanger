@@ -38,7 +38,40 @@
 
 <MainMenuScreen>:
     name: "main_menu"
-    label: label
+    scroll: scroll
+    AnchorLayout:
+        anchor_y: "bottom"
+        anchor_x: "center"
+        ScrollView:
+            id: scroll
+            size_hint: (1, 0.9)
+            do_scroll_x: False
+            do_scroll_y: True
+            BoxLayout:
+                orientation: "vertical"
+                spacing: 40
+                size_hint_y: None
+
+<Chat>:
+    chat_icon: chat_icon
+    chat_name: chat_name
+    enter_chat: enter_chat
+    size_hint_y: None
+    height: 20
     Label:
-        id: label
-        text: "You're logined!!!!!!"
+        id: chat_name
+        center: root.center
+        size_hint_y: None
+        height: 20
+    Image:
+        id: chat_icon
+        pos: (0, root.y)
+        size_hint_y: None
+        height: 20
+    Button:
+        id: enter_chat
+        on_press: root.abc()
+        height: 20
+        size_hint_x: None
+        center: root.center
+        background_color: (0, 0, 0, 0)
