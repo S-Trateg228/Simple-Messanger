@@ -37,7 +37,7 @@ def authorization_func():  # Авторизация
 
         return data
     else:
-        return json
+        return None
 
 
 @app.route('/send_message', methods=['GET', 'POST'])
