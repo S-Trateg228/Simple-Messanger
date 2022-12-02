@@ -41,7 +41,6 @@
     scroll: scroll
     AnchorLayout:
         anchor_y: "bottom"
-        anchor_x: "center"
         ScrollView:
             id: scroll
             size_hint: (1, 0.9)
@@ -51,11 +50,12 @@
                 orientation: "vertical"
                 spacing: 40
                 size_hint_y: None
+                height: self.minimum_height
 
 <Chat>:
     chat_icon: chat_icon
     chat_name: chat_name
-    enter_chat: enter_chat
+    chat_button: chat_button
     size_hint_y: None
     height: 20
     Label:
@@ -69,9 +69,103 @@
         size_hint_y: None
         height: 20
     Button:
-        id: enter_chat
-        on_press: root.abc()
+        id: chat_button
+        on_press: root.enter_chat()
         height: 20
-        size_hint_x: None
+        size_hint_x: 1
         center: root.center
         background_color: (0, 0, 0, 0)
+
+<ChatScreen>:
+    scroll: scroll
+    back_button: back_button
+    chat_name: chat_name
+    input_field: input_field
+    send_button: send_button
+    # message list
+    AnchorLayout:
+        ScrollView:
+            id: scroll
+            size_hint: (1, 0.8)
+            do_scroll_x: False
+            do_scroll_y: True
+            BoxLayout:
+                orientation: "vertical"
+                spacing: 10
+                size_hint_y: None
+                height: self.minimum_height
+    # top chat interface
+    AnchorLayout:
+        anchor_x: "center"
+        anchor_y: "top"
+        BoxLayout:
+            orientation: "horizontal"
+            size_hint: (1, 0.1)
+            Button:
+                id: back_button
+                size_hint_x: None
+                width: self.texture_size[0]+30
+                text: "Main Menu"
+                on_press: root.return_back()
+            Label:
+                id: chat_name
+    
+    # bottom chat interface
+    AnchorLayout:
+        anchor_x: "center"
+        anchor_y: "bottom"
+        BoxLayout:
+            orientation: "horizontal"
+            size_hint: (1, 0.1)
+            TextInput:
+                id: input_field
+            Button:
+                id: send_button
+                size_hint_x: None
+                width: self.texture_size[0]+30
+                text: "Send"
+                on_press: root.send()
+
+<Message>:
+    message_text: message_text
+    message_time: message_time
+    message_sender: message_sender
+    size_hint_y: None
+    canvas:
+        Color:
+            rgba: 0, 0, 1, 0.3
+        Rectangle:
+            size: self.size
+            pos: self.pos
+    # text
+    AnchorLayout:
+        anchor_x: "right"
+        size: root.size
+        pos: root.pos
+        Label:
+            id: message_text
+            size_hint: None, None
+            size: self.texture_size
+            multiline: True
+    # time
+    AnchorLayout:
+        anchor_x: "left"
+        anchor_y: "bottom"
+        size: root.size
+        pos: root.pos
+        Label:
+            id: message_time
+            size_hint: None, None
+            size: self.texture_size
+            text: "19:00"
+    # sender
+    AnchorLayout:
+        anchor_x: "right"
+        anchor_y: "top"
+        size: root.size
+        pos: root.pos
+        Label:
+            id: message_sender
+            size_hint: None, None
+            size: self.texture_size
+            text: "admin"
