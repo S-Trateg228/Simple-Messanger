@@ -1,5 +1,4 @@
 from flask import Flask, request, jsonify
-import flask_sqlalchemy
 from flask_mysqldb import MySQL
 
 import threading
@@ -7,49 +6,51 @@ import cryptography
 
 
 app = Flask(__name__)
-app.config['MYSQL_DATABASE_USER'] = 'root'
-app.config['MYSQL_DATABASE_PASSWORD'] = ''
-app.config['MYSQL_DATABASE_DB'] = 'users'
-app.config['MYSQL_DATABASE_HOST'] = 'localhost'
+
+app.config['SECRET_KEY'] = 'EYE_OF_DEVIL'
+
+app.config['MYSQL_USER'] = 'RIPPER'
+app.config['MYSQL_DB'] = 'users'
+app.config['MYSQL_PASSWORD'] = ''
 
 mysql = MySQL(app)
 
 
 @app.route('/to_server')
 def ping():
-    return 'WE WILL CONTROL THE FUCK WORLD'
+    return 'WE WILL CONTROL THE FUCK PING'
 
 
 @app.route('/get_info', methods=['GET', 'POST'])
 def authorization_func():  # Авторизация
     if request.method == 'POST':
-        data = jsonify(request.json)
-        login = str(data.data).split('&&')[0].split(':')[1][:]
-        password = str(data.data).split('&&')[1].split(':')[1][:-4]
+        try:
+            login = request.json['login']
+            password = request.json['password']
+            cursor = mysql.connection.cursor()
 
-        cursor = mysql.connection.cursor()
+            cursor.execute('''INSERT INTO UsersBase (login, password) VALUES ('{0}', '{1}')'''.format(login, password))
 
-        cursor.execute('''INSERT INTO user_pass (id, login, password) VALUES ({0}{1}{2})'''.format(1, login, password))
+            mysql.connection.commit()
 
-        mysql.connection.commit()
+            cursor.close()
 
-        cursor.close()
-
-        return data
+            return 'OK'
+        except BaseException:
+            return 'ERROR OF AUTHORIZATION'
     else:
-        return json
+        return None
 
 
 @app.route('/send_message', methods=['GET', 'POST'])
 def get_user_message():  # Получение на сервер сообщения отправленного пользователем
     if request.method == 'POST':
-        data = jsonify(request.json)
-        user = str(data.data).split('&&')[0].split(':')[1][:]
-        message = str(data.data).split('&&')[1].split(':')[1][:-4]
+        user = request.json['user']
+        message = request.json['message']
 
         cursor = mysql.connection.cursor()
 
-        cursor.execute('''INSERT INTO message_base (id, user, message) VALUES ({0}{1}{2})'''.format(1, user, message))
+        cursor.execute('''INSERT INTO MessageBase (id, user, message) VALUES ({0}{1}{2})'''.format(1, user, message))
 
         mysql.connection.commit()
 
@@ -59,9 +60,8 @@ def get_user_message():  # Получение на сервер сообщени
 @app.route('/send_image', methods=['GET', 'POST'])
 def get_user_image():  # Получение картинки и ее загрузка в мессенджере
     if request.method == 'POST':
-        data = jsonify(request.json)
-        user = str(data.data).split('&&')[0].split(':')[1][:]
-        image = str(data.data).split('&&')[1].split(':')[1][:-4]
+        user = request.json['user']
+        image = request.json['image']
 
         cursor = mysql.connection.cursor()
 
@@ -75,9 +75,8 @@ def get_user_image():  # Получение картинки и ее загру�
 @app.route('/send_document', methods=['GET', 'POST'])
 def get_user_document():  # Получение документа
     if request.method == 'POST':
-        data = jsonify(request.json)
-        user = str(data.data).split('&&')[0].split(':')[1][:]
-        document = str(data.data).split('&&')[1].split(':')[1][:-4]
+        user = request.json['user']
+        document = request.json['document']
 
         cursor = mysql.connection.cursor()
 
@@ -87,11 +86,28 @@ def get_user_document():  # Получение документа
 
         cursor.close()
 
+@app.route('/check_new_messages', methods=['GET', 'POST'])
+def check_new_messages():
+    user = request.json['user']
+    id_last_message = request.json['id_last_message']
+
+    cursor = mysql.connection.cursor()
+
+    cursor.execute('SELECT * FROM MessageBase WHERE id > {0} AND user = {1}'.format(id_last_message, user))
+    print(cursor.description)
+
 
 if __name__ == '__main__':
     threading.Thread(target=lambda: app.run(host='localhost', port=8080, debug=True, use_reloader=False)).start()
+    #app.run(host='localhost', port=8080, debug=True, use_reloader=False)
+
 
 '''
 login:RIPPER
 password:123
+'''
+
+'''
+request.post('http://127.0.0.1/get_info', json='login:{0}&&password:{1}'.format(login, password))
+request.post('http://127.0.0.1/get_info', json='login:{0}&&password:{1}'.format(login, password))
 '''
