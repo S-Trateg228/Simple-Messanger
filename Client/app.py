@@ -23,10 +23,28 @@ from kivy.graphics import Color, Rectangle
 import asyncio
 import threading
 from time import sleep
-
 Window.size = (500, 500)
 Window.icon = 'icon.png'
 OOO = 0
+
+class ChatFinderScreen(Screen):
+    scroll: ScrollView = ObjectProperty(None)
+    back_button: Button = ObjectProperty(None)
+    input_field: TextInput = ObjectProperty(None)
+    find_chat_button: Button = ObjectProperty(None)
+    
+    def return_back(self):
+        ClientApp.SM.transition.direction = "up"
+        ClientApp.SM.current = "main_menu"
+    
+    def find_chat(self):
+        print(self.input_field.text, "I'm looking for this chat")
+        self.scroll.children[0].clear_widgets()
+        for i in range(10):
+            global OOO
+            c = Chat(f"Chat {OOO}", 'add')
+            OOO += 1
+            self.scroll.children[0].add_widget(c)
 
 class Message(Widget):
     message_text: Label = ObjectProperty(None)
@@ -43,6 +61,10 @@ class Message(Widget):
             self.message_text.text = "Some text"
         else:
             self.message_text.text = text
+        if ClientApp.LOGIN:
+            self.message_sender.text = ClientApp.LOGIN
+        else:
+            self.message_sender.text = "admin"
         self.resize()
             
     def resize(self):
@@ -61,15 +83,23 @@ class ChatScreen(Screen):
         self.chat_name.text = kwargs["name"]
         self.scroll.width = Window.width
         Window.bind(on_resize=self.on_window_resize_messages)
-        for i in range(2):
-            a = Message()
-            self.scroll.children[0].add_widget(a)
-            a.resize()
+        
+    
+    @mainthread        
+    def add_message(self, text=''):
+        self.scroll.children[0].add_widget(Message(text=text))
     
     def on_window_resize_messages(self, window, width, height):
         if ClientApp.SM.current == self.chat_name.text:
             for message in self.scroll.children[0].children:
                 message.resize()
+                
+    def on_enter(self, *args):
+        if len(self.scroll.children[0].children) == 0:
+            for i in range(200):
+                a = Message()
+                self.scroll.children[0].add_widget(a)
+                a.resize()
     
     def resize_messages(self):
         for message in self.scroll.children[0].children:
@@ -97,13 +127,26 @@ class Chat(Widget):
     chat_name: Label = ObjectProperty(None)
     chat_button: Button = ObjectProperty(None)
         
-    def __init__(self):
+    def __init__(self, chat_name, b_type="enter"):
         super().__init__()
         self.chat_icon.source = "icon.png"
-        self.chat_name.text = f"Chat {OOO}"
+        self.chat_name.text = chat_name
+        self.button_type = b_type
         self.chat_button.width = Window.width
-        self.screen = ChatScreen([1]*10, name=self.chat_name.text)
-        ClientApp.SM.add_widget(self.screen)
+        if b_type == "enter":
+            self.screen = ChatScreen([1]*10, name=self.chat_name.text)
+            ClientApp.SM.add_widget(self.screen)
+    
+    def activate(self):
+        match self.button_type:
+            case "enter":
+                self.enter_chat()
+            case "add":
+                self.add_chat()
+    
+    def add_chat(self):
+        if self.chat_name.text not in ClientApp.SM.screen_names:
+            ClientApp.SM.get_screen("main_menu").scroll.children[0].add_widget(Chat(self.chat_name.text))
         
     def enter_chat(self):
         ClientApp.SM.transition.direction = "left"
@@ -111,46 +154,58 @@ class Chat(Widget):
         ClientApp.SM.current_screen.resize_messages()
 
 class LoginScreen(Screen):
-    login_label = ObjectProperty(None)
-    login = ObjectProperty(None)
-    password = ObjectProperty(None)
-    password_label = ObjectProperty(None)
-    button = ObjectProperty(None)
+    login_label: Label = ObjectProperty(None)
+    login: TextInput = ObjectProperty(None)
+    password: TextInput = ObjectProperty(None)
+    password_label: Label = ObjectProperty(None)
+    button: Button = ObjectProperty(None)
 
     def sign_in(self):
         print("Logined with %s and password %s" % (self.login.text, self.password.text))
-        if self.login.text == 'abc' and self.password.text == '1' or self.login.text == '':
-            global LOGIN
-            global PASSWORD
-            LOGIN = self.login.text
-            PASSWORD = hash(self.password.text)
+        if self.login.text == 'abc' and self.password.text == '1' or self.login.text != '':
+            ClientApp.LOGIN = self.login.text
+            ClientApp.PASSWORD = hash(self.password.text)
             self.manager.current = "main_menu"
 
 class MainMenuScreen(Screen):
-    scroll = ObjectProperty(None)
+    scroll: ScrollView = ObjectProperty(None)
+    finder_button: Button = ObjectProperty(None)
     def __init__(self):
         super().__init__()
         for i in range(10):
-            a = Chat()
-            self.scroll.children[0].add_widget(a)
             global OOO
+            a = Chat(f"Chat {OOO}")
             OOO += 1
+            self.scroll.children[0].add_widget(a)
+            
+    def to_find_chat_screen(self):
+        ClientApp.SM.transition.direction = "down"
+        ClientApp.SM.current = "chat_finder"
 
 class ClientApp(App):
     title = StringProperty("Messanger")
     SM: ScreenManager = ObjectProperty(None)
+    LOGIN: str = ''
+    PASSWORD: str = ''
     
     def __init__(self, IP, PORT):
         super().__init__()
         self.icon = "icon.png"
+
+    def sender(self):
+        while True:
+            sleep(5)
+            [screen.add_message(text=f"This message is in {name}") for name, screen in zip(ClientApp.SM.screen_names, ClientApp.SM.screens) if name.startswith('Chat')]
 
     def build(self):
         root = ScreenManager()
         ClientApp.SM = root        
         root.add_widget(LoginScreen())
         root.add_widget(MainMenuScreen())
+        root.add_widget(ChatFinderScreen())
+        #threading.Thread(target=self.sender).start()
         return root
-    
+
 if __name__ == "__main__":
-    ClientApp('localhost', '8080').run()
+    a = ClientApp('localhost', '8080').run()
     

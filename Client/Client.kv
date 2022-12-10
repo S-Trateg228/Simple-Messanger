@@ -39,6 +39,7 @@
 <MainMenuScreen>:
     name: "main_menu"
     scroll: scroll
+    finder_button: finder_button
     AnchorLayout:
         anchor_y: "bottom"
         ScrollView:
@@ -51,6 +52,15 @@
                 spacing: 40
                 size_hint_y: None
                 height: self.minimum_height
+    AnchorLayout:
+        anchor_x: "left"
+        anchor_y: "top"
+        Button:
+            id: finder_button
+            text: "Find Chat"
+            size_hint: (None, 0.1)
+            width: self.texture_size[0]+30
+            on_press: root.to_find_chat_screen()
 
 <Chat>:
     chat_icon: chat_icon
@@ -70,7 +80,7 @@
         height: 20
     Button:
         id: chat_button
-        on_press: root.enter_chat()
+        on_press: root.activate()
         height: 20
         size_hint_x: 1
         center: root.center
@@ -169,3 +179,45 @@
             size_hint: None, None
             size: self.texture_size
             text: "admin"
+
+<ChatFinderScreen>:
+    name: "chat_finder"
+    scroll: scroll
+    back_button: back_button
+    input_field: input_field
+    find_chat_button: find_chat_button
+    AnchorLayout:
+        ScrollView:
+            id: scroll
+            size_hint: (1, 0.8)
+            do_scroll_y: True
+            do_scroll_x: False
+            BoxLayout:
+                orientation: "vertical"
+                spacing: 40
+                size_hint_y: None
+                height: self.minimum_height
+    AnchorLayout:
+        anchor_x: "left"
+        anchor_y: "top"
+        Button:
+            id: back_button
+            size_hint: (None, 0.1)
+            width: self.texture_size[0]+30
+            text: "Main Menu"
+            on_press: root.return_back()
+    AnchorLayout:
+        anchor_y: "bottom"
+        BoxLayout:
+            orientation: "horizontal"
+            size_hint: (1, 0.1)
+            TextInput:
+                id: input_field
+            Button:
+                id: find_chat_button
+                text: "Find Chat"
+                size_hint_x: None
+                width: self.texture_size[0]+30
+                on_press: root.find_chat()
+
+            
