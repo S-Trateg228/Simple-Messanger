@@ -12,11 +12,13 @@ class Session():
         self.port = port
 
     def connect(self):
-        try:
-            answer: requests.Response = requests.post(json.dumps({"login":"RIPPER", "password": "123"}))
-            print(answer.status_code, answer.content)
-        except requests.RequestException:
-            print('No connection')
+        answer: requests.Response = requests.post(f"http://{self.ip}:{self.port}/send_message", json={'user': 'RIPPER', 'id_last_message': -5, 'chat_id': 0})
+        #print(answer.status_code, answer.content)
+        print(answer.text)
+        #try:
+            
+        #except requests.RequestException:
+            #print('No connection')
         '''try:
             self.RSA()
         except requests.RequestException:
@@ -27,9 +29,13 @@ class Session():
         sent_message = (BASE ** power) % MOD
         answer = requests.post(self.ip + ':' + self.port, data=json.dumps(sent_message))
         self.key = (sent_message ** answer) % MOD
-
+#print(json.dumps({"login":"RIPPER", "password": "123"}))
 if __name__ == "__main__":
-    Session('localhost', '8080').connect()
+    #print("send")
+    #print(f"http://192.168.195.164:8080/get_info/")
+    #a = requests.post(url=f"http://192.168.1.68:8080/get_info", json={"login":"RIPPER", "password": "123"})
+    #print(a.text)
+    Session('192.168.1.68', '8080').connect()
 
 '''
 login:...
