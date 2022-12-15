@@ -10,34 +10,46 @@ class Session():
     def __init__(self, ip: str, port: str):
         self.ip = ip
         self.port = port
+        self.login = ''
+        self.password = ''
 
-    def connect(self):
-        answer: requests.Response = requests.post(f"http://{self.ip}:{self.port}/send_message", json={'user': 'RIPPER', 'id_last_message': -5, 'chat_id': 0})
-        #print(answer.status_code, answer.content)
-        print(answer.text)
-        #try:
-            
-        #except requests.RequestException:
-            #print('No connection')
+    def connect(self, login, password):
+        try:
+            answer: requests.Response = requests.post(f"http://{self.ip}:{self.port}/get_info", json={'login': login, 'password': password, 'is_register': 'auth'})
+            print(answer.text)
+            return answer.text == 'OK' or answer.text == 'yes'
+        except (requests.exceptions.ConnectTimeout, requests.exceptions.ConnectionError):
+            print("No connection!")
         '''try:
             self.RSA()
         except requests.RequestException:
             print('No signal! Try again')'''
+
+    def get_new_messages(self, chat_name, last_message_id):
+        print('try to get')
+        answer: requests.Response = requests.get(f"http://{self.ip}:{self.port}/check_new_messages", json={"user": self.login, "user2": chat_name, "id_last_message": last_message_id})
+        print('Success')
+        print(answer.json())
+        return answer.json()
+
+    def send_message(self, chat_name, text, time):
+        answer: requests.Response = requests.post(f"http://{self.ip}:{self.port}/send_message", json={"login": self.login, "password": self.password, "sender": chat_name, "message": text, "time": time})
+        print(answer.text, "status of sending")
+
+    def find_chats(self, chat_name):
+        answer: requests.Response = requests.get(f"http://{self.ip}:{self.port}/find_users", json={"find_user": chat_name})
+        return [element_list[0] for element_list in answer.json()]
+        
+    
+    def get_all_chats(self):
+        answer: requests.Response = requests.get(f"http://{self.ip}:{self.port}/get_all_my_users", json={"login": self.login})
+        print(answer.content)
+        return answer.json()
 
     def RSA(self):
         power = random.randint(50, 100)
         sent_message = (BASE ** power) % MOD
         answer = requests.post(self.ip + ':' + self.port, data=json.dumps(sent_message))
         self.key = (sent_message ** answer) % MOD
-#print(json.dumps({"login":"RIPPER", "password": "123"}))
 if __name__ == "__main__":
-    #print("send")
-    #print(f"http://192.168.195.164:8080/get_info/")
-    #a = requests.post(url=f"http://192.168.1.68:8080/get_info", json={"login":"RIPPER", "password": "123"})
-    #print(a.text)
-    Session('192.168.1.68', '8080').connect()
-
-'''
-login:...
-password:hash(...)
-'''
+    Session('192.168.1.1', '8080').connect("R", "123")

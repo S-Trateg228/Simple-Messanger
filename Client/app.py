@@ -1,31 +1,22 @@
 from kivy.app import App 
 from kivy.uix.widget import Widget
 from kivy.uix.label import Label
-from kivy.properties import (StringProperty, ObjectProperty, NumericProperty)
-from kivy.uix.stacklayout import StackLayout
-from kivy.uix.boxlayout import BoxLayout
-from kivy.uix.gridlayout import GridLayout
+from kivy.properties import (StringProperty, ObjectProperty)
 from kivy.uix.textinput import TextInput
 from kivy.uix.button import Button
-from kivy.uix.relativelayout import RelativeLayout
-from kivy.uix.floatlayout import FloatLayout
 from kivy.core.window import Window
 from kivy.uix.image import Image
 from kivy.uix.screenmanager import ScreenManager, Screen
 from kivy.uix.scrollview import ScrollView
-from kivy.uix.slider import Slider
-from kivy.uix.layout import Layout
-from kivy.input.providers.mouse import MouseMotionEvent
-from kivy.clock import Clock, mainthread
+from kivy.clock import mainthread
 from network import Session
-from functools import partial
 from kivy.graphics import Color, Rectangle
-import asyncio
 import threading
 from time import sleep
+from network import Session
+
 Window.size = (500, 500)
 Window.icon = 'icon.png'
-OOO = 0
 
 class ChatFinderScreen(Screen):
     scroll: ScrollView = ObjectProperty(None)
@@ -37,21 +28,24 @@ class ChatFinderScreen(Screen):
         ClientApp.SM.transition.direction = "up"
         ClientApp.SM.current = "main_menu"
     
+    @mainthread
+    def add_chats_to_scroll(self, chat_names):
+        for chat_name in chat_names:
+            self.scroll.children[0].add_widget(Chat(chat_name, 'add'))
+    
     def find_chat(self):
-        print(self.input_field.text, "I'm looking for this chat")
-        self.scroll.children[0].clear_widgets()
-        for i in range(10):
-            global OOO
-            c = Chat(f"Chat {OOO}", 'add')
-            OOO += 1
-            self.scroll.children[0].add_widget(c)
+        def threaded_find_chat():    
+            chat_names = ClientApp.session.find_chats(self.input_field.text)
+            self.add_chats_to_scroll(chat_names)
+        threading.Thread(target=threaded_find_chat).start()
+        
 
 class Message(Widget):
     message_text: Label = ObjectProperty(None)
     message_time: Label = ObjectProperty(None)
     message_sender: Label = ObjectProperty(None)
     
-    def __init__(self, text='', **kwargs):
+    def __init__(self, text='', sender='', index=0, **kwargs):
         super().__init__(**kwargs)
         if not isinstance(text, str):
             raise TypeError("Argument text in message must be str.")
@@ -61,10 +55,11 @@ class Message(Widget):
             self.message_text.text = "Some text"
         else:
             self.message_text.text = text
-        if ClientApp.LOGIN:
-            self.message_sender.text = ClientApp.LOGIN
+        if sender:
+            self.message_sender.text = sender
         else:
-            self.message_sender.text = "admin"
+            self.message_sender.text = "Some sender"
+        self.index = index
         self.resize()
             
     def resize(self):
@@ -86,8 +81,8 @@ class ChatScreen(Screen):
         
     
     @mainthread        
-    def add_message(self, text=''):
-        self.scroll.children[0].add_widget(Message(text=text))
+    def add_message(self, text='', sender='', index=0):
+        self.scroll.children[0].add_widget(Message(text=text, sender=sender, index=index))
     
     def on_window_resize_messages(self, window, width, height):
         if ClientApp.SM.current == self.chat_name.text:
@@ -95,16 +90,29 @@ class ChatScreen(Screen):
                 message.resize()
                 
     def on_enter(self, *args):
-        if len(self.scroll.children[0].children) == 0:
-            for i in range(200):
-                a = Message()
-                self.scroll.children[0].add_widget(a)
-                a.resize()
+        threading.Thread(target=self.update_messages).start()
     
+    def on_leave(self, *args):
+        self.updating = False
+    
+    def update_messages(self):
+        self.updating = True
+        while True:
+            print('update')
+            if not self.updating:
+                break
+            current_messages = self.scroll.children[0].children
+            idx = 0 if len(current_messages) == 0 else current_messages[0].index
+            news = ClientApp.session.get_new_messages(self.chat_name.text.split(maxsplit=1)[1], idx)
+            for new_idx, message_text, sender, time in news:
+                print(new_idx, message_text, sender, time)
+                self.add_message(text=message_text, sender=sender, index=new_idx)
+            sleep(2)
+
     def resize_messages(self):
         for message in self.scroll.children[0].children:
             message.resize()
-            
+
     def return_back(self):
         ClientApp.SM.transition.direction = "right"
         ClientApp.SM.current = "main_menu"
@@ -112,15 +120,17 @@ class ChatScreen(Screen):
     def send(self):
         message_text = self.input_field.text
         self.input_field.text = ""
+        
+        def threaded_send(text):
+            ClientApp.session.send_message(self.chat_name.text.split(maxsplit=1)[1], text, 'xxx')
+        
         if len(message_text) % 200 == 0 and message_text:
             times = len(message_text)//200
         else:
             times = len(message_text)//200 + 1
         for i in range(times):
             sample = message_text[i*200:(i+1)*200]
-            print(sample)
-            message = Message(text=sample)
-            self.scroll.children[0].add_widget(message)
+            threading.Thread(target=threaded_send, args=[sample]).start()        
         
 class Chat(Widget):
     chat_icon: Image = ObjectProperty(None)
@@ -134,8 +144,8 @@ class Chat(Widget):
         self.button_type = b_type
         self.chat_button.width = Window.width
         if b_type == "enter":
-            self.screen = ChatScreen([1]*10, name=self.chat_name.text)
-            ClientApp.SM.add_widget(self.screen)
+            screen = ChatScreen(name=f"Chat {self.chat_name.text}")
+            ClientApp.SM.add_widget(screen)
     
     def activate(self):
         match self.button_type:
@@ -145,12 +155,12 @@ class Chat(Widget):
                 self.add_chat()
     
     def add_chat(self):
-        if self.chat_name.text not in ClientApp.SM.screen_names:
+        if f"Chat {self.chat_name.text}" not in ClientApp.SM.screen_names:
             ClientApp.SM.get_screen("main_menu").scroll.children[0].add_widget(Chat(self.chat_name.text))
         
     def enter_chat(self):
         ClientApp.SM.transition.direction = "left"
-        ClientApp.SM.current = self.chat_name.text
+        ClientApp.SM.current = f"Chat {self.chat_name.text}"
         ClientApp.SM.current_screen.resize_messages()
 
 class LoginScreen(Screen):
@@ -160,23 +170,45 @@ class LoginScreen(Screen):
     password_label: Label = ObjectProperty(None)
     button: Button = ObjectProperty(None)
 
+    @mainthread
+    def to_main_menu_screen(self):
+        self.manager.current = "main_menu"
+
     def sign_in(self):
-        print("Logined with %s and password %s" % (self.login.text, self.password.text))
-        if self.login.text == 'abc' and self.password.text == '1' or self.login.text != '':
-            ClientApp.LOGIN = self.login.text
-            ClientApp.PASSWORD = hash(self.password.text)
-            self.manager.current = "main_menu"
+        def threaded_sign_in():
+            success = ClientApp.session.connect(self.login.text, self.password.text)
+            if success:
+                ClientApp.LOGIN = self.login.text
+                ClientApp.PASSWORD = self.password.text
+                ClientApp.session.login = ClientApp.LOGIN
+                ClientApp.session.password = ClientApp.PASSWORD
+                self.to_main_menu_screen()
+        threading.Thread(target=threaded_sign_in).start()
 
 class MainMenuScreen(Screen):
     scroll: ScrollView = ObjectProperty(None)
     finder_button: Button = ObjectProperty(None)
-    def __init__(self):
-        super().__init__()
-        for i in range(10):
-            global OOO
-            a = Chat(f"Chat {OOO}")
-            OOO += 1
-            self.scroll.children[0].add_widget(a)
+
+    def on_enter(self, *args):
+        threading.Thread(target=self.update_chats).start()
+        
+    def on_leave(self, *args):
+        self.updating = False
+    
+    def update_chats(self):
+        self.updating = True
+        while True:
+            if not self.updating:
+                break
+            chat_names = ClientApp.session.get_all_chats()
+            self.add_chats_to_scroll(chat_names)
+            sleep(5)
+    
+    @mainthread
+    def add_chats_to_scroll(self, chat_names):
+        for chat_name in chat_names:
+            if f"Chat {chat_name}" not in ClientApp.SM.screen_names:
+                self.scroll.children[0].add_widget(Chat(chat_name, 'enter'))
             
     def to_find_chat_screen(self):
         ClientApp.SM.transition.direction = "down"
@@ -188,14 +220,14 @@ class ClientApp(App):
     LOGIN: str = ''
     PASSWORD: str = ''
     
-    def __init__(self, IP, PORT):
+    def __init__(self, ip, port):
         super().__init__()
         self.icon = "icon.png"
+        ClientApp.session = Session(ip, port)
 
-    def sender(self):
-        while True:
-            sleep(5)
-            [screen.add_message(text=f"This message is in {name}") for name, screen in zip(ClientApp.SM.screen_names, ClientApp.SM.screens) if name.startswith('Chat')]
+    def on_stop(self):
+        for screen in ClientApp.SM.screens:
+            screen.updating = False
 
     def build(self):
         root = ScreenManager()
@@ -203,9 +235,8 @@ class ClientApp(App):
         root.add_widget(LoginScreen())
         root.add_widget(MainMenuScreen())
         root.add_widget(ChatFinderScreen())
-        #threading.Thread(target=self.sender).start()
         return root
 
 if __name__ == "__main__":
-    a = ClientApp('localhost', '8080').run()
+    a = ClientApp('25.19.117.26', '8080').run()
     
