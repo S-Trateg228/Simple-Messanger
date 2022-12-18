@@ -1,40 +1,43 @@
 #:kivy 2.1.0
 <LoginScreen>:
     name: "login"
-    login_label: login_label
     login: login
-    password_label: password_label
     password: password
+    check_box: check_box
     AnchorLayout:
-        GridLayout:
-            rows: 2
-            size: 200, 200
-            size_hint_x: None
-            size_hint_y: None
+        BoxLayout:
+            orientation: "vertical"
+            size_hint: (0.6, 0.6)
             GridLayout:
-                cols: 2
-                Label:
-                    id: login_label
-                    size_hint_x: None
-                    width: 80
-                    text: "Login:"
-                TextInput:
-                    id: login
-                Label:
-                    id: password_label
-                    size_hint_x: None
-                    width: 80
-                    text: "Password:"
-                TextInput:
-                    id: password
-                    password: True
-            Button:
-                id: button
-                size_hint_y: None
-                height: 50
-                text: "Submit!"
-                on_press: root.sign_in()
-                
+                rows: 3
+                size: root.size      
+                GridLayout:
+                    cols: 2
+                    Label:
+                        size_hint_x: None
+                        width: 80
+                        text: "Login:"
+                    TextInput:
+                        id: login
+                    Label:
+                        size_hint_x: None
+                        width: 80
+                        text: "Password:"
+                    TextInput:
+                        id: password
+                        password: True
+                BoxLayout:
+                    orientation: "horizontal"
+                    size_hint_y: 0.2
+                    Label:
+                        text: "Registration: "
+                    CheckBox:
+                        id: check_box
+                Button:
+                    id: button
+                    size_hint_y: 0.2
+                    text: "Submit!"
+                    on_press: root.sign_in()
 
 <MainMenuScreen>:
     name: "main_menu"
@@ -92,6 +95,7 @@
     chat_name: chat_name
     input_field: input_field
     send_button: send_button
+    is_file_check_box: is_file_check_box
     # message list
     AnchorLayout:
         ScrollView:
@@ -129,6 +133,12 @@
             size_hint: (1, 0.1)
             TextInput:
                 id: input_field
+            Label:
+                text: "Send file: "
+                size_hint_x: None
+            CheckBox:
+                id: is_file_check_box
+                size_hint_x: None
             Button:
                 id: send_button
                 size_hint_x: None
@@ -219,5 +229,4 @@
                 size_hint_x: None
                 width: self.texture_size[0]+30
                 on_press: root.find_chat()
-
-            
+       

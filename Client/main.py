@@ -1,9 +1,8 @@
 from app import ClientApp
-from network import Session
 
-IP = 'localhost'
-PORT = 8080
+f = open("server_address.txt")
+IP, PORT = f.readline().split(':')
+f.close()
 
 if __name__ == "__main__":
-    session = Session(IP, PORT)
     ClientApp(IP, PORT).run()
