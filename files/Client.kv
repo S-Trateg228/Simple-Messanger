@@ -1,0 +1,230 @@
+#:kivy 2.1.0
+<LoginScreen>:
+    name: "login"
+    login: login
+    password: password
+    check_box: check_box
+    AnchorLayout:
+        BoxLayout:
+            orientation: "vertical"
+            size_hint: (0.6, 0.6)
+            GridLayout:
+                rows: 3
+                size: root.size      
+                GridLayout:
+                    cols: 2
+                    Label:
+                        size_hint_x: None
+                        width: 80
+                        text: "Login:"
+                    TextInput:
+                        id: login
+                    Label:
+                        size_hint_x: None
+                        width: 80
+                        text: "Password:"
+                    TextInput:
+                        id: password
+                        password: True
+                BoxLayout:
+                    orientation: "horizontal"
+                    size_hint_y: 0.2
+                    Label:
+                        text: "Registration: "
+                    CheckBox:
+                        id: check_box
+                Button:
+                    id: button
+                    size_hint_y: 0.2
+                    text: "Submit!"
+                    on_press: root.sign_in()
+
+<MainMenuScreen>:
+    name: "main_menu"
+    scroll: scroll
+    finder_button: finder_button
+    AnchorLayout:
+        anchor_y: "bottom"
+        ScrollView:
+            id: scroll
+            size_hint: (1, 0.9)
+            do_scroll_x: False
+            do_scroll_y: True
+            BoxLayout:
+                orientation: "vertical"
+                spacing: 40
+                size_hint_y: None
+                height: self.minimum_height
+    AnchorLayout:
+        anchor_x: "left"
+        anchor_y: "top"
+        Button:
+            id: finder_button
+            text: "Find Chat"
+            size_hint: (None, 0.1)
+            width: self.texture_size[0]+30
+            on_press: root.to_find_chat_screen()
+
+<Chat>:
+    chat_icon: chat_icon
+    chat_name: chat_name
+    chat_button: chat_button
+    size_hint_y: None
+    height: 20
+    Label:
+        id: chat_name
+        center: root.center
+        size_hint_y: None
+        height: 20
+    Image:
+        id: chat_icon
+        pos: (0, root.y)
+        size_hint_y: None
+        height: 20
+    Button:
+        id: chat_button
+        on_press: root.activate()
+        height: 20
+        size_hint_x: 1
+        center: root.center
+        background_color: (0, 0, 0, 0)
+
+<ChatScreen>:
+    scroll: scroll
+    back_button: back_button
+    chat_name: chat_name
+    input_field: input_field
+    send_button: send_button
+    is_file_check_box: is_file_check_box
+    # message list
+    AnchorLayout:
+        ScrollView:
+            id: scroll
+            size_hint: (1, 0.8)
+            do_scroll_x: False
+            do_scroll_y: True
+            BoxLayout:
+                orientation: "vertical"
+                spacing: 10
+                size_hint_y: None
+                height: self.minimum_height
+    # top chat interface
+    AnchorLayout:
+        anchor_x: "center"
+        anchor_y: "top"
+        BoxLayout:
+            orientation: "horizontal"
+            size_hint: (1, 0.1)
+            Button:
+                id: back_button
+                size_hint_x: None
+                width: self.texture_size[0]+30
+                text: "Main Menu"
+                on_press: root.return_back()
+            Label:
+                id: chat_name
+    
+    # bottom chat interface
+    AnchorLayout:
+        anchor_x: "center"
+        anchor_y: "bottom"
+        BoxLayout:
+            orientation: "horizontal"
+            size_hint: (1, 0.1)
+            TextInput:
+                id: input_field
+            Label:
+                text: "Send file: "
+            CheckBox:
+                id: is_file_check_box
+            Button:
+                id: send_button
+                size_hint_x: None
+                width: self.texture_size[0]+30
+                text: "Send"
+                on_press: root.send()
+
+<Message>:
+    message_text: message_text
+    message_time: message_time
+    message_sender: message_sender
+    size_hint_y: None
+    canvas:
+        Color:
+            rgba: 0, 0, 1, 0.3
+        Rectangle:
+            size: self.size
+            pos: self.pos
+    # text
+    AnchorLayout:
+        anchor_x: "right"
+        size: root.size
+        pos: root.pos
+        Label:
+            id: message_text
+            size_hint: None, None
+            size: self.texture_size
+            multiline: True
+    # time
+    AnchorLayout:
+        anchor_x: "left"
+        anchor_y: "bottom"
+        size: root.size
+        pos: root.pos
+        Label:
+            id: message_time
+            size_hint: None, None
+            size: self.texture_size
+            text: "19:00"
+    # sender
+    AnchorLayout:
+        anchor_x: "right"
+        anchor_y: "top"
+        size: root.size
+        pos: root.pos
+        Label:
+            id: message_sender
+            size_hint: None, None
+            size: self.texture_size
+            text: "admin"
+
+<ChatFinderScreen>:
+    name: "chat_finder"
+    scroll: scroll
+    back_button: back_button
+    input_field: input_field
+    find_chat_button: find_chat_button
+    AnchorLayout:
+        ScrollView:
+            id: scroll
+            size_hint: (1, 0.8)
+            do_scroll_y: True
+            do_scroll_x: False
+            BoxLayout:
+                orientation: "vertical"
+                spacing: 40
+                size_hint_y: None
+                height: self.minimum_height
+    AnchorLayout:
+        anchor_x: "left"
+        anchor_y: "top"
+        Button:
+            id: back_button
+            size_hint: (None, 0.1)
+            width: self.texture_size[0]+30
+            text: "Main Menu"
+            on_press: root.return_back()
+    AnchorLayout:
+        anchor_y: "bottom"
+        BoxLayout:
+            orientation: "horizontal"
+            size_hint: (1, 0.1)
+            TextInput:
+                id: input_field
+            Button:
+                id: find_chat_button
+                text: "Find Chat"
+                size_hint_x: None
+                width: self.texture_size[0]+30
+                on_press: root.find_chat()
+       
