@@ -110,6 +110,8 @@ def authorization_func():
             return 'ERROR. DATABASE HAS NOT APPROPRIATE DATA OR REQUIRED INFORMATION WAS NOT SENT TO THE SERVER.'
         except KeyError:
             return 'ERROR. NOT ENOUGH NECESSARY INFORMATION.'
+        except BaseException:
+            return 'ERROR OF IDENTIFICATION'
 
 
 @app.route('/send_message', methods=['POST'])
@@ -135,6 +137,7 @@ def get_user_message():
             time = request.json['time']
 
             if not check_time_format(time):
+                print(time, 'AAAAAAAAAAAAAAAA')
                 return 'ERROR OF TIME FORMAT'
 
             cursor = mysql.connection.cursor()
@@ -153,6 +156,8 @@ def get_user_message():
             return 'ERROR. DATABASE HAS NOT APPROPRIATE DATA OR REQUIRED INFORMATION WAS NOT SENT TO THE SERVER.'
         except KeyError:
             return 'ERROR. NOT ENOUGH NECESSARY INFORMATION.'
+        except BaseException:
+            return 'ERROR OF SENDING MESSAGE'
 
 
 @app.route('/check_new_messages', methods=['GET'])
@@ -185,6 +190,8 @@ def check_new_messages():
             return 'ERROR. DATABASE HAS NOT APPROPRIATE DATA OR REQUIRED INFORMATION WAS NOT SENT TO THE SERVER.'
         except KeyError:
             return 'ERROR. NOT ENOUGH NECESSARY INFORMATION.'
+        except BaseException:
+            return 'ERROR OF SENDING MESSAGE'
 
 
 @app.route('/find_users', methods=['GET'])
@@ -213,6 +220,8 @@ def find_user():
             return 'ERROR. DATABASE HAS NOT APPROPRIATE DATA OR REQUIRED INFORMATION WAS NOT SENT TO THE SERVER.'
         except KeyError:
             return 'ERROR. NOT ENOUGH NECESSARY INFORMATION.'
+        except BaseException:
+            return 'ERROR OF FINDING USER'
 
 
 
@@ -255,10 +264,12 @@ def get_all_my_users():
             return 'ERROR. DATABASE HAS NOT APPROPRIATE DATA OR REQUIRED INFORMATION WAS NOT SENT TO THE SERVER.'
         except KeyError:
             return 'ERROR. NOT ENOUGH NECESSARY INFORMATION.'
+        except BaseException:
+            return 'ERROR OF GETTING USERS'
 
 
 if __name__ == '__main__':
-    threading.Thread(target=lambda: app.run(host='127.0.0.1', port=8080, debug=True, use_reloader=False)).start()
+    threading.Thread(target=lambda: app.run(host='0.0.0.0', port=8080, debug=True, use_reloader=False)).start()
 
 '''
 login:RIPPER
