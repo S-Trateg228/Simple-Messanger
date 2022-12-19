@@ -1,6 +1,7 @@
-from flask import request
-from flask_mysqldb import MySQL
 from time import strptime
+
+from flask import request
+
 
 def check_user(mysql, special_flag=False) -> bool:
     '''
@@ -37,6 +38,7 @@ def check_user(mysql, special_flag=False) -> bool:
 
 
 TIME_FORMAT = "%d.%m.%Y %H:%M"
+
 
 def check_time_format(time: str) -> bool:
     """Проверяет совпадает ли формат времени со следующим DD.MM.YYYY hh:mm.
