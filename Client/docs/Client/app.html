@@ -1,0 +1,2610 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1" />
+<meta name="generator" content="pdoc 0.10.0" />
+<title>Client.app API documentation</title>
+<meta name="description" content="" />
+<link rel="preload stylesheet" as="style" href="https://cdnjs.cloudflare.com/ajax/libs/10up-sanitize.css/11.0.1/sanitize.min.css" integrity="sha256-PK9q560IAAa6WVRRh76LtCaI8pjTJ2z11v0miyNNjrs=" crossorigin>
+<link rel="preload stylesheet" as="style" href="https://cdnjs.cloudflare.com/ajax/libs/10up-sanitize.css/11.0.1/typography.min.css" integrity="sha256-7l/o7C8jubJiy74VsKTidCy1yBkRtiUGbVkYBylBqUg=" crossorigin>
+<link rel="stylesheet preload" as="style" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.1.1/styles/github.min.css" crossorigin>
+<style>:root{--highlight-color:#fe9}.flex{display:flex !important}body{line-height:1.5em}#content{padding:20px}#sidebar{padding:30px;overflow:hidden}#sidebar > *:last-child{margin-bottom:2cm}.http-server-breadcrumbs{font-size:130%;margin:0 0 15px 0}#footer{font-size:.75em;padding:5px 30px;border-top:1px solid #ddd;text-align:right}#footer p{margin:0 0 0 1em;display:inline-block}#footer p:last-child{margin-right:30px}h1,h2,h3,h4,h5{font-weight:300}h1{font-size:2.5em;line-height:1.1em}h2{font-size:1.75em;margin:1em 0 .50em 0}h3{font-size:1.4em;margin:25px 0 10px 0}h4{margin:0;font-size:105%}h1:target,h2:target,h3:target,h4:target,h5:target,h6:target{background:var(--highlight-color);padding:.2em 0}a{color:#058;text-decoration:none;transition:color .3s ease-in-out}a:hover{color:#e82}.title code{font-weight:bold}h2[id^="header-"]{margin-top:2em}.ident{color:#900}pre code{background:#f8f8f8;font-size:.8em;line-height:1.4em}code{background:#f2f2f1;padding:1px 4px;overflow-wrap:break-word}h1 code{background:transparent}pre{background:#f8f8f8;border:0;border-top:1px solid #ccc;border-bottom:1px solid #ccc;margin:1em 0;padding:1ex}#http-server-module-list{display:flex;flex-flow:column}#http-server-module-list div{display:flex}#http-server-module-list dt{min-width:10%}#http-server-module-list p{margin-top:0}.toc ul,#index{list-style-type:none;margin:0;padding:0}#index code{background:transparent}#index h3{border-bottom:1px solid #ddd}#index ul{padding:0}#index h4{margin-top:.6em;font-weight:bold}@media (min-width:200ex){#index .two-column{column-count:2}}@media (min-width:300ex){#index .two-column{column-count:3}}dl{margin-bottom:2em}dl dl:last-child{margin-bottom:4em}dd{margin:0 0 1em 3em}#header-classes + dl > dd{margin-bottom:3em}dd dd{margin-left:2em}dd p{margin:10px 0}.name{background:#eee;font-weight:bold;font-size:.85em;padding:5px 10px;display:inline-block;min-width:40%}.name:hover{background:#e0e0e0}dt:target .name{background:var(--highlight-color)}.name > span:first-child{white-space:nowrap}.name.class > span:nth-child(2){margin-left:.4em}.inherited{color:#999;border-left:5px solid #eee;padding-left:1em}.inheritance em{font-style:normal;font-weight:bold}.desc h2{font-weight:400;font-size:1.25em}.desc h3{font-size:1em}.desc dt code{background:inherit}.source summary,.git-link-div{color:#666;text-align:right;font-weight:400;font-size:.8em;text-transform:uppercase}.source summary > *{white-space:nowrap;cursor:pointer}.git-link{color:inherit;margin-left:1em}.source pre{max-height:500px;overflow:auto;margin:0}.source pre code{font-size:12px;overflow:visible}.hlist{list-style:none}.hlist li{display:inline}.hlist li:after{content:',\2002'}.hlist li:last-child:after{content:none}.hlist .hlist{display:inline;padding-left:1em}img{max-width:100%}td{padding:0 .5em}.admonition{padding:.1em .5em;margin-bottom:1em}.admonition-title{font-weight:bold}.admonition.note,.admonition.info,.admonition.important{background:#aef}.admonition.todo,.admonition.versionadded,.admonition.tip,.admonition.hint{background:#dfd}.admonition.warning,.admonition.versionchanged,.admonition.deprecated{background:#fd4}.admonition.error,.admonition.danger,.admonition.caution{background:lightpink}</style>
+<style media="screen and (min-width: 700px)">@media screen and (min-width:700px){#sidebar{width:30%;height:100vh;overflow:auto;position:sticky;top:0}#content{width:70%;max-width:100ch;padding:3em 4em;border-left:1px solid #ddd}pre code{font-size:1em}.item .name{font-size:1em}main{display:flex;flex-direction:row-reverse;justify-content:flex-end}.toc ul ul,#index ul{padding-left:1.5em}.toc > ul > li{margin-top:.5em}}</style>
+<style media="print">@media print{#sidebar h1{page-break-before:always}.source{display:none}}@media print{*{background:transparent !important;color:#000 !important;box-shadow:none !important;text-shadow:none !important}a[href]:after{content:" (" attr(href) ")";font-size:90%}a[href][title]:after{content:none}abbr[title]:after{content:" (" attr(title) ")"}.ir a:after,a[href^="javascript:"]:after,a[href^="#"]:after{content:""}pre,blockquote{border:1px solid #999;page-break-inside:avoid}thead{display:table-header-group}tr,img{page-break-inside:avoid}img{max-width:100% !important}@page{margin:0.5cm}p,h2,h3{orphans:3;widows:3}h1,h2,h3,h4,h5,h6{page-break-after:avoid}}</style>
+<script defer src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.1.1/highlight.min.js" integrity="sha256-Uv3H6lx7dJmRfRvH8TH6kJD1TSK1aFcwgx+mdg3epi8=" crossorigin></script>
+<script>window.addEventListener('DOMContentLoaded', () => hljs.initHighlighting())</script>
+</head>
+<body>
+<main>
+<article id="content">
+<header>
+<h1 class="title">Module <code>Client.app</code></h1>
+</header>
+<section id="section-intro">
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">import os
+os.environ[&#34;KIVY_NO_ARGS&#34;] = &#34;1&#34;
+
+from kivy.app import App 
+from kivy.uix.widget import Widget
+from kivy.uix.label import Label
+from kivy.properties import (StringProperty, ObjectProperty)
+from kivy.uix.textinput import TextInput
+from kivy.uix.button import Button
+from kivy.uix.checkbox import CheckBox
+from kivy.core.window import Window
+from kivy.uix.image import Image
+from kivy.uix.screenmanager import ScreenManager, Screen
+from kivy.uix.scrollview import ScrollView
+from kivy.clock import mainthread
+from network import Session
+import threading
+from time import sleep, strptime
+from datetime import datetime as dt
+from network import Session
+
+Window.size = (500, 500)
+Window.icon = &#39;icon.png&#39;
+TIME_FORMAT = &#34;%d.%m.%Y %H:%M&#34;
+
+def is_valid_time_format(time: str) -&gt; bool:
+    &#34;&#34;&#34;Проверяет совпадает ли формат времени со следующим DD.MM.YYYY hh:mm.
+
+        :param time: время для проверки
+        :type time: str
+
+        :returns: True - формат совпадает
+        :rtype: bool
+    &#34;&#34;&#34;
+    try:
+        strptime(time, TIME_FORMAT)
+        return True
+    except ValueError:
+        return False
+
+class ChatFinderScreen(Screen):
+    &#34;Окно, отвечающее за нахождение пользователей по имени.&#34;
+    scroll: ScrollView = ObjectProperty(None)
+    back_button: Button = ObjectProperty(None)
+    input_field: TextInput = ObjectProperty(None)
+    find_chat_button: Button = ObjectProperty(None)
+    
+    def return_back(self):
+        &#34;Нажатие кнопки возвращает обратно в главное меню.&#34;
+        ClientApp.SM.transition.direction = &#34;up&#34;
+        ClientApp.SM.current = &#34;main_menu&#34;
+    
+    @mainthread
+    def add_chats_to_scroll(self, chat_names: list[str]):
+        &#34;&#34;&#34;Добавление чата в двигающееся меню.
+
+        :param chat_names: список чатов для добавления
+        :type chat_names: list[str]
+        &#34;&#34;&#34;
+        for chat_name in chat_names:
+            self.scroll.children[0].add_widget(Chat(chat_name, &#39;add&#39;))
+    
+    def find_chat(self):
+        &#34;Получает с сервера список чатов по имени.&#34;
+        def threaded_find_chat():    
+            success, chat_names = ClientApp.session.find_chats(self.input_field.text)
+            if success:
+                self.add_chats_to_scroll(chat_names)
+        threading.Thread(target=threaded_find_chat).start()
+
+class Message(Widget):
+    &#34;Виджет-сообщение. Имеет 3 строки: текст сообщения, отправитель, время отправки.&#34;
+    message_text: Label = ObjectProperty(None)
+    message_time: Label = ObjectProperty(None)
+    message_sender: Label = ObjectProperty(None)
+    
+    def __init__(self, text: str=&#39;&#39;, sender: str=&#39;&#39;, time: str=&#39;&#39;, index: int=0, **kwargs):
+        &#34;&#34;&#34;Инициализация сообщения.
+
+        :param text: текст сообщения (содержит максимум 200 символов)
+        :type text: str
+        
+        :param sender: отправитель
+        :type sender: str
+        
+        :param time: время отправки формата DD.MM.YYYY hh:mm
+        :type time: str
+        
+        :param index: индекс сообщения
+        :type index: int
+        &#34;&#34;&#34;
+        super().__init__(**kwargs)
+        if not isinstance(text, str):
+            raise TypeError(&#34;Argument text in message must be str.&#34;)
+        if len(text) &gt; 200:
+            raise ValueError(&#34;Argument text in message can&#39;t contain more than 200 chars.&#34;)
+        if not isinstance(sender, str):
+            raise TypeError(&#34;Argument sender in message must be str.&#34;)
+        if not isinstance(index, int):
+            raise TypeError(&#34;Argument index in message must be int.&#34;)
+        if not isinstance(time, str):
+            raise TypeError(&#34;Argument time in message must be str.&#34;)
+        if not is_valid_time_format(time):
+            raise ValueError(&#34;Invalid time format.&#34;)
+         
+        if text == &#39;&#39;:
+            self.message_text.text = &#34;Some text&#34;
+        else:
+            self.message_text.text = text
+        if sender:
+            self.message_sender.text = sender
+        else:
+            self.message_sender.text = &#34;Some sender&#34;
+        self.message_time.text = time
+        self.index = index
+        self.resize()
+            
+    def resize(self):
+        &#34;Подгоняет размер сообщения под размер окна приложения.&#34;
+        self.message_text.text_size[0] = Window.width - 20
+        self.message_text.texture_update()
+        self.height = self.message_text.height + 40
+
+class ChatScreen(Screen):
+    &#34;Окно конкретного чата.&#34;
+    scroll: ScrollView = ObjectProperty(None)
+    back_button: Button = ObjectProperty(None)
+    chat_name: Label = ObjectProperty(None)
+    input_field: TextInput = ObjectProperty(None)
+    send_button: Button = ObjectProperty(None)
+    is_file_check_box: CheckBox = ObjectProperty(None)
+    def __init__(self, **kwargs):
+        &#34;Инициализация окна чата.&#34;
+        super().__init__(**kwargs)
+        self.chat_name.text = kwargs[&#34;name&#34;]
+        self.scroll.width = Window.width
+        Window.bind(on_resize=self.on_window_resize_messages)
+    
+    @mainthread        
+    def add_message(self, text: str=&#39;&#39;, sender: str=&#39;&#39;, time: str=&#39;&#39;, index: int=0):
+        &#34;&#34;&#34;Добавляет сообщение по заданному тексту, отправителю, 
+        времени отправки, и индексу в прокручивающееся меню.
+
+        :param text: текст сообщения
+        :type text: str
+        
+        :param sender: отправитель
+        :type sender: str
+        
+        :param time: время отправки формата DD.MM.YYYY hh:mm
+        :type time: str
+        
+        :param index: индекс сообщения
+        :type index: int
+        &#34;&#34;&#34;
+        self.scroll.children[0].add_widget(Message(text=text, sender=sender, time=time, index=index))
+    
+    def on_window_resize_messages(self, *args):
+        &#34;&#34;&#34;Изменяет размер каждого сообщения в чате.
+        Вызывается при изменении размера окна приложения.&#34;&#34;&#34;
+        if ClientApp.SM.current == self.chat_name.text:
+            for message in self.scroll.children[0].children:
+                message.resize()
+                
+    def on_enter(self, *args):
+        &#34;При входе в чат начинается обновление сообщений с сервера.&#34;
+        threading.Thread(target=self.update_messages).start()
+    
+    def on_leave(self, *args):
+        &#34;При выходе из чата сообщения перестают обновлятся.&#34;
+        self.updating = False
+    
+    def update_messages(self):
+        &#34;Обновление сообщений с сервера.&#34;
+        self.updating = True
+        while True:
+            print(&#39;update&#39;)
+            if not self.updating:
+                break
+            current_messages = self.scroll.children[0].children
+            idx = 0 if len(current_messages) == 0 else current_messages[0].index
+            success, news = ClientApp.session.get_new_messages(self.chat_name.text.split(maxsplit=1)[1], idx)
+            if success:
+                for new_idx, message_text, sender, time in news:
+                    print(new_idx, message_text, sender, time)
+                    self.add_message(text=message_text, sender=sender, index=new_idx, time=time)
+            sleep(2)
+
+    def resize_messages(self):
+        &#34;Изменяет размер каждого сообщения в чате.&#34;
+        for message in self.scroll.children[0].children:
+            message.resize()
+
+    def return_back(self):
+        &#34;Возвращается в главное меню при нажатии кнопки.&#34;
+        ClientApp.SM.transition.direction = &#34;right&#34;
+        ClientApp.SM.current = &#34;main_menu&#34;
+        
+    def send(self):
+        &#34;Отправка сообщения на сервер.&#34;
+        message_text = self.input_field.text
+        self.input_field.text = &#34;&#34;
+        
+        def threaded_send(text):
+            success = ClientApp.session.send_message(self.chat_name.text.split(maxsplit=1)[1], text, dt.now().strftime(TIME_FORMAT))
+            if not success:
+                print(&#34;Message has NOT be sent!&#34;)
+        
+        def threaded_send_file(filename):
+            print(&#39;tryes to send file&#39;)
+            success = ClientApp.session.send_file(self.chat_name.text.split(maxsplit=1)[1], filename, dt.now().strftime(TIME_FORMAT))
+            if not success:
+                print(&#34;Document has NOT been sent!&#34;)
+        
+        if self.is_file_check_box.active:
+            threading.Thread(target=threaded_send_file, args=[message_text]).start()
+            return
+        
+        if len(message_text) % 200 == 0 and message_text:
+            times = len(message_text)//200
+        else:
+            times = len(message_text)//200 + 1
+        for i in range(times):
+            sample = message_text[i*200:(i+1)*200]
+            threading.Thread(target=threaded_send, args=[sample]).start()        
+
+class Chat(Widget):
+    &#34;Виджет-чат. Является отображением конкретного чата.&#34;
+    chat_icon: Image = ObjectProperty(None)
+    chat_name: Label = ObjectProperty(None)
+    chat_button: Button = ObjectProperty(None)
+        
+    def __init__(self, chat_name: str, b_type: str=&#34;enter&#34;):
+        &#34;&#34;&#34;Инициализация. 
+        При b_type &#34;enter&#34; входит в чат при нажатии на виджет.
+        При b_type &#34;add&#34; добавляет чат в главное меню при нажатии на виджет.
+
+        :param chat_name: имя чата
+        :type chat_name: str
+        
+        :param b_type: тип поведения
+        :type sender: str
+        &#34;&#34;&#34;
+        super().__init__()
+        
+        if b_type not in (&#34;enter&#34;, &#34;add&#34;):
+            raise ValueError(&#34;No such type of ChatWidget Button. It must be &#39;enter&#39; or &#39;add&#39;&#34;)
+        
+        self.chat_icon.source = &#34;icon.png&#34;
+        self.chat_name.text = chat_name
+        self.button_type = b_type
+        self.chat_button.width = Window.width
+        if b_type == &#34;enter&#34;:
+            screen = ChatScreen(name=f&#34;Chat {self.chat_name.text}&#34;)
+            ClientApp.SM.add_widget(screen)
+    
+    def activate(self):
+        &#34;&#34;&#34;При b_type &#34;enter&#34; входит в чат.
+        При b_type &#34;add&#34; добавляет чат в главное меню.&#34;&#34;&#34;
+        match self.button_type:
+            case &#34;enter&#34;:
+                self.enter_chat()
+            case &#34;add&#34;:
+                self.add_chat()
+    
+    def add_chat(self):
+        &#34;Добавление чата в главное меню.&#34;
+        if f&#34;Chat {self.chat_name.text}&#34; not in ClientApp.SM.screen_names:
+            ClientApp.SM.get_screen(&#34;main_menu&#34;).scroll.children[0].add_widget(Chat(self.chat_name.text))
+        
+    def enter_chat(self):
+        &#34;Вход в чат.&#34;
+        ClientApp.SM.transition.direction = &#34;left&#34;
+        ClientApp.SM.current = f&#34;Chat {self.chat_name.text}&#34;
+        ClientApp.SM.current_screen.resize_messages()
+
+class LoginScreen(Screen):
+    &#34;Начальное окно. Отвечает за авторизацию и регистрацию пользователя.&#34;
+    login: TextInput = ObjectProperty(None)
+    password: TextInput = ObjectProperty(None)
+    button: Button = ObjectProperty(None)
+    check_box: CheckBox = ObjectProperty(None)
+
+    @mainthread
+    def to_main_menu_screen(self):
+        &#34;Переход в главное меню.&#34;
+        self.manager.current = &#34;main_menu&#34;
+
+    def sign_in(self):
+        &#34;&#34;&#34;Авторизуется или регистрируется на сервере.
+        При успехе входит в главное меню.&#34;&#34;&#34;
+        def threaded_sign_in():
+            success = ClientApp.session.connect(self.login.text, self.password.text, self.check_box.active)
+            if success:
+                ClientApp.LOGIN = self.login.text
+                ClientApp.PASSWORD = self.password.text
+                ClientApp.session.login = ClientApp.LOGIN
+                ClientApp.session.password = ClientApp.PASSWORD
+                self.to_main_menu_screen()
+        threading.Thread(target=threaded_sign_in).start()
+
+class MainMenuScreen(Screen):
+    scroll: ScrollView = ObjectProperty(None)
+    finder_button: Button = ObjectProperty(None)
+
+    def on_enter(self, *args):
+        &#34;Начинает обновлять все свои чаты при входе в главное меню.&#34;
+        threading.Thread(target=self.update_chats).start()
+        
+    def on_leave(self, *args):
+        &#34;Прекращает обновлять чаты при выходе из главного меню.&#34;
+        self.updating = False
+    
+    def update_chats(self):
+        &#34;Обновление списка чатов.&#34;
+        self.updating = True
+        while True:
+            if not self.updating:
+                break
+            success, chat_names = ClientApp.session.get_all_chats()
+            if success:
+                self.add_chats_to_scroll(chat_names)
+            sleep(5)
+    
+    @mainthread
+    def add_chats_to_scroll(self, chat_names: list[str]):
+        &#34;&#34;&#34;Добавление чатов в прокручивающийся список по имени.
+        
+        :param chat_names: имена чатов
+        :type chat_names: list[str]
+        &#34;&#34;&#34;
+        for chat_name in chat_names:
+            if f&#34;Chat {chat_name}&#34; not in ClientApp.SM.screen_names:
+                self.scroll.children[0].add_widget(Chat(chat_name, &#39;enter&#39;))
+            
+    def to_find_chat_screen(self):
+        &#34;Переход в меню поиска чатов.&#34;
+        ClientApp.SM.transition.direction = &#34;down&#34;
+        ClientApp.SM.current = &#34;chat_finder&#34;
+
+class ClientApp(App):
+    &#34;Главное приложение.&#34;
+    title = StringProperty(&#34;Messanger&#34;)
+    SM: ScreenManager = ObjectProperty(None)
+    LOGIN: str = &#39;&#39;
+    PASSWORD: str = &#39;&#39;
+    
+    def __init__(self, ip: str, port: str):
+        &#34;&#34;&#34;Инициализация приложения.
+        
+        :param ip: ip-адрес сервера для подключения
+        :type ip: str
+        
+        :param port: port сервера для подключения
+        :type port: str&#34;&#34;&#34;
+        
+        super().__init__()
+        self.icon = &#34;icon.png&#34;
+        ClientApp.session = Session(ip, port)
+
+    def on_stop(self):
+        &#34;Останавливает обновление чатов и сообщений при закрытии приложения.&#34;
+        for screen in ClientApp.SM.screens:
+            screen.updating = False
+
+    def build(self):
+        &#34;Формирование окон приложения.&#34;
+        root = ScreenManager()
+        ClientApp.SM = root        
+        root.add_widget(LoginScreen())
+        root.add_widget(MainMenuScreen())
+        root.add_widget(ChatFinderScreen())
+        return root</code></pre>
+</details>
+</section>
+<section>
+</section>
+<section>
+</section>
+<section>
+<h2 class="section-title" id="header-functions">Functions</h2>
+<dl>
+<dt id="Client.app.is_valid_time_format"><code class="name flex">
+<span>def <span class="ident">is_valid_time_format</span></span>(<span>time: str) ‑> bool</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Проверяет совпадает ли формат времени со следующим DD.MM.YYYY hh:mm.</p>
+<p>:param time: время для проверки
+:type time: str</p>
+<p>:returns: True - формат совпадает
+:rtype: bool</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def is_valid_time_format(time: str) -&gt; bool:
+    &#34;&#34;&#34;Проверяет совпадает ли формат времени со следующим DD.MM.YYYY hh:mm.
+
+        :param time: время для проверки
+        :type time: str
+
+        :returns: True - формат совпадает
+        :rtype: bool
+    &#34;&#34;&#34;
+    try:
+        strptime(time, TIME_FORMAT)
+        return True
+    except ValueError:
+        return False</code></pre>
+</details>
+</dd>
+</dl>
+</section>
+<section>
+<h2 class="section-title" id="header-classes">Classes</h2>
+<dl>
+<dt id="Client.app.Chat"><code class="flex name class">
+<span>class <span class="ident">Chat</span></span>
+<span>(</span><span>chat_name: str, b_type: str = 'enter')</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Виджет-чат. Является отображением конкретного чата.</p>
+<p>Инициализация.
+При b_type "enter" входит в чат при нажатии на виджет.
+При b_type "add" добавляет чат в главное меню при нажатии на виджет.</p>
+<p>:param chat_name: имя чата
+:type chat_name: str</p>
+<p>:param b_type: тип поведения
+:type sender: str</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">class Chat(Widget):
+    &#34;Виджет-чат. Является отображением конкретного чата.&#34;
+    chat_icon: Image = ObjectProperty(None)
+    chat_name: Label = ObjectProperty(None)
+    chat_button: Button = ObjectProperty(None)
+        
+    def __init__(self, chat_name: str, b_type: str=&#34;enter&#34;):
+        &#34;&#34;&#34;Инициализация. 
+        При b_type &#34;enter&#34; входит в чат при нажатии на виджет.
+        При b_type &#34;add&#34; добавляет чат в главное меню при нажатии на виджет.
+
+        :param chat_name: имя чата
+        :type chat_name: str
+        
+        :param b_type: тип поведения
+        :type sender: str
+        &#34;&#34;&#34;
+        super().__init__()
+        
+        if b_type not in (&#34;enter&#34;, &#34;add&#34;):
+            raise ValueError(&#34;No such type of ChatWidget Button. It must be &#39;enter&#39; or &#39;add&#39;&#34;)
+        
+        self.chat_icon.source = &#34;icon.png&#34;
+        self.chat_name.text = chat_name
+        self.button_type = b_type
+        self.chat_button.width = Window.width
+        if b_type == &#34;enter&#34;:
+            screen = ChatScreen(name=f&#34;Chat {self.chat_name.text}&#34;)
+            ClientApp.SM.add_widget(screen)
+    
+    def activate(self):
+        &#34;&#34;&#34;При b_type &#34;enter&#34; входит в чат.
+        При b_type &#34;add&#34; добавляет чат в главное меню.&#34;&#34;&#34;
+        match self.button_type:
+            case &#34;enter&#34;:
+                self.enter_chat()
+            case &#34;add&#34;:
+                self.add_chat()
+    
+    def add_chat(self):
+        &#34;Добавление чата в главное меню.&#34;
+        if f&#34;Chat {self.chat_name.text}&#34; not in ClientApp.SM.screen_names:
+            ClientApp.SM.get_screen(&#34;main_menu&#34;).scroll.children[0].add_widget(Chat(self.chat_name.text))
+        
+    def enter_chat(self):
+        &#34;Вход в чат.&#34;
+        ClientApp.SM.transition.direction = &#34;left&#34;
+        ClientApp.SM.current = f&#34;Chat {self.chat_name.text}&#34;
+        ClientApp.SM.current_screen.resize_messages()</code></pre>
+</details>
+<h3>Ancestors</h3>
+<ul class="hlist">
+<li>kivy.uix.widget.Widget</li>
+<li>kivy.uix.widget.WidgetBase</li>
+<li>kivy._event.EventDispatcher</li>
+<li>kivy._event.ObjectWithUid</li>
+</ul>
+<h3>Instance variables</h3>
+<dl>
+<dt id="Client.app.Chat.chat_button"><code class="name">var <span class="ident">chat_button</span> : kivy.uix.button.Button</code></dt>
+<dd>
+<div class="desc"><p>ObjectProperty(defaultvalue=None, rebind=False, **kw)
+Property that represents a Python object.</p>
+<pre><code>:Parameters:
+    &lt;code&gt;defaultvalue&lt;/code&gt;: object type
+        Specifies the default value of the property.
+    &lt;code&gt;rebind&lt;/code&gt;: bool, defaults to False
+        Whether kv rules using this object as an intermediate attribute
+        in a kv rule, will update the bound property when this object
+        changes.
+
+        That is the standard behavior is that if there's a kv rule
+        ``text: self.a.b.c.d``, where &lt;code&gt;a&lt;/code&gt;, &lt;code&gt;b&lt;/code&gt;, and &lt;code&gt;c&lt;/code&gt; are
+        properties with &lt;code&gt;rebind&lt;/code&gt; &lt;code&gt;False&lt;/code&gt; and &lt;code&gt;d&lt;/code&gt; is a
+        :class:&lt;code&gt;StringProperty&lt;/code&gt;. Then when the rule is applied, &lt;code&gt;text&lt;/code&gt;
+        becomes bound only to &lt;code&gt;d&lt;/code&gt;. If &lt;code&gt;a&lt;/code&gt;, &lt;code&gt;b&lt;/code&gt;, or &lt;code&gt;c&lt;/code&gt; change,
+        &lt;code&gt;text&lt;/code&gt; still remains bound to &lt;code&gt;d&lt;/code&gt;. Furthermore, if any of them
+        were &lt;code&gt;None&lt;/code&gt; when the rule was initially evaluated, e.g. &lt;code&gt;b&lt;/code&gt; was
+        &lt;code&gt;None&lt;/code&gt;; then &lt;code&gt;text&lt;/code&gt; is bound to &lt;code&gt;b&lt;/code&gt; and will not become bound
+        to &lt;code&gt;d&lt;/code&gt; even when &lt;code&gt;b&lt;/code&gt; is changed to not be &lt;code&gt;None&lt;/code&gt;.
+
+        By setting &lt;code&gt;rebind&lt;/code&gt; to &lt;code&gt;True&lt;/code&gt;, however, the rule will be
+        re-evaluated and all the properties rebound when that intermediate
+        property changes. E.g. in the example above, whenever &lt;code&gt;b&lt;/code&gt; changes
+        or becomes not &lt;code&gt;None&lt;/code&gt; if it was &lt;code&gt;None&lt;/code&gt; before, &lt;code&gt;text&lt;/code&gt; is
+        evaluated again and becomes rebound to &lt;code&gt;d&lt;/code&gt;. The overall result is
+        that &lt;code&gt;text&lt;/code&gt; is now bound to all the properties among &lt;code&gt;a&lt;/code&gt;,
+        &lt;code&gt;b&lt;/code&gt;, or &lt;code&gt;c&lt;/code&gt; that have &lt;code&gt;rebind&lt;/code&gt; set to &lt;code&gt;True&lt;/code&gt;.
+    `\*\*kwargs`: a list of keyword arguments
+        &lt;code&gt;baseclass&lt;/code&gt;
+            If kwargs includes a &lt;code&gt;baseclass&lt;/code&gt; argument, this value will be
+            used for validation: `isinstance(value, kwargs['baseclass'])`.
+
+!!! warning "Warning"
+    To mark the property as changed, you must reassign a new python object.
+
+!!! versionchanged "Changed in version:&amp;ensp;1.9.0"
+    &lt;code&gt;rebind&lt;/code&gt; has been introduced.
+
+!!! versionchanged "Changed in version:&amp;ensp;1.7.0"
+    &lt;code&gt;baseclass&lt;/code&gt; parameter added.
+</code></pre></div>
+</dd>
+<dt id="Client.app.Chat.chat_icon"><code class="name">var <span class="ident">chat_icon</span> : kivy.uix.image.Image</code></dt>
+<dd>
+<div class="desc"><p>ObjectProperty(defaultvalue=None, rebind=False, **kw)
+Property that represents a Python object.</p>
+<pre><code>:Parameters:
+    &lt;code&gt;defaultvalue&lt;/code&gt;: object type
+        Specifies the default value of the property.
+    &lt;code&gt;rebind&lt;/code&gt;: bool, defaults to False
+        Whether kv rules using this object as an intermediate attribute
+        in a kv rule, will update the bound property when this object
+        changes.
+
+        That is the standard behavior is that if there's a kv rule
+        ``text: self.a.b.c.d``, where &lt;code&gt;a&lt;/code&gt;, &lt;code&gt;b&lt;/code&gt;, and &lt;code&gt;c&lt;/code&gt; are
+        properties with &lt;code&gt;rebind&lt;/code&gt; &lt;code&gt;False&lt;/code&gt; and &lt;code&gt;d&lt;/code&gt; is a
+        :class:&lt;code&gt;StringProperty&lt;/code&gt;. Then when the rule is applied, &lt;code&gt;text&lt;/code&gt;
+        becomes bound only to &lt;code&gt;d&lt;/code&gt;. If &lt;code&gt;a&lt;/code&gt;, &lt;code&gt;b&lt;/code&gt;, or &lt;code&gt;c&lt;/code&gt; change,
+        &lt;code&gt;text&lt;/code&gt; still remains bound to &lt;code&gt;d&lt;/code&gt;. Furthermore, if any of them
+        were &lt;code&gt;None&lt;/code&gt; when the rule was initially evaluated, e.g. &lt;code&gt;b&lt;/code&gt; was
+        &lt;code&gt;None&lt;/code&gt;; then &lt;code&gt;text&lt;/code&gt; is bound to &lt;code&gt;b&lt;/code&gt; and will not become bound
+        to &lt;code&gt;d&lt;/code&gt; even when &lt;code&gt;b&lt;/code&gt; is changed to not be &lt;code&gt;None&lt;/code&gt;.
+
+        By setting &lt;code&gt;rebind&lt;/code&gt; to &lt;code&gt;True&lt;/code&gt;, however, the rule will be
+        re-evaluated and all the properties rebound when that intermediate
+        property changes. E.g. in the example above, whenever &lt;code&gt;b&lt;/code&gt; changes
+        or becomes not &lt;code&gt;None&lt;/code&gt; if it was &lt;code&gt;None&lt;/code&gt; before, &lt;code&gt;text&lt;/code&gt; is
+        evaluated again and becomes rebound to &lt;code&gt;d&lt;/code&gt;. The overall result is
+        that &lt;code&gt;text&lt;/code&gt; is now bound to all the properties among &lt;code&gt;a&lt;/code&gt;,
+        &lt;code&gt;b&lt;/code&gt;, or &lt;code&gt;c&lt;/code&gt; that have &lt;code&gt;rebind&lt;/code&gt; set to &lt;code&gt;True&lt;/code&gt;.
+    `\*\*kwargs`: a list of keyword arguments
+        &lt;code&gt;baseclass&lt;/code&gt;
+            If kwargs includes a &lt;code&gt;baseclass&lt;/code&gt; argument, this value will be
+            used for validation: `isinstance(value, kwargs['baseclass'])`.
+
+!!! warning "Warning"
+    To mark the property as changed, you must reassign a new python object.
+
+!!! versionchanged "Changed in version:&amp;ensp;1.9.0"
+    &lt;code&gt;rebind&lt;/code&gt; has been introduced.
+
+!!! versionchanged "Changed in version:&amp;ensp;1.7.0"
+    &lt;code&gt;baseclass&lt;/code&gt; parameter added.
+</code></pre></div>
+</dd>
+<dt id="Client.app.Chat.chat_name"><code class="name">var <span class="ident">chat_name</span> : kivy.uix.label.Label</code></dt>
+<dd>
+<div class="desc"><p>ObjectProperty(defaultvalue=None, rebind=False, **kw)
+Property that represents a Python object.</p>
+<pre><code>:Parameters:
+    &lt;code&gt;defaultvalue&lt;/code&gt;: object type
+        Specifies the default value of the property.
+    &lt;code&gt;rebind&lt;/code&gt;: bool, defaults to False
+        Whether kv rules using this object as an intermediate attribute
+        in a kv rule, will update the bound property when this object
+        changes.
+
+        That is the standard behavior is that if there's a kv rule
+        ``text: self.a.b.c.d``, where &lt;code&gt;a&lt;/code&gt;, &lt;code&gt;b&lt;/code&gt;, and &lt;code&gt;c&lt;/code&gt; are
+        properties with &lt;code&gt;rebind&lt;/code&gt; &lt;code&gt;False&lt;/code&gt; and &lt;code&gt;d&lt;/code&gt; is a
+        :class:&lt;code&gt;StringProperty&lt;/code&gt;. Then when the rule is applied, &lt;code&gt;text&lt;/code&gt;
+        becomes bound only to &lt;code&gt;d&lt;/code&gt;. If &lt;code&gt;a&lt;/code&gt;, &lt;code&gt;b&lt;/code&gt;, or &lt;code&gt;c&lt;/code&gt; change,
+        &lt;code&gt;text&lt;/code&gt; still remains bound to &lt;code&gt;d&lt;/code&gt;. Furthermore, if any of them
+        were &lt;code&gt;None&lt;/code&gt; when the rule was initially evaluated, e.g. &lt;code&gt;b&lt;/code&gt; was
+        &lt;code&gt;None&lt;/code&gt;; then &lt;code&gt;text&lt;/code&gt; is bound to &lt;code&gt;b&lt;/code&gt; and will not become bound
+        to &lt;code&gt;d&lt;/code&gt; even when &lt;code&gt;b&lt;/code&gt; is changed to not be &lt;code&gt;None&lt;/code&gt;.
+
+        By setting &lt;code&gt;rebind&lt;/code&gt; to &lt;code&gt;True&lt;/code&gt;, however, the rule will be
+        re-evaluated and all the properties rebound when that intermediate
+        property changes. E.g. in the example above, whenever &lt;code&gt;b&lt;/code&gt; changes
+        or becomes not &lt;code&gt;None&lt;/code&gt; if it was &lt;code&gt;None&lt;/code&gt; before, &lt;code&gt;text&lt;/code&gt; is
+        evaluated again and becomes rebound to &lt;code&gt;d&lt;/code&gt;. The overall result is
+        that &lt;code&gt;text&lt;/code&gt; is now bound to all the properties among &lt;code&gt;a&lt;/code&gt;,
+        &lt;code&gt;b&lt;/code&gt;, or &lt;code&gt;c&lt;/code&gt; that have &lt;code&gt;rebind&lt;/code&gt; set to &lt;code&gt;True&lt;/code&gt;.
+    `\*\*kwargs`: a list of keyword arguments
+        &lt;code&gt;baseclass&lt;/code&gt;
+            If kwargs includes a &lt;code&gt;baseclass&lt;/code&gt; argument, this value will be
+            used for validation: `isinstance(value, kwargs['baseclass'])`.
+
+!!! warning "Warning"
+    To mark the property as changed, you must reassign a new python object.
+
+!!! versionchanged "Changed in version:&amp;ensp;1.9.0"
+    &lt;code&gt;rebind&lt;/code&gt; has been introduced.
+
+!!! versionchanged "Changed in version:&amp;ensp;1.7.0"
+    &lt;code&gt;baseclass&lt;/code&gt; parameter added.
+</code></pre></div>
+</dd>
+</dl>
+<h3>Methods</h3>
+<dl>
+<dt id="Client.app.Chat.activate"><code class="name flex">
+<span>def <span class="ident">activate</span></span>(<span>self)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>При b_type "enter" входит в чат.
+При b_type "add" добавляет чат в главное меню.</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def activate(self):
+    &#34;&#34;&#34;При b_type &#34;enter&#34; входит в чат.
+    При b_type &#34;add&#34; добавляет чат в главное меню.&#34;&#34;&#34;
+    match self.button_type:
+        case &#34;enter&#34;:
+            self.enter_chat()
+        case &#34;add&#34;:
+            self.add_chat()</code></pre>
+</details>
+</dd>
+<dt id="Client.app.Chat.add_chat"><code class="name flex">
+<span>def <span class="ident">add_chat</span></span>(<span>self)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Добавление чата в главное меню.</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def add_chat(self):
+    &#34;Добавление чата в главное меню.&#34;
+    if f&#34;Chat {self.chat_name.text}&#34; not in ClientApp.SM.screen_names:
+        ClientApp.SM.get_screen(&#34;main_menu&#34;).scroll.children[0].add_widget(Chat(self.chat_name.text))</code></pre>
+</details>
+</dd>
+<dt id="Client.app.Chat.enter_chat"><code class="name flex">
+<span>def <span class="ident">enter_chat</span></span>(<span>self)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Вход в чат.</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def enter_chat(self):
+    &#34;Вход в чат.&#34;
+    ClientApp.SM.transition.direction = &#34;left&#34;
+    ClientApp.SM.current = f&#34;Chat {self.chat_name.text}&#34;
+    ClientApp.SM.current_screen.resize_messages()</code></pre>
+</details>
+</dd>
+</dl>
+</dd>
+<dt id="Client.app.ChatFinderScreen"><code class="flex name class">
+<span>class <span class="ident">ChatFinderScreen</span></span>
+<span>(</span><span>**kw)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Окно, отвечающее за нахождение пользователей по имени.</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">class ChatFinderScreen(Screen):
+    &#34;Окно, отвечающее за нахождение пользователей по имени.&#34;
+    scroll: ScrollView = ObjectProperty(None)
+    back_button: Button = ObjectProperty(None)
+    input_field: TextInput = ObjectProperty(None)
+    find_chat_button: Button = ObjectProperty(None)
+    
+    def return_back(self):
+        &#34;Нажатие кнопки возвращает обратно в главное меню.&#34;
+        ClientApp.SM.transition.direction = &#34;up&#34;
+        ClientApp.SM.current = &#34;main_menu&#34;
+    
+    @mainthread
+    def add_chats_to_scroll(self, chat_names: list[str]):
+        &#34;&#34;&#34;Добавление чата в двигающееся меню.
+
+        :param chat_names: список чатов для добавления
+        :type chat_names: list[str]
+        &#34;&#34;&#34;
+        for chat_name in chat_names:
+            self.scroll.children[0].add_widget(Chat(chat_name, &#39;add&#39;))
+    
+    def find_chat(self):
+        &#34;Получает с сервера список чатов по имени.&#34;
+        def threaded_find_chat():    
+            success, chat_names = ClientApp.session.find_chats(self.input_field.text)
+            if success:
+                self.add_chats_to_scroll(chat_names)
+        threading.Thread(target=threaded_find_chat).start()</code></pre>
+</details>
+<h3>Ancestors</h3>
+<ul class="hlist">
+<li>kivy.uix.screenmanager.Screen</li>
+<li>kivy.uix.relativelayout.RelativeLayout</li>
+<li>kivy.uix.floatlayout.FloatLayout</li>
+<li>kivy.uix.layout.Layout</li>
+<li>kivy.uix.widget.Widget</li>
+<li>kivy.uix.widget.WidgetBase</li>
+<li>kivy._event.EventDispatcher</li>
+<li>kivy._event.ObjectWithUid</li>
+</ul>
+<h3>Instance variables</h3>
+<dl>
+<dt id="Client.app.ChatFinderScreen.back_button"><code class="name">var <span class="ident">back_button</span> : kivy.uix.button.Button</code></dt>
+<dd>
+<div class="desc"><p>ObjectProperty(defaultvalue=None, rebind=False, **kw)
+Property that represents a Python object.</p>
+<pre><code>:Parameters:
+    &lt;code&gt;defaultvalue&lt;/code&gt;: object type
+        Specifies the default value of the property.
+    &lt;code&gt;rebind&lt;/code&gt;: bool, defaults to False
+        Whether kv rules using this object as an intermediate attribute
+        in a kv rule, will update the bound property when this object
+        changes.
+
+        That is the standard behavior is that if there's a kv rule
+        ``text: self.a.b.c.d``, where &lt;code&gt;a&lt;/code&gt;, &lt;code&gt;b&lt;/code&gt;, and &lt;code&gt;c&lt;/code&gt; are
+        properties with &lt;code&gt;rebind&lt;/code&gt; &lt;code&gt;False&lt;/code&gt; and &lt;code&gt;d&lt;/code&gt; is a
+        :class:&lt;code&gt;StringProperty&lt;/code&gt;. Then when the rule is applied, &lt;code&gt;text&lt;/code&gt;
+        becomes bound only to &lt;code&gt;d&lt;/code&gt;. If &lt;code&gt;a&lt;/code&gt;, &lt;code&gt;b&lt;/code&gt;, or &lt;code&gt;c&lt;/code&gt; change,
+        &lt;code&gt;text&lt;/code&gt; still remains bound to &lt;code&gt;d&lt;/code&gt;. Furthermore, if any of them
+        were &lt;code&gt;None&lt;/code&gt; when the rule was initially evaluated, e.g. &lt;code&gt;b&lt;/code&gt; was
+        &lt;code&gt;None&lt;/code&gt;; then &lt;code&gt;text&lt;/code&gt; is bound to &lt;code&gt;b&lt;/code&gt; and will not become bound
+        to &lt;code&gt;d&lt;/code&gt; even when &lt;code&gt;b&lt;/code&gt; is changed to not be &lt;code&gt;None&lt;/code&gt;.
+
+        By setting &lt;code&gt;rebind&lt;/code&gt; to &lt;code&gt;True&lt;/code&gt;, however, the rule will be
+        re-evaluated and all the properties rebound when that intermediate
+        property changes. E.g. in the example above, whenever &lt;code&gt;b&lt;/code&gt; changes
+        or becomes not &lt;code&gt;None&lt;/code&gt; if it was &lt;code&gt;None&lt;/code&gt; before, &lt;code&gt;text&lt;/code&gt; is
+        evaluated again and becomes rebound to &lt;code&gt;d&lt;/code&gt;. The overall result is
+        that &lt;code&gt;text&lt;/code&gt; is now bound to all the properties among &lt;code&gt;a&lt;/code&gt;,
+        &lt;code&gt;b&lt;/code&gt;, or &lt;code&gt;c&lt;/code&gt; that have &lt;code&gt;rebind&lt;/code&gt; set to &lt;code&gt;True&lt;/code&gt;.
+    `\*\*kwargs`: a list of keyword arguments
+        &lt;code&gt;baseclass&lt;/code&gt;
+            If kwargs includes a &lt;code&gt;baseclass&lt;/code&gt; argument, this value will be
+            used for validation: `isinstance(value, kwargs['baseclass'])`.
+
+!!! warning "Warning"
+    To mark the property as changed, you must reassign a new python object.
+
+!!! versionchanged "Changed in version:&amp;ensp;1.9.0"
+    &lt;code&gt;rebind&lt;/code&gt; has been introduced.
+
+!!! versionchanged "Changed in version:&amp;ensp;1.7.0"
+    &lt;code&gt;baseclass&lt;/code&gt; parameter added.
+</code></pre></div>
+</dd>
+<dt id="Client.app.ChatFinderScreen.find_chat_button"><code class="name">var <span class="ident">find_chat_button</span> : kivy.uix.button.Button</code></dt>
+<dd>
+<div class="desc"><p>ObjectProperty(defaultvalue=None, rebind=False, **kw)
+Property that represents a Python object.</p>
+<pre><code>:Parameters:
+    &lt;code&gt;defaultvalue&lt;/code&gt;: object type
+        Specifies the default value of the property.
+    &lt;code&gt;rebind&lt;/code&gt;: bool, defaults to False
+        Whether kv rules using this object as an intermediate attribute
+        in a kv rule, will update the bound property when this object
+        changes.
+
+        That is the standard behavior is that if there's a kv rule
+        ``text: self.a.b.c.d``, where &lt;code&gt;a&lt;/code&gt;, &lt;code&gt;b&lt;/code&gt;, and &lt;code&gt;c&lt;/code&gt; are
+        properties with &lt;code&gt;rebind&lt;/code&gt; &lt;code&gt;False&lt;/code&gt; and &lt;code&gt;d&lt;/code&gt; is a
+        :class:&lt;code&gt;StringProperty&lt;/code&gt;. Then when the rule is applied, &lt;code&gt;text&lt;/code&gt;
+        becomes bound only to &lt;code&gt;d&lt;/code&gt;. If &lt;code&gt;a&lt;/code&gt;, &lt;code&gt;b&lt;/code&gt;, or &lt;code&gt;c&lt;/code&gt; change,
+        &lt;code&gt;text&lt;/code&gt; still remains bound to &lt;code&gt;d&lt;/code&gt;. Furthermore, if any of them
+        were &lt;code&gt;None&lt;/code&gt; when the rule was initially evaluated, e.g. &lt;code&gt;b&lt;/code&gt; was
+        &lt;code&gt;None&lt;/code&gt;; then &lt;code&gt;text&lt;/code&gt; is bound to &lt;code&gt;b&lt;/code&gt; and will not become bound
+        to &lt;code&gt;d&lt;/code&gt; even when &lt;code&gt;b&lt;/code&gt; is changed to not be &lt;code&gt;None&lt;/code&gt;.
+
+        By setting &lt;code&gt;rebind&lt;/code&gt; to &lt;code&gt;True&lt;/code&gt;, however, the rule will be
+        re-evaluated and all the properties rebound when that intermediate
+        property changes. E.g. in the example above, whenever &lt;code&gt;b&lt;/code&gt; changes
+        or becomes not &lt;code&gt;None&lt;/code&gt; if it was &lt;code&gt;None&lt;/code&gt; before, &lt;code&gt;text&lt;/code&gt; is
+        evaluated again and becomes rebound to &lt;code&gt;d&lt;/code&gt;. The overall result is
+        that &lt;code&gt;text&lt;/code&gt; is now bound to all the properties among &lt;code&gt;a&lt;/code&gt;,
+        &lt;code&gt;b&lt;/code&gt;, or &lt;code&gt;c&lt;/code&gt; that have &lt;code&gt;rebind&lt;/code&gt; set to &lt;code&gt;True&lt;/code&gt;.
+    `\*\*kwargs`: a list of keyword arguments
+        &lt;code&gt;baseclass&lt;/code&gt;
+            If kwargs includes a &lt;code&gt;baseclass&lt;/code&gt; argument, this value will be
+            used for validation: `isinstance(value, kwargs['baseclass'])`.
+
+!!! warning "Warning"
+    To mark the property as changed, you must reassign a new python object.
+
+!!! versionchanged "Changed in version:&amp;ensp;1.9.0"
+    &lt;code&gt;rebind&lt;/code&gt; has been introduced.
+
+!!! versionchanged "Changed in version:&amp;ensp;1.7.0"
+    &lt;code&gt;baseclass&lt;/code&gt; parameter added.
+</code></pre></div>
+</dd>
+<dt id="Client.app.ChatFinderScreen.input_field"><code class="name">var <span class="ident">input_field</span> : kivy.uix.textinput.TextInput</code></dt>
+<dd>
+<div class="desc"><p>ObjectProperty(defaultvalue=None, rebind=False, **kw)
+Property that represents a Python object.</p>
+<pre><code>:Parameters:
+    &lt;code&gt;defaultvalue&lt;/code&gt;: object type
+        Specifies the default value of the property.
+    &lt;code&gt;rebind&lt;/code&gt;: bool, defaults to False
+        Whether kv rules using this object as an intermediate attribute
+        in a kv rule, will update the bound property when this object
+        changes.
+
+        That is the standard behavior is that if there's a kv rule
+        ``text: self.a.b.c.d``, where &lt;code&gt;a&lt;/code&gt;, &lt;code&gt;b&lt;/code&gt;, and &lt;code&gt;c&lt;/code&gt; are
+        properties with &lt;code&gt;rebind&lt;/code&gt; &lt;code&gt;False&lt;/code&gt; and &lt;code&gt;d&lt;/code&gt; is a
+        :class:&lt;code&gt;StringProperty&lt;/code&gt;. Then when the rule is applied, &lt;code&gt;text&lt;/code&gt;
+        becomes bound only to &lt;code&gt;d&lt;/code&gt;. If &lt;code&gt;a&lt;/code&gt;, &lt;code&gt;b&lt;/code&gt;, or &lt;code&gt;c&lt;/code&gt; change,
+        &lt;code&gt;text&lt;/code&gt; still remains bound to &lt;code&gt;d&lt;/code&gt;. Furthermore, if any of them
+        were &lt;code&gt;None&lt;/code&gt; when the rule was initially evaluated, e.g. &lt;code&gt;b&lt;/code&gt; was
+        &lt;code&gt;None&lt;/code&gt;; then &lt;code&gt;text&lt;/code&gt; is bound to &lt;code&gt;b&lt;/code&gt; and will not become bound
+        to &lt;code&gt;d&lt;/code&gt; even when &lt;code&gt;b&lt;/code&gt; is changed to not be &lt;code&gt;None&lt;/code&gt;.
+
+        By setting &lt;code&gt;rebind&lt;/code&gt; to &lt;code&gt;True&lt;/code&gt;, however, the rule will be
+        re-evaluated and all the properties rebound when that intermediate
+        property changes. E.g. in the example above, whenever &lt;code&gt;b&lt;/code&gt; changes
+        or becomes not &lt;code&gt;None&lt;/code&gt; if it was &lt;code&gt;None&lt;/code&gt; before, &lt;code&gt;text&lt;/code&gt; is
+        evaluated again and becomes rebound to &lt;code&gt;d&lt;/code&gt;. The overall result is
+        that &lt;code&gt;text&lt;/code&gt; is now bound to all the properties among &lt;code&gt;a&lt;/code&gt;,
+        &lt;code&gt;b&lt;/code&gt;, or &lt;code&gt;c&lt;/code&gt; that have &lt;code&gt;rebind&lt;/code&gt; set to &lt;code&gt;True&lt;/code&gt;.
+    `\*\*kwargs`: a list of keyword arguments
+        &lt;code&gt;baseclass&lt;/code&gt;
+            If kwargs includes a &lt;code&gt;baseclass&lt;/code&gt; argument, this value will be
+            used for validation: `isinstance(value, kwargs['baseclass'])`.
+
+!!! warning "Warning"
+    To mark the property as changed, you must reassign a new python object.
+
+!!! versionchanged "Changed in version:&amp;ensp;1.9.0"
+    &lt;code&gt;rebind&lt;/code&gt; has been introduced.
+
+!!! versionchanged "Changed in version:&amp;ensp;1.7.0"
+    &lt;code&gt;baseclass&lt;/code&gt; parameter added.
+</code></pre></div>
+</dd>
+<dt id="Client.app.ChatFinderScreen.scroll"><code class="name">var <span class="ident">scroll</span> : kivy.uix.scrollview.ScrollView</code></dt>
+<dd>
+<div class="desc"><p>ObjectProperty(defaultvalue=None, rebind=False, **kw)
+Property that represents a Python object.</p>
+<pre><code>:Parameters:
+    &lt;code&gt;defaultvalue&lt;/code&gt;: object type
+        Specifies the default value of the property.
+    &lt;code&gt;rebind&lt;/code&gt;: bool, defaults to False
+        Whether kv rules using this object as an intermediate attribute
+        in a kv rule, will update the bound property when this object
+        changes.
+
+        That is the standard behavior is that if there's a kv rule
+        ``text: self.a.b.c.d``, where &lt;code&gt;a&lt;/code&gt;, &lt;code&gt;b&lt;/code&gt;, and &lt;code&gt;c&lt;/code&gt; are
+        properties with &lt;code&gt;rebind&lt;/code&gt; &lt;code&gt;False&lt;/code&gt; and &lt;code&gt;d&lt;/code&gt; is a
+        :class:&lt;code&gt;StringProperty&lt;/code&gt;. Then when the rule is applied, &lt;code&gt;text&lt;/code&gt;
+        becomes bound only to &lt;code&gt;d&lt;/code&gt;. If &lt;code&gt;a&lt;/code&gt;, &lt;code&gt;b&lt;/code&gt;, or &lt;code&gt;c&lt;/code&gt; change,
+        &lt;code&gt;text&lt;/code&gt; still remains bound to &lt;code&gt;d&lt;/code&gt;. Furthermore, if any of them
+        were &lt;code&gt;None&lt;/code&gt; when the rule was initially evaluated, e.g. &lt;code&gt;b&lt;/code&gt; was
+        &lt;code&gt;None&lt;/code&gt;; then &lt;code&gt;text&lt;/code&gt; is bound to &lt;code&gt;b&lt;/code&gt; and will not become bound
+        to &lt;code&gt;d&lt;/code&gt; even when &lt;code&gt;b&lt;/code&gt; is changed to not be &lt;code&gt;None&lt;/code&gt;.
+
+        By setting &lt;code&gt;rebind&lt;/code&gt; to &lt;code&gt;True&lt;/code&gt;, however, the rule will be
+        re-evaluated and all the properties rebound when that intermediate
+        property changes. E.g. in the example above, whenever &lt;code&gt;b&lt;/code&gt; changes
+        or becomes not &lt;code&gt;None&lt;/code&gt; if it was &lt;code&gt;None&lt;/code&gt; before, &lt;code&gt;text&lt;/code&gt; is
+        evaluated again and becomes rebound to &lt;code&gt;d&lt;/code&gt;. The overall result is
+        that &lt;code&gt;text&lt;/code&gt; is now bound to all the properties among &lt;code&gt;a&lt;/code&gt;,
+        &lt;code&gt;b&lt;/code&gt;, or &lt;code&gt;c&lt;/code&gt; that have &lt;code&gt;rebind&lt;/code&gt; set to &lt;code&gt;True&lt;/code&gt;.
+    `\*\*kwargs`: a list of keyword arguments
+        &lt;code&gt;baseclass&lt;/code&gt;
+            If kwargs includes a &lt;code&gt;baseclass&lt;/code&gt; argument, this value will be
+            used for validation: `isinstance(value, kwargs['baseclass'])`.
+
+!!! warning "Warning"
+    To mark the property as changed, you must reassign a new python object.
+
+!!! versionchanged "Changed in version:&amp;ensp;1.9.0"
+    &lt;code&gt;rebind&lt;/code&gt; has been introduced.
+
+!!! versionchanged "Changed in version:&amp;ensp;1.7.0"
+    &lt;code&gt;baseclass&lt;/code&gt; parameter added.
+</code></pre></div>
+</dd>
+</dl>
+<h3>Methods</h3>
+<dl>
+<dt id="Client.app.ChatFinderScreen.add_chats_to_scroll"><code class="name flex">
+<span>def <span class="ident">add_chats_to_scroll</span></span>(<span>self, chat_names: list[str])</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Добавление чата в двигающееся меню.</p>
+<p>:param chat_names: список чатов для добавления
+:type chat_names: list[str]</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">@mainthread
+def add_chats_to_scroll(self, chat_names: list[str]):
+    &#34;&#34;&#34;Добавление чата в двигающееся меню.
+
+    :param chat_names: список чатов для добавления
+    :type chat_names: list[str]
+    &#34;&#34;&#34;
+    for chat_name in chat_names:
+        self.scroll.children[0].add_widget(Chat(chat_name, &#39;add&#39;))</code></pre>
+</details>
+</dd>
+<dt id="Client.app.ChatFinderScreen.find_chat"><code class="name flex">
+<span>def <span class="ident">find_chat</span></span>(<span>self)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Получает с сервера список чатов по имени.</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def find_chat(self):
+    &#34;Получает с сервера список чатов по имени.&#34;
+    def threaded_find_chat():    
+        success, chat_names = ClientApp.session.find_chats(self.input_field.text)
+        if success:
+            self.add_chats_to_scroll(chat_names)
+    threading.Thread(target=threaded_find_chat).start()</code></pre>
+</details>
+</dd>
+<dt id="Client.app.ChatFinderScreen.return_back"><code class="name flex">
+<span>def <span class="ident">return_back</span></span>(<span>self)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Нажатие кнопки возвращает обратно в главное меню.</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def return_back(self):
+    &#34;Нажатие кнопки возвращает обратно в главное меню.&#34;
+    ClientApp.SM.transition.direction = &#34;up&#34;
+    ClientApp.SM.current = &#34;main_menu&#34;</code></pre>
+</details>
+</dd>
+</dl>
+</dd>
+<dt id="Client.app.ChatScreen"><code class="flex name class">
+<span>class <span class="ident">ChatScreen</span></span>
+<span>(</span><span>**kwargs)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Окно конкретного чата.</p>
+<p>Инициализация окна чата.</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">class ChatScreen(Screen):
+    &#34;Окно конкретного чата.&#34;
+    scroll: ScrollView = ObjectProperty(None)
+    back_button: Button = ObjectProperty(None)
+    chat_name: Label = ObjectProperty(None)
+    input_field: TextInput = ObjectProperty(None)
+    send_button: Button = ObjectProperty(None)
+    is_file_check_box: CheckBox = ObjectProperty(None)
+    def __init__(self, **kwargs):
+        &#34;Инициализация окна чата.&#34;
+        super().__init__(**kwargs)
+        self.chat_name.text = kwargs[&#34;name&#34;]
+        self.scroll.width = Window.width
+        Window.bind(on_resize=self.on_window_resize_messages)
+    
+    @mainthread        
+    def add_message(self, text: str=&#39;&#39;, sender: str=&#39;&#39;, time: str=&#39;&#39;, index: int=0):
+        &#34;&#34;&#34;Добавляет сообщение по заданному тексту, отправителю, 
+        времени отправки, и индексу в прокручивающееся меню.
+
+        :param text: текст сообщения
+        :type text: str
+        
+        :param sender: отправитель
+        :type sender: str
+        
+        :param time: время отправки формата DD.MM.YYYY hh:mm
+        :type time: str
+        
+        :param index: индекс сообщения
+        :type index: int
+        &#34;&#34;&#34;
+        self.scroll.children[0].add_widget(Message(text=text, sender=sender, time=time, index=index))
+    
+    def on_window_resize_messages(self, *args):
+        &#34;&#34;&#34;Изменяет размер каждого сообщения в чате.
+        Вызывается при изменении размера окна приложения.&#34;&#34;&#34;
+        if ClientApp.SM.current == self.chat_name.text:
+            for message in self.scroll.children[0].children:
+                message.resize()
+                
+    def on_enter(self, *args):
+        &#34;При входе в чат начинается обновление сообщений с сервера.&#34;
+        threading.Thread(target=self.update_messages).start()
+    
+    def on_leave(self, *args):
+        &#34;При выходе из чата сообщения перестают обновлятся.&#34;
+        self.updating = False
+    
+    def update_messages(self):
+        &#34;Обновление сообщений с сервера.&#34;
+        self.updating = True
+        while True:
+            print(&#39;update&#39;)
+            if not self.updating:
+                break
+            current_messages = self.scroll.children[0].children
+            idx = 0 if len(current_messages) == 0 else current_messages[0].index
+            success, news = ClientApp.session.get_new_messages(self.chat_name.text.split(maxsplit=1)[1], idx)
+            if success:
+                for new_idx, message_text, sender, time in news:
+                    print(new_idx, message_text, sender, time)
+                    self.add_message(text=message_text, sender=sender, index=new_idx, time=time)
+            sleep(2)
+
+    def resize_messages(self):
+        &#34;Изменяет размер каждого сообщения в чате.&#34;
+        for message in self.scroll.children[0].children:
+            message.resize()
+
+    def return_back(self):
+        &#34;Возвращается в главное меню при нажатии кнопки.&#34;
+        ClientApp.SM.transition.direction = &#34;right&#34;
+        ClientApp.SM.current = &#34;main_menu&#34;
+        
+    def send(self):
+        &#34;Отправка сообщения на сервер.&#34;
+        message_text = self.input_field.text
+        self.input_field.text = &#34;&#34;
+        
+        def threaded_send(text):
+            success = ClientApp.session.send_message(self.chat_name.text.split(maxsplit=1)[1], text, dt.now().strftime(TIME_FORMAT))
+            if not success:
+                print(&#34;Message has NOT be sent!&#34;)
+        
+        def threaded_send_file(filename):
+            print(&#39;tryes to send file&#39;)
+            success = ClientApp.session.send_file(self.chat_name.text.split(maxsplit=1)[1], filename, dt.now().strftime(TIME_FORMAT))
+            if not success:
+                print(&#34;Document has NOT been sent!&#34;)
+        
+        if self.is_file_check_box.active:
+            threading.Thread(target=threaded_send_file, args=[message_text]).start()
+            return
+        
+        if len(message_text) % 200 == 0 and message_text:
+            times = len(message_text)//200
+        else:
+            times = len(message_text)//200 + 1
+        for i in range(times):
+            sample = message_text[i*200:(i+1)*200]
+            threading.Thread(target=threaded_send, args=[sample]).start()        </code></pre>
+</details>
+<h3>Ancestors</h3>
+<ul class="hlist">
+<li>kivy.uix.screenmanager.Screen</li>
+<li>kivy.uix.relativelayout.RelativeLayout</li>
+<li>kivy.uix.floatlayout.FloatLayout</li>
+<li>kivy.uix.layout.Layout</li>
+<li>kivy.uix.widget.Widget</li>
+<li>kivy.uix.widget.WidgetBase</li>
+<li>kivy._event.EventDispatcher</li>
+<li>kivy._event.ObjectWithUid</li>
+</ul>
+<h3>Instance variables</h3>
+<dl>
+<dt id="Client.app.ChatScreen.back_button"><code class="name">var <span class="ident">back_button</span> : kivy.uix.button.Button</code></dt>
+<dd>
+<div class="desc"><p>ObjectProperty(defaultvalue=None, rebind=False, **kw)
+Property that represents a Python object.</p>
+<pre><code>:Parameters:
+    &lt;code&gt;defaultvalue&lt;/code&gt;: object type
+        Specifies the default value of the property.
+    &lt;code&gt;rebind&lt;/code&gt;: bool, defaults to False
+        Whether kv rules using this object as an intermediate attribute
+        in a kv rule, will update the bound property when this object
+        changes.
+
+        That is the standard behavior is that if there's a kv rule
+        ``text: self.a.b.c.d``, where &lt;code&gt;a&lt;/code&gt;, &lt;code&gt;b&lt;/code&gt;, and &lt;code&gt;c&lt;/code&gt; are
+        properties with &lt;code&gt;rebind&lt;/code&gt; &lt;code&gt;False&lt;/code&gt; and &lt;code&gt;d&lt;/code&gt; is a
+        :class:&lt;code&gt;StringProperty&lt;/code&gt;. Then when the rule is applied, &lt;code&gt;text&lt;/code&gt;
+        becomes bound only to &lt;code&gt;d&lt;/code&gt;. If &lt;code&gt;a&lt;/code&gt;, &lt;code&gt;b&lt;/code&gt;, or &lt;code&gt;c&lt;/code&gt; change,
+        &lt;code&gt;text&lt;/code&gt; still remains bound to &lt;code&gt;d&lt;/code&gt;. Furthermore, if any of them
+        were &lt;code&gt;None&lt;/code&gt; when the rule was initially evaluated, e.g. &lt;code&gt;b&lt;/code&gt; was
+        &lt;code&gt;None&lt;/code&gt;; then &lt;code&gt;text&lt;/code&gt; is bound to &lt;code&gt;b&lt;/code&gt; and will not become bound
+        to &lt;code&gt;d&lt;/code&gt; even when &lt;code&gt;b&lt;/code&gt; is changed to not be &lt;code&gt;None&lt;/code&gt;.
+
+        By setting &lt;code&gt;rebind&lt;/code&gt; to &lt;code&gt;True&lt;/code&gt;, however, the rule will be
+        re-evaluated and all the properties rebound when that intermediate
+        property changes. E.g. in the example above, whenever &lt;code&gt;b&lt;/code&gt; changes
+        or becomes not &lt;code&gt;None&lt;/code&gt; if it was &lt;code&gt;None&lt;/code&gt; before, &lt;code&gt;text&lt;/code&gt; is
+        evaluated again and becomes rebound to &lt;code&gt;d&lt;/code&gt;. The overall result is
+        that &lt;code&gt;text&lt;/code&gt; is now bound to all the properties among &lt;code&gt;a&lt;/code&gt;,
+        &lt;code&gt;b&lt;/code&gt;, or &lt;code&gt;c&lt;/code&gt; that have &lt;code&gt;rebind&lt;/code&gt; set to &lt;code&gt;True&lt;/code&gt;.
+    `\*\*kwargs`: a list of keyword arguments
+        &lt;code&gt;baseclass&lt;/code&gt;
+            If kwargs includes a &lt;code&gt;baseclass&lt;/code&gt; argument, this value will be
+            used for validation: `isinstance(value, kwargs['baseclass'])`.
+
+!!! warning "Warning"
+    To mark the property as changed, you must reassign a new python object.
+
+!!! versionchanged "Changed in version:&amp;ensp;1.9.0"
+    &lt;code&gt;rebind&lt;/code&gt; has been introduced.
+
+!!! versionchanged "Changed in version:&amp;ensp;1.7.0"
+    &lt;code&gt;baseclass&lt;/code&gt; parameter added.
+</code></pre></div>
+</dd>
+<dt id="Client.app.ChatScreen.chat_name"><code class="name">var <span class="ident">chat_name</span> : kivy.uix.label.Label</code></dt>
+<dd>
+<div class="desc"><p>ObjectProperty(defaultvalue=None, rebind=False, **kw)
+Property that represents a Python object.</p>
+<pre><code>:Parameters:
+    &lt;code&gt;defaultvalue&lt;/code&gt;: object type
+        Specifies the default value of the property.
+    &lt;code&gt;rebind&lt;/code&gt;: bool, defaults to False
+        Whether kv rules using this object as an intermediate attribute
+        in a kv rule, will update the bound property when this object
+        changes.
+
+        That is the standard behavior is that if there's a kv rule
+        ``text: self.a.b.c.d``, where &lt;code&gt;a&lt;/code&gt;, &lt;code&gt;b&lt;/code&gt;, and &lt;code&gt;c&lt;/code&gt; are
+        properties with &lt;code&gt;rebind&lt;/code&gt; &lt;code&gt;False&lt;/code&gt; and &lt;code&gt;d&lt;/code&gt; is a
+        :class:&lt;code&gt;StringProperty&lt;/code&gt;. Then when the rule is applied, &lt;code&gt;text&lt;/code&gt;
+        becomes bound only to &lt;code&gt;d&lt;/code&gt;. If &lt;code&gt;a&lt;/code&gt;, &lt;code&gt;b&lt;/code&gt;, or &lt;code&gt;c&lt;/code&gt; change,
+        &lt;code&gt;text&lt;/code&gt; still remains bound to &lt;code&gt;d&lt;/code&gt;. Furthermore, if any of them
+        were &lt;code&gt;None&lt;/code&gt; when the rule was initially evaluated, e.g. &lt;code&gt;b&lt;/code&gt; was
+        &lt;code&gt;None&lt;/code&gt;; then &lt;code&gt;text&lt;/code&gt; is bound to &lt;code&gt;b&lt;/code&gt; and will not become bound
+        to &lt;code&gt;d&lt;/code&gt; even when &lt;code&gt;b&lt;/code&gt; is changed to not be &lt;code&gt;None&lt;/code&gt;.
+
+        By setting &lt;code&gt;rebind&lt;/code&gt; to &lt;code&gt;True&lt;/code&gt;, however, the rule will be
+        re-evaluated and all the properties rebound when that intermediate
+        property changes. E.g. in the example above, whenever &lt;code&gt;b&lt;/code&gt; changes
+        or becomes not &lt;code&gt;None&lt;/code&gt; if it was &lt;code&gt;None&lt;/code&gt; before, &lt;code&gt;text&lt;/code&gt; is
+        evaluated again and becomes rebound to &lt;code&gt;d&lt;/code&gt;. The overall result is
+        that &lt;code&gt;text&lt;/code&gt; is now bound to all the properties among &lt;code&gt;a&lt;/code&gt;,
+        &lt;code&gt;b&lt;/code&gt;, or &lt;code&gt;c&lt;/code&gt; that have &lt;code&gt;rebind&lt;/code&gt; set to &lt;code&gt;True&lt;/code&gt;.
+    `\*\*kwargs`: a list of keyword arguments
+        &lt;code&gt;baseclass&lt;/code&gt;
+            If kwargs includes a &lt;code&gt;baseclass&lt;/code&gt; argument, this value will be
+            used for validation: `isinstance(value, kwargs['baseclass'])`.
+
+!!! warning "Warning"
+    To mark the property as changed, you must reassign a new python object.
+
+!!! versionchanged "Changed in version:&amp;ensp;1.9.0"
+    &lt;code&gt;rebind&lt;/code&gt; has been introduced.
+
+!!! versionchanged "Changed in version:&amp;ensp;1.7.0"
+    &lt;code&gt;baseclass&lt;/code&gt; parameter added.
+</code></pre></div>
+</dd>
+<dt id="Client.app.ChatScreen.input_field"><code class="name">var <span class="ident">input_field</span> : kivy.uix.textinput.TextInput</code></dt>
+<dd>
+<div class="desc"><p>ObjectProperty(defaultvalue=None, rebind=False, **kw)
+Property that represents a Python object.</p>
+<pre><code>:Parameters:
+    &lt;code&gt;defaultvalue&lt;/code&gt;: object type
+        Specifies the default value of the property.
+    &lt;code&gt;rebind&lt;/code&gt;: bool, defaults to False
+        Whether kv rules using this object as an intermediate attribute
+        in a kv rule, will update the bound property when this object
+        changes.
+
+        That is the standard behavior is that if there's a kv rule
+        ``text: self.a.b.c.d``, where &lt;code&gt;a&lt;/code&gt;, &lt;code&gt;b&lt;/code&gt;, and &lt;code&gt;c&lt;/code&gt; are
+        properties with &lt;code&gt;rebind&lt;/code&gt; &lt;code&gt;False&lt;/code&gt; and &lt;code&gt;d&lt;/code&gt; is a
+        :class:&lt;code&gt;StringProperty&lt;/code&gt;. Then when the rule is applied, &lt;code&gt;text&lt;/code&gt;
+        becomes bound only to &lt;code&gt;d&lt;/code&gt;. If &lt;code&gt;a&lt;/code&gt;, &lt;code&gt;b&lt;/code&gt;, or &lt;code&gt;c&lt;/code&gt; change,
+        &lt;code&gt;text&lt;/code&gt; still remains bound to &lt;code&gt;d&lt;/code&gt;. Furthermore, if any of them
+        were &lt;code&gt;None&lt;/code&gt; when the rule was initially evaluated, e.g. &lt;code&gt;b&lt;/code&gt; was
+        &lt;code&gt;None&lt;/code&gt;; then &lt;code&gt;text&lt;/code&gt; is bound to &lt;code&gt;b&lt;/code&gt; and will not become bound
+        to &lt;code&gt;d&lt;/code&gt; even when &lt;code&gt;b&lt;/code&gt; is changed to not be &lt;code&gt;None&lt;/code&gt;.
+
+        By setting &lt;code&gt;rebind&lt;/code&gt; to &lt;code&gt;True&lt;/code&gt;, however, the rule will be
+        re-evaluated and all the properties rebound when that intermediate
+        property changes. E.g. in the example above, whenever &lt;code&gt;b&lt;/code&gt; changes
+        or becomes not &lt;code&gt;None&lt;/code&gt; if it was &lt;code&gt;None&lt;/code&gt; before, &lt;code&gt;text&lt;/code&gt; is
+        evaluated again and becomes rebound to &lt;code&gt;d&lt;/code&gt;. The overall result is
+        that &lt;code&gt;text&lt;/code&gt; is now bound to all the properties among &lt;code&gt;a&lt;/code&gt;,
+        &lt;code&gt;b&lt;/code&gt;, or &lt;code&gt;c&lt;/code&gt; that have &lt;code&gt;rebind&lt;/code&gt; set to &lt;code&gt;True&lt;/code&gt;.
+    `\*\*kwargs`: a list of keyword arguments
+        &lt;code&gt;baseclass&lt;/code&gt;
+            If kwargs includes a &lt;code&gt;baseclass&lt;/code&gt; argument, this value will be
+            used for validation: `isinstance(value, kwargs['baseclass'])`.
+
+!!! warning "Warning"
+    To mark the property as changed, you must reassign a new python object.
+
+!!! versionchanged "Changed in version:&amp;ensp;1.9.0"
+    &lt;code&gt;rebind&lt;/code&gt; has been introduced.
+
+!!! versionchanged "Changed in version:&amp;ensp;1.7.0"
+    &lt;code&gt;baseclass&lt;/code&gt; parameter added.
+</code></pre></div>
+</dd>
+<dt id="Client.app.ChatScreen.is_file_check_box"><code class="name">var <span class="ident">is_file_check_box</span> : kivy.uix.checkbox.CheckBox</code></dt>
+<dd>
+<div class="desc"><p>ObjectProperty(defaultvalue=None, rebind=False, **kw)
+Property that represents a Python object.</p>
+<pre><code>:Parameters:
+    &lt;code&gt;defaultvalue&lt;/code&gt;: object type
+        Specifies the default value of the property.
+    &lt;code&gt;rebind&lt;/code&gt;: bool, defaults to False
+        Whether kv rules using this object as an intermediate attribute
+        in a kv rule, will update the bound property when this object
+        changes.
+
+        That is the standard behavior is that if there's a kv rule
+        ``text: self.a.b.c.d``, where &lt;code&gt;a&lt;/code&gt;, &lt;code&gt;b&lt;/code&gt;, and &lt;code&gt;c&lt;/code&gt; are
+        properties with &lt;code&gt;rebind&lt;/code&gt; &lt;code&gt;False&lt;/code&gt; and &lt;code&gt;d&lt;/code&gt; is a
+        :class:&lt;code&gt;StringProperty&lt;/code&gt;. Then when the rule is applied, &lt;code&gt;text&lt;/code&gt;
+        becomes bound only to &lt;code&gt;d&lt;/code&gt;. If &lt;code&gt;a&lt;/code&gt;, &lt;code&gt;b&lt;/code&gt;, or &lt;code&gt;c&lt;/code&gt; change,
+        &lt;code&gt;text&lt;/code&gt; still remains bound to &lt;code&gt;d&lt;/code&gt;. Furthermore, if any of them
+        were &lt;code&gt;None&lt;/code&gt; when the rule was initially evaluated, e.g. &lt;code&gt;b&lt;/code&gt; was
+        &lt;code&gt;None&lt;/code&gt;; then &lt;code&gt;text&lt;/code&gt; is bound to &lt;code&gt;b&lt;/code&gt; and will not become bound
+        to &lt;code&gt;d&lt;/code&gt; even when &lt;code&gt;b&lt;/code&gt; is changed to not be &lt;code&gt;None&lt;/code&gt;.
+
+        By setting &lt;code&gt;rebind&lt;/code&gt; to &lt;code&gt;True&lt;/code&gt;, however, the rule will be
+        re-evaluated and all the properties rebound when that intermediate
+        property changes. E.g. in the example above, whenever &lt;code&gt;b&lt;/code&gt; changes
+        or becomes not &lt;code&gt;None&lt;/code&gt; if it was &lt;code&gt;None&lt;/code&gt; before, &lt;code&gt;text&lt;/code&gt; is
+        evaluated again and becomes rebound to &lt;code&gt;d&lt;/code&gt;. The overall result is
+        that &lt;code&gt;text&lt;/code&gt; is now bound to all the properties among &lt;code&gt;a&lt;/code&gt;,
+        &lt;code&gt;b&lt;/code&gt;, or &lt;code&gt;c&lt;/code&gt; that have &lt;code&gt;rebind&lt;/code&gt; set to &lt;code&gt;True&lt;/code&gt;.
+    `\*\*kwargs`: a list of keyword arguments
+        &lt;code&gt;baseclass&lt;/code&gt;
+            If kwargs includes a &lt;code&gt;baseclass&lt;/code&gt; argument, this value will be
+            used for validation: `isinstance(value, kwargs['baseclass'])`.
+
+!!! warning "Warning"
+    To mark the property as changed, you must reassign a new python object.
+
+!!! versionchanged "Changed in version:&amp;ensp;1.9.0"
+    &lt;code&gt;rebind&lt;/code&gt; has been introduced.
+
+!!! versionchanged "Changed in version:&amp;ensp;1.7.0"
+    &lt;code&gt;baseclass&lt;/code&gt; parameter added.
+</code></pre></div>
+</dd>
+<dt id="Client.app.ChatScreen.scroll"><code class="name">var <span class="ident">scroll</span> : kivy.uix.scrollview.ScrollView</code></dt>
+<dd>
+<div class="desc"><p>ObjectProperty(defaultvalue=None, rebind=False, **kw)
+Property that represents a Python object.</p>
+<pre><code>:Parameters:
+    &lt;code&gt;defaultvalue&lt;/code&gt;: object type
+        Specifies the default value of the property.
+    &lt;code&gt;rebind&lt;/code&gt;: bool, defaults to False
+        Whether kv rules using this object as an intermediate attribute
+        in a kv rule, will update the bound property when this object
+        changes.
+
+        That is the standard behavior is that if there's a kv rule
+        ``text: self.a.b.c.d``, where &lt;code&gt;a&lt;/code&gt;, &lt;code&gt;b&lt;/code&gt;, and &lt;code&gt;c&lt;/code&gt; are
+        properties with &lt;code&gt;rebind&lt;/code&gt; &lt;code&gt;False&lt;/code&gt; and &lt;code&gt;d&lt;/code&gt; is a
+        :class:&lt;code&gt;StringProperty&lt;/code&gt;. Then when the rule is applied, &lt;code&gt;text&lt;/code&gt;
+        becomes bound only to &lt;code&gt;d&lt;/code&gt;. If &lt;code&gt;a&lt;/code&gt;, &lt;code&gt;b&lt;/code&gt;, or &lt;code&gt;c&lt;/code&gt; change,
+        &lt;code&gt;text&lt;/code&gt; still remains bound to &lt;code&gt;d&lt;/code&gt;. Furthermore, if any of them
+        were &lt;code&gt;None&lt;/code&gt; when the rule was initially evaluated, e.g. &lt;code&gt;b&lt;/code&gt; was
+        &lt;code&gt;None&lt;/code&gt;; then &lt;code&gt;text&lt;/code&gt; is bound to &lt;code&gt;b&lt;/code&gt; and will not become bound
+        to &lt;code&gt;d&lt;/code&gt; even when &lt;code&gt;b&lt;/code&gt; is changed to not be &lt;code&gt;None&lt;/code&gt;.
+
+        By setting &lt;code&gt;rebind&lt;/code&gt; to &lt;code&gt;True&lt;/code&gt;, however, the rule will be
+        re-evaluated and all the properties rebound when that intermediate
+        property changes. E.g. in the example above, whenever &lt;code&gt;b&lt;/code&gt; changes
+        or becomes not &lt;code&gt;None&lt;/code&gt; if it was &lt;code&gt;None&lt;/code&gt; before, &lt;code&gt;text&lt;/code&gt; is
+        evaluated again and becomes rebound to &lt;code&gt;d&lt;/code&gt;. The overall result is
+        that &lt;code&gt;text&lt;/code&gt; is now bound to all the properties among &lt;code&gt;a&lt;/code&gt;,
+        &lt;code&gt;b&lt;/code&gt;, or &lt;code&gt;c&lt;/code&gt; that have &lt;code&gt;rebind&lt;/code&gt; set to &lt;code&gt;True&lt;/code&gt;.
+    `\*\*kwargs`: a list of keyword arguments
+        &lt;code&gt;baseclass&lt;/code&gt;
+            If kwargs includes a &lt;code&gt;baseclass&lt;/code&gt; argument, this value will be
+            used for validation: `isinstance(value, kwargs['baseclass'])`.
+
+!!! warning "Warning"
+    To mark the property as changed, you must reassign a new python object.
+
+!!! versionchanged "Changed in version:&amp;ensp;1.9.0"
+    &lt;code&gt;rebind&lt;/code&gt; has been introduced.
+
+!!! versionchanged "Changed in version:&amp;ensp;1.7.0"
+    &lt;code&gt;baseclass&lt;/code&gt; parameter added.
+</code></pre></div>
+</dd>
+<dt id="Client.app.ChatScreen.send_button"><code class="name">var <span class="ident">send_button</span> : kivy.uix.button.Button</code></dt>
+<dd>
+<div class="desc"><p>ObjectProperty(defaultvalue=None, rebind=False, **kw)
+Property that represents a Python object.</p>
+<pre><code>:Parameters:
+    &lt;code&gt;defaultvalue&lt;/code&gt;: object type
+        Specifies the default value of the property.
+    &lt;code&gt;rebind&lt;/code&gt;: bool, defaults to False
+        Whether kv rules using this object as an intermediate attribute
+        in a kv rule, will update the bound property when this object
+        changes.
+
+        That is the standard behavior is that if there's a kv rule
+        ``text: self.a.b.c.d``, where &lt;code&gt;a&lt;/code&gt;, &lt;code&gt;b&lt;/code&gt;, and &lt;code&gt;c&lt;/code&gt; are
+        properties with &lt;code&gt;rebind&lt;/code&gt; &lt;code&gt;False&lt;/code&gt; and &lt;code&gt;d&lt;/code&gt; is a
+        :class:&lt;code&gt;StringProperty&lt;/code&gt;. Then when the rule is applied, &lt;code&gt;text&lt;/code&gt;
+        becomes bound only to &lt;code&gt;d&lt;/code&gt;. If &lt;code&gt;a&lt;/code&gt;, &lt;code&gt;b&lt;/code&gt;, or &lt;code&gt;c&lt;/code&gt; change,
+        &lt;code&gt;text&lt;/code&gt; still remains bound to &lt;code&gt;d&lt;/code&gt;. Furthermore, if any of them
+        were &lt;code&gt;None&lt;/code&gt; when the rule was initially evaluated, e.g. &lt;code&gt;b&lt;/code&gt; was
+        &lt;code&gt;None&lt;/code&gt;; then &lt;code&gt;text&lt;/code&gt; is bound to &lt;code&gt;b&lt;/code&gt; and will not become bound
+        to &lt;code&gt;d&lt;/code&gt; even when &lt;code&gt;b&lt;/code&gt; is changed to not be &lt;code&gt;None&lt;/code&gt;.
+
+        By setting &lt;code&gt;rebind&lt;/code&gt; to &lt;code&gt;True&lt;/code&gt;, however, the rule will be
+        re-evaluated and all the properties rebound when that intermediate
+        property changes. E.g. in the example above, whenever &lt;code&gt;b&lt;/code&gt; changes
+        or becomes not &lt;code&gt;None&lt;/code&gt; if it was &lt;code&gt;None&lt;/code&gt; before, &lt;code&gt;text&lt;/code&gt; is
+        evaluated again and becomes rebound to &lt;code&gt;d&lt;/code&gt;. The overall result is
+        that &lt;code&gt;text&lt;/code&gt; is now bound to all the properties among &lt;code&gt;a&lt;/code&gt;,
+        &lt;code&gt;b&lt;/code&gt;, or &lt;code&gt;c&lt;/code&gt; that have &lt;code&gt;rebind&lt;/code&gt; set to &lt;code&gt;True&lt;/code&gt;.
+    `\*\*kwargs`: a list of keyword arguments
+        &lt;code&gt;baseclass&lt;/code&gt;
+            If kwargs includes a &lt;code&gt;baseclass&lt;/code&gt; argument, this value will be
+            used for validation: `isinstance(value, kwargs['baseclass'])`.
+
+!!! warning "Warning"
+    To mark the property as changed, you must reassign a new python object.
+
+!!! versionchanged "Changed in version:&amp;ensp;1.9.0"
+    &lt;code&gt;rebind&lt;/code&gt; has been introduced.
+
+!!! versionchanged "Changed in version:&amp;ensp;1.7.0"
+    &lt;code&gt;baseclass&lt;/code&gt; parameter added.
+</code></pre></div>
+</dd>
+</dl>
+<h3>Methods</h3>
+<dl>
+<dt id="Client.app.ChatScreen.add_message"><code class="name flex">
+<span>def <span class="ident">add_message</span></span>(<span>self, text: str = '', sender: str = '', time: str = '', index: int = 0)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Добавляет сообщение по заданному тексту, отправителю,
+времени отправки, и индексу в прокручивающееся меню.</p>
+<p>:param text: текст сообщения
+:type text: str</p>
+<p>:param sender: отправитель
+:type sender: str</p>
+<p>:param time: время отправки формата DD.MM.YYYY hh:mm
+:type time: str</p>
+<p>:param index: индекс сообщения
+:type index: int</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">@mainthread        
+def add_message(self, text: str=&#39;&#39;, sender: str=&#39;&#39;, time: str=&#39;&#39;, index: int=0):
+    &#34;&#34;&#34;Добавляет сообщение по заданному тексту, отправителю, 
+    времени отправки, и индексу в прокручивающееся меню.
+
+    :param text: текст сообщения
+    :type text: str
+    
+    :param sender: отправитель
+    :type sender: str
+    
+    :param time: время отправки формата DD.MM.YYYY hh:mm
+    :type time: str
+    
+    :param index: индекс сообщения
+    :type index: int
+    &#34;&#34;&#34;
+    self.scroll.children[0].add_widget(Message(text=text, sender=sender, time=time, index=index))</code></pre>
+</details>
+</dd>
+<dt id="Client.app.ChatScreen.on_enter"><code class="name flex">
+<span>def <span class="ident">on_enter</span></span>(<span>self, *args)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>При входе в чат начинается обновление сообщений с сервера.</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def on_enter(self, *args):
+    &#34;При входе в чат начинается обновление сообщений с сервера.&#34;
+    threading.Thread(target=self.update_messages).start()</code></pre>
+</details>
+</dd>
+<dt id="Client.app.ChatScreen.on_leave"><code class="name flex">
+<span>def <span class="ident">on_leave</span></span>(<span>self, *args)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>При выходе из чата сообщения перестают обновлятся.</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def on_leave(self, *args):
+    &#34;При выходе из чата сообщения перестают обновлятся.&#34;
+    self.updating = False</code></pre>
+</details>
+</dd>
+<dt id="Client.app.ChatScreen.on_window_resize_messages"><code class="name flex">
+<span>def <span class="ident">on_window_resize_messages</span></span>(<span>self, *args)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Изменяет размер каждого сообщения в чате.
+Вызывается при изменении размера окна приложения.</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def on_window_resize_messages(self, *args):
+    &#34;&#34;&#34;Изменяет размер каждого сообщения в чате.
+    Вызывается при изменении размера окна приложения.&#34;&#34;&#34;
+    if ClientApp.SM.current == self.chat_name.text:
+        for message in self.scroll.children[0].children:
+            message.resize()</code></pre>
+</details>
+</dd>
+<dt id="Client.app.ChatScreen.resize_messages"><code class="name flex">
+<span>def <span class="ident">resize_messages</span></span>(<span>self)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Изменяет размер каждого сообщения в чате.</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def resize_messages(self):
+    &#34;Изменяет размер каждого сообщения в чате.&#34;
+    for message in self.scroll.children[0].children:
+        message.resize()</code></pre>
+</details>
+</dd>
+<dt id="Client.app.ChatScreen.return_back"><code class="name flex">
+<span>def <span class="ident">return_back</span></span>(<span>self)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Возвращается в главное меню при нажатии кнопки.</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def return_back(self):
+    &#34;Возвращается в главное меню при нажатии кнопки.&#34;
+    ClientApp.SM.transition.direction = &#34;right&#34;
+    ClientApp.SM.current = &#34;main_menu&#34;</code></pre>
+</details>
+</dd>
+<dt id="Client.app.ChatScreen.send"><code class="name flex">
+<span>def <span class="ident">send</span></span>(<span>self)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Отправка сообщения на сервер.</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def send(self):
+    &#34;Отправка сообщения на сервер.&#34;
+    message_text = self.input_field.text
+    self.input_field.text = &#34;&#34;
+    
+    def threaded_send(text):
+        success = ClientApp.session.send_message(self.chat_name.text.split(maxsplit=1)[1], text, dt.now().strftime(TIME_FORMAT))
+        if not success:
+            print(&#34;Message has NOT be sent!&#34;)
+    
+    def threaded_send_file(filename):
+        print(&#39;tryes to send file&#39;)
+        success = ClientApp.session.send_file(self.chat_name.text.split(maxsplit=1)[1], filename, dt.now().strftime(TIME_FORMAT))
+        if not success:
+            print(&#34;Document has NOT been sent!&#34;)
+    
+    if self.is_file_check_box.active:
+        threading.Thread(target=threaded_send_file, args=[message_text]).start()
+        return
+    
+    if len(message_text) % 200 == 0 and message_text:
+        times = len(message_text)//200
+    else:
+        times = len(message_text)//200 + 1
+    for i in range(times):
+        sample = message_text[i*200:(i+1)*200]
+        threading.Thread(target=threaded_send, args=[sample]).start()        </code></pre>
+</details>
+</dd>
+<dt id="Client.app.ChatScreen.update_messages"><code class="name flex">
+<span>def <span class="ident">update_messages</span></span>(<span>self)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Обновление сообщений с сервера.</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def update_messages(self):
+    &#34;Обновление сообщений с сервера.&#34;
+    self.updating = True
+    while True:
+        print(&#39;update&#39;)
+        if not self.updating:
+            break
+        current_messages = self.scroll.children[0].children
+        idx = 0 if len(current_messages) == 0 else current_messages[0].index
+        success, news = ClientApp.session.get_new_messages(self.chat_name.text.split(maxsplit=1)[1], idx)
+        if success:
+            for new_idx, message_text, sender, time in news:
+                print(new_idx, message_text, sender, time)
+                self.add_message(text=message_text, sender=sender, index=new_idx, time=time)
+        sleep(2)</code></pre>
+</details>
+</dd>
+</dl>
+</dd>
+<dt id="Client.app.ClientApp"><code class="flex name class">
+<span>class <span class="ident">ClientApp</span></span>
+<span>(</span><span>ip: str, port: str)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Главное приложение.</p>
+<p>Инициализация приложения.</p>
+<p>:param ip: ip-адрес сервера для подключения
+:type ip: str</p>
+<p>:param port: port сервера для подключения
+:type port: str</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">class ClientApp(App):
+    &#34;Главное приложение.&#34;
+    title = StringProperty(&#34;Messanger&#34;)
+    SM: ScreenManager = ObjectProperty(None)
+    LOGIN: str = &#39;&#39;
+    PASSWORD: str = &#39;&#39;
+    
+    def __init__(self, ip: str, port: str):
+        &#34;&#34;&#34;Инициализация приложения.
+        
+        :param ip: ip-адрес сервера для подключения
+        :type ip: str
+        
+        :param port: port сервера для подключения
+        :type port: str&#34;&#34;&#34;
+        
+        super().__init__()
+        self.icon = &#34;icon.png&#34;
+        ClientApp.session = Session(ip, port)
+
+    def on_stop(self):
+        &#34;Останавливает обновление чатов и сообщений при закрытии приложения.&#34;
+        for screen in ClientApp.SM.screens:
+            screen.updating = False
+
+    def build(self):
+        &#34;Формирование окон приложения.&#34;
+        root = ScreenManager()
+        ClientApp.SM = root        
+        root.add_widget(LoginScreen())
+        root.add_widget(MainMenuScreen())
+        root.add_widget(ChatFinderScreen())
+        return root</code></pre>
+</details>
+<h3>Ancestors</h3>
+<ul class="hlist">
+<li>kivy.app.App</li>
+<li>kivy._event.EventDispatcher</li>
+<li>kivy._event.ObjectWithUid</li>
+</ul>
+<h3>Class variables</h3>
+<dl>
+<dt id="Client.app.ClientApp.LOGIN"><code class="name">var <span class="ident">LOGIN</span> : str</code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="Client.app.ClientApp.PASSWORD"><code class="name">var <span class="ident">PASSWORD</span> : str</code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+</dl>
+<h3>Instance variables</h3>
+<dl>
+<dt id="Client.app.ClientApp.SM"><code class="name">var <span class="ident">SM</span> : kivy.uix.screenmanager.ScreenManager</code></dt>
+<dd>
+<div class="desc"><p>ObjectProperty(defaultvalue=None, rebind=False, **kw)
+Property that represents a Python object.</p>
+<pre><code>:Parameters:
+    &lt;code&gt;defaultvalue&lt;/code&gt;: object type
+        Specifies the default value of the property.
+    &lt;code&gt;rebind&lt;/code&gt;: bool, defaults to False
+        Whether kv rules using this object as an intermediate attribute
+        in a kv rule, will update the bound property when this object
+        changes.
+
+        That is the standard behavior is that if there's a kv rule
+        ``text: self.a.b.c.d``, where &lt;code&gt;a&lt;/code&gt;, &lt;code&gt;b&lt;/code&gt;, and &lt;code&gt;c&lt;/code&gt; are
+        properties with &lt;code&gt;rebind&lt;/code&gt; &lt;code&gt;False&lt;/code&gt; and &lt;code&gt;d&lt;/code&gt; is a
+        :class:&lt;code&gt;StringProperty&lt;/code&gt;. Then when the rule is applied, &lt;code&gt;text&lt;/code&gt;
+        becomes bound only to &lt;code&gt;d&lt;/code&gt;. If &lt;code&gt;a&lt;/code&gt;, &lt;code&gt;b&lt;/code&gt;, or &lt;code&gt;c&lt;/code&gt; change,
+        &lt;code&gt;text&lt;/code&gt; still remains bound to &lt;code&gt;d&lt;/code&gt;. Furthermore, if any of them
+        were &lt;code&gt;None&lt;/code&gt; when the rule was initially evaluated, e.g. &lt;code&gt;b&lt;/code&gt; was
+        &lt;code&gt;None&lt;/code&gt;; then &lt;code&gt;text&lt;/code&gt; is bound to &lt;code&gt;b&lt;/code&gt; and will not become bound
+        to &lt;code&gt;d&lt;/code&gt; even when &lt;code&gt;b&lt;/code&gt; is changed to not be &lt;code&gt;None&lt;/code&gt;.
+
+        By setting &lt;code&gt;rebind&lt;/code&gt; to &lt;code&gt;True&lt;/code&gt;, however, the rule will be
+        re-evaluated and all the properties rebound when that intermediate
+        property changes. E.g. in the example above, whenever &lt;code&gt;b&lt;/code&gt; changes
+        or becomes not &lt;code&gt;None&lt;/code&gt; if it was &lt;code&gt;None&lt;/code&gt; before, &lt;code&gt;text&lt;/code&gt; is
+        evaluated again and becomes rebound to &lt;code&gt;d&lt;/code&gt;. The overall result is
+        that &lt;code&gt;text&lt;/code&gt; is now bound to all the properties among &lt;code&gt;a&lt;/code&gt;,
+        &lt;code&gt;b&lt;/code&gt;, or &lt;code&gt;c&lt;/code&gt; that have &lt;code&gt;rebind&lt;/code&gt; set to &lt;code&gt;True&lt;/code&gt;.
+    `\*\*kwargs`: a list of keyword arguments
+        &lt;code&gt;baseclass&lt;/code&gt;
+            If kwargs includes a &lt;code&gt;baseclass&lt;/code&gt; argument, this value will be
+            used for validation: `isinstance(value, kwargs['baseclass'])`.
+
+!!! warning "Warning"
+    To mark the property as changed, you must reassign a new python object.
+
+!!! versionchanged "Changed in version:&amp;ensp;1.9.0"
+    &lt;code&gt;rebind&lt;/code&gt; has been introduced.
+
+!!! versionchanged "Changed in version:&amp;ensp;1.7.0"
+    &lt;code&gt;baseclass&lt;/code&gt; parameter added.
+</code></pre></div>
+</dd>
+<dt id="Client.app.ClientApp.title"><code class="name">var <span class="ident">title</span></code></dt>
+<dd>
+<div class="desc"><p>StringProperty(defaultvalue=u'', **kw)
+Property that represents a string value.</p>
+<pre><code>:Parameters:
+    &lt;code&gt;defaultvalue&lt;/code&gt;: string, defaults to ''
+        Specifies the default value of the property.
+</code></pre></div>
+</dd>
+</dl>
+<h3>Methods</h3>
+<dl>
+<dt id="Client.app.ClientApp.build"><code class="name flex">
+<span>def <span class="ident">build</span></span>(<span>self)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Формирование окон приложения.</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def build(self):
+    &#34;Формирование окон приложения.&#34;
+    root = ScreenManager()
+    ClientApp.SM = root        
+    root.add_widget(LoginScreen())
+    root.add_widget(MainMenuScreen())
+    root.add_widget(ChatFinderScreen())
+    return root</code></pre>
+</details>
+</dd>
+<dt id="Client.app.ClientApp.on_stop"><code class="name flex">
+<span>def <span class="ident">on_stop</span></span>(<span>self)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Останавливает обновление чатов и сообщений при закрытии приложения.</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def on_stop(self):
+    &#34;Останавливает обновление чатов и сообщений при закрытии приложения.&#34;
+    for screen in ClientApp.SM.screens:
+        screen.updating = False</code></pre>
+</details>
+</dd>
+</dl>
+</dd>
+<dt id="Client.app.LoginScreen"><code class="flex name class">
+<span>class <span class="ident">LoginScreen</span></span>
+<span>(</span><span>**kw)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Начальное окно. Отвечает за авторизацию и регистрацию пользователя.</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">class LoginScreen(Screen):
+    &#34;Начальное окно. Отвечает за авторизацию и регистрацию пользователя.&#34;
+    login: TextInput = ObjectProperty(None)
+    password: TextInput = ObjectProperty(None)
+    button: Button = ObjectProperty(None)
+    check_box: CheckBox = ObjectProperty(None)
+
+    @mainthread
+    def to_main_menu_screen(self):
+        &#34;Переход в главное меню.&#34;
+        self.manager.current = &#34;main_menu&#34;
+
+    def sign_in(self):
+        &#34;&#34;&#34;Авторизуется или регистрируется на сервере.
+        При успехе входит в главное меню.&#34;&#34;&#34;
+        def threaded_sign_in():
+            success = ClientApp.session.connect(self.login.text, self.password.text, self.check_box.active)
+            if success:
+                ClientApp.LOGIN = self.login.text
+                ClientApp.PASSWORD = self.password.text
+                ClientApp.session.login = ClientApp.LOGIN
+                ClientApp.session.password = ClientApp.PASSWORD
+                self.to_main_menu_screen()
+        threading.Thread(target=threaded_sign_in).start()</code></pre>
+</details>
+<h3>Ancestors</h3>
+<ul class="hlist">
+<li>kivy.uix.screenmanager.Screen</li>
+<li>kivy.uix.relativelayout.RelativeLayout</li>
+<li>kivy.uix.floatlayout.FloatLayout</li>
+<li>kivy.uix.layout.Layout</li>
+<li>kivy.uix.widget.Widget</li>
+<li>kivy.uix.widget.WidgetBase</li>
+<li>kivy._event.EventDispatcher</li>
+<li>kivy._event.ObjectWithUid</li>
+</ul>
+<h3>Instance variables</h3>
+<dl>
+<dt id="Client.app.LoginScreen.button"><code class="name">var <span class="ident">button</span> : kivy.uix.button.Button</code></dt>
+<dd>
+<div class="desc"><p>ObjectProperty(defaultvalue=None, rebind=False, **kw)
+Property that represents a Python object.</p>
+<pre><code>:Parameters:
+    &lt;code&gt;defaultvalue&lt;/code&gt;: object type
+        Specifies the default value of the property.
+    &lt;code&gt;rebind&lt;/code&gt;: bool, defaults to False
+        Whether kv rules using this object as an intermediate attribute
+        in a kv rule, will update the bound property when this object
+        changes.
+
+        That is the standard behavior is that if there's a kv rule
+        ``text: self.a.b.c.d``, where &lt;code&gt;a&lt;/code&gt;, &lt;code&gt;b&lt;/code&gt;, and &lt;code&gt;c&lt;/code&gt; are
+        properties with &lt;code&gt;rebind&lt;/code&gt; &lt;code&gt;False&lt;/code&gt; and &lt;code&gt;d&lt;/code&gt; is a
+        :class:&lt;code&gt;StringProperty&lt;/code&gt;. Then when the rule is applied, &lt;code&gt;text&lt;/code&gt;
+        becomes bound only to &lt;code&gt;d&lt;/code&gt;. If &lt;code&gt;a&lt;/code&gt;, &lt;code&gt;b&lt;/code&gt;, or &lt;code&gt;c&lt;/code&gt; change,
+        &lt;code&gt;text&lt;/code&gt; still remains bound to &lt;code&gt;d&lt;/code&gt;. Furthermore, if any of them
+        were &lt;code&gt;None&lt;/code&gt; when the rule was initially evaluated, e.g. &lt;code&gt;b&lt;/code&gt; was
+        &lt;code&gt;None&lt;/code&gt;; then &lt;code&gt;text&lt;/code&gt; is bound to &lt;code&gt;b&lt;/code&gt; and will not become bound
+        to &lt;code&gt;d&lt;/code&gt; even when &lt;code&gt;b&lt;/code&gt; is changed to not be &lt;code&gt;None&lt;/code&gt;.
+
+        By setting &lt;code&gt;rebind&lt;/code&gt; to &lt;code&gt;True&lt;/code&gt;, however, the rule will be
+        re-evaluated and all the properties rebound when that intermediate
+        property changes. E.g. in the example above, whenever &lt;code&gt;b&lt;/code&gt; changes
+        or becomes not &lt;code&gt;None&lt;/code&gt; if it was &lt;code&gt;None&lt;/code&gt; before, &lt;code&gt;text&lt;/code&gt; is
+        evaluated again and becomes rebound to &lt;code&gt;d&lt;/code&gt;. The overall result is
+        that &lt;code&gt;text&lt;/code&gt; is now bound to all the properties among &lt;code&gt;a&lt;/code&gt;,
+        &lt;code&gt;b&lt;/code&gt;, or &lt;code&gt;c&lt;/code&gt; that have &lt;code&gt;rebind&lt;/code&gt; set to &lt;code&gt;True&lt;/code&gt;.
+    `\*\*kwargs`: a list of keyword arguments
+        &lt;code&gt;baseclass&lt;/code&gt;
+            If kwargs includes a &lt;code&gt;baseclass&lt;/code&gt; argument, this value will be
+            used for validation: `isinstance(value, kwargs['baseclass'])`.
+
+!!! warning "Warning"
+    To mark the property as changed, you must reassign a new python object.
+
+!!! versionchanged "Changed in version:&amp;ensp;1.9.0"
+    &lt;code&gt;rebind&lt;/code&gt; has been introduced.
+
+!!! versionchanged "Changed in version:&amp;ensp;1.7.0"
+    &lt;code&gt;baseclass&lt;/code&gt; parameter added.
+</code></pre></div>
+</dd>
+<dt id="Client.app.LoginScreen.check_box"><code class="name">var <span class="ident">check_box</span> : kivy.uix.checkbox.CheckBox</code></dt>
+<dd>
+<div class="desc"><p>ObjectProperty(defaultvalue=None, rebind=False, **kw)
+Property that represents a Python object.</p>
+<pre><code>:Parameters:
+    &lt;code&gt;defaultvalue&lt;/code&gt;: object type
+        Specifies the default value of the property.
+    &lt;code&gt;rebind&lt;/code&gt;: bool, defaults to False
+        Whether kv rules using this object as an intermediate attribute
+        in a kv rule, will update the bound property when this object
+        changes.
+
+        That is the standard behavior is that if there's a kv rule
+        ``text: self.a.b.c.d``, where &lt;code&gt;a&lt;/code&gt;, &lt;code&gt;b&lt;/code&gt;, and &lt;code&gt;c&lt;/code&gt; are
+        properties with &lt;code&gt;rebind&lt;/code&gt; &lt;code&gt;False&lt;/code&gt; and &lt;code&gt;d&lt;/code&gt; is a
+        :class:&lt;code&gt;StringProperty&lt;/code&gt;. Then when the rule is applied, &lt;code&gt;text&lt;/code&gt;
+        becomes bound only to &lt;code&gt;d&lt;/code&gt;. If &lt;code&gt;a&lt;/code&gt;, &lt;code&gt;b&lt;/code&gt;, or &lt;code&gt;c&lt;/code&gt; change,
+        &lt;code&gt;text&lt;/code&gt; still remains bound to &lt;code&gt;d&lt;/code&gt;. Furthermore, if any of them
+        were &lt;code&gt;None&lt;/code&gt; when the rule was initially evaluated, e.g. &lt;code&gt;b&lt;/code&gt; was
+        &lt;code&gt;None&lt;/code&gt;; then &lt;code&gt;text&lt;/code&gt; is bound to &lt;code&gt;b&lt;/code&gt; and will not become bound
+        to &lt;code&gt;d&lt;/code&gt; even when &lt;code&gt;b&lt;/code&gt; is changed to not be &lt;code&gt;None&lt;/code&gt;.
+
+        By setting &lt;code&gt;rebind&lt;/code&gt; to &lt;code&gt;True&lt;/code&gt;, however, the rule will be
+        re-evaluated and all the properties rebound when that intermediate
+        property changes. E.g. in the example above, whenever &lt;code&gt;b&lt;/code&gt; changes
+        or becomes not &lt;code&gt;None&lt;/code&gt; if it was &lt;code&gt;None&lt;/code&gt; before, &lt;code&gt;text&lt;/code&gt; is
+        evaluated again and becomes rebound to &lt;code&gt;d&lt;/code&gt;. The overall result is
+        that &lt;code&gt;text&lt;/code&gt; is now bound to all the properties among &lt;code&gt;a&lt;/code&gt;,
+        &lt;code&gt;b&lt;/code&gt;, or &lt;code&gt;c&lt;/code&gt; that have &lt;code&gt;rebind&lt;/code&gt; set to &lt;code&gt;True&lt;/code&gt;.
+    `\*\*kwargs`: a list of keyword arguments
+        &lt;code&gt;baseclass&lt;/code&gt;
+            If kwargs includes a &lt;code&gt;baseclass&lt;/code&gt; argument, this value will be
+            used for validation: `isinstance(value, kwargs['baseclass'])`.
+
+!!! warning "Warning"
+    To mark the property as changed, you must reassign a new python object.
+
+!!! versionchanged "Changed in version:&amp;ensp;1.9.0"
+    &lt;code&gt;rebind&lt;/code&gt; has been introduced.
+
+!!! versionchanged "Changed in version:&amp;ensp;1.7.0"
+    &lt;code&gt;baseclass&lt;/code&gt; parameter added.
+</code></pre></div>
+</dd>
+<dt id="Client.app.LoginScreen.login"><code class="name">var <span class="ident">login</span> : kivy.uix.textinput.TextInput</code></dt>
+<dd>
+<div class="desc"><p>ObjectProperty(defaultvalue=None, rebind=False, **kw)
+Property that represents a Python object.</p>
+<pre><code>:Parameters:
+    &lt;code&gt;defaultvalue&lt;/code&gt;: object type
+        Specifies the default value of the property.
+    &lt;code&gt;rebind&lt;/code&gt;: bool, defaults to False
+        Whether kv rules using this object as an intermediate attribute
+        in a kv rule, will update the bound property when this object
+        changes.
+
+        That is the standard behavior is that if there's a kv rule
+        ``text: self.a.b.c.d``, where &lt;code&gt;a&lt;/code&gt;, &lt;code&gt;b&lt;/code&gt;, and &lt;code&gt;c&lt;/code&gt; are
+        properties with &lt;code&gt;rebind&lt;/code&gt; &lt;code&gt;False&lt;/code&gt; and &lt;code&gt;d&lt;/code&gt; is a
+        :class:&lt;code&gt;StringProperty&lt;/code&gt;. Then when the rule is applied, &lt;code&gt;text&lt;/code&gt;
+        becomes bound only to &lt;code&gt;d&lt;/code&gt;. If &lt;code&gt;a&lt;/code&gt;, &lt;code&gt;b&lt;/code&gt;, or &lt;code&gt;c&lt;/code&gt; change,
+        &lt;code&gt;text&lt;/code&gt; still remains bound to &lt;code&gt;d&lt;/code&gt;. Furthermore, if any of them
+        were &lt;code&gt;None&lt;/code&gt; when the rule was initially evaluated, e.g. &lt;code&gt;b&lt;/code&gt; was
+        &lt;code&gt;None&lt;/code&gt;; then &lt;code&gt;text&lt;/code&gt; is bound to &lt;code&gt;b&lt;/code&gt; and will not become bound
+        to &lt;code&gt;d&lt;/code&gt; even when &lt;code&gt;b&lt;/code&gt; is changed to not be &lt;code&gt;None&lt;/code&gt;.
+
+        By setting &lt;code&gt;rebind&lt;/code&gt; to &lt;code&gt;True&lt;/code&gt;, however, the rule will be
+        re-evaluated and all the properties rebound when that intermediate
+        property changes. E.g. in the example above, whenever &lt;code&gt;b&lt;/code&gt; changes
+        or becomes not &lt;code&gt;None&lt;/code&gt; if it was &lt;code&gt;None&lt;/code&gt; before, &lt;code&gt;text&lt;/code&gt; is
+        evaluated again and becomes rebound to &lt;code&gt;d&lt;/code&gt;. The overall result is
+        that &lt;code&gt;text&lt;/code&gt; is now bound to all the properties among &lt;code&gt;a&lt;/code&gt;,
+        &lt;code&gt;b&lt;/code&gt;, or &lt;code&gt;c&lt;/code&gt; that have &lt;code&gt;rebind&lt;/code&gt; set to &lt;code&gt;True&lt;/code&gt;.
+    `\*\*kwargs`: a list of keyword arguments
+        &lt;code&gt;baseclass&lt;/code&gt;
+            If kwargs includes a &lt;code&gt;baseclass&lt;/code&gt; argument, this value will be
+            used for validation: `isinstance(value, kwargs['baseclass'])`.
+
+!!! warning "Warning"
+    To mark the property as changed, you must reassign a new python object.
+
+!!! versionchanged "Changed in version:&amp;ensp;1.9.0"
+    &lt;code&gt;rebind&lt;/code&gt; has been introduced.
+
+!!! versionchanged "Changed in version:&amp;ensp;1.7.0"
+    &lt;code&gt;baseclass&lt;/code&gt; parameter added.
+</code></pre></div>
+</dd>
+<dt id="Client.app.LoginScreen.password"><code class="name">var <span class="ident">password</span> : kivy.uix.textinput.TextInput</code></dt>
+<dd>
+<div class="desc"><p>ObjectProperty(defaultvalue=None, rebind=False, **kw)
+Property that represents a Python object.</p>
+<pre><code>:Parameters:
+    &lt;code&gt;defaultvalue&lt;/code&gt;: object type
+        Specifies the default value of the property.
+    &lt;code&gt;rebind&lt;/code&gt;: bool, defaults to False
+        Whether kv rules using this object as an intermediate attribute
+        in a kv rule, will update the bound property when this object
+        changes.
+
+        That is the standard behavior is that if there's a kv rule
+        ``text: self.a.b.c.d``, where &lt;code&gt;a&lt;/code&gt;, &lt;code&gt;b&lt;/code&gt;, and &lt;code&gt;c&lt;/code&gt; are
+        properties with &lt;code&gt;rebind&lt;/code&gt; &lt;code&gt;False&lt;/code&gt; and &lt;code&gt;d&lt;/code&gt; is a
+        :class:&lt;code&gt;StringProperty&lt;/code&gt;. Then when the rule is applied, &lt;code&gt;text&lt;/code&gt;
+        becomes bound only to &lt;code&gt;d&lt;/code&gt;. If &lt;code&gt;a&lt;/code&gt;, &lt;code&gt;b&lt;/code&gt;, or &lt;code&gt;c&lt;/code&gt; change,
+        &lt;code&gt;text&lt;/code&gt; still remains bound to &lt;code&gt;d&lt;/code&gt;. Furthermore, if any of them
+        were &lt;code&gt;None&lt;/code&gt; when the rule was initially evaluated, e.g. &lt;code&gt;b&lt;/code&gt; was
+        &lt;code&gt;None&lt;/code&gt;; then &lt;code&gt;text&lt;/code&gt; is bound to &lt;code&gt;b&lt;/code&gt; and will not become bound
+        to &lt;code&gt;d&lt;/code&gt; even when &lt;code&gt;b&lt;/code&gt; is changed to not be &lt;code&gt;None&lt;/code&gt;.
+
+        By setting &lt;code&gt;rebind&lt;/code&gt; to &lt;code&gt;True&lt;/code&gt;, however, the rule will be
+        re-evaluated and all the properties rebound when that intermediate
+        property changes. E.g. in the example above, whenever &lt;code&gt;b&lt;/code&gt; changes
+        or becomes not &lt;code&gt;None&lt;/code&gt; if it was &lt;code&gt;None&lt;/code&gt; before, &lt;code&gt;text&lt;/code&gt; is
+        evaluated again and becomes rebound to &lt;code&gt;d&lt;/code&gt;. The overall result is
+        that &lt;code&gt;text&lt;/code&gt; is now bound to all the properties among &lt;code&gt;a&lt;/code&gt;,
+        &lt;code&gt;b&lt;/code&gt;, or &lt;code&gt;c&lt;/code&gt; that have &lt;code&gt;rebind&lt;/code&gt; set to &lt;code&gt;True&lt;/code&gt;.
+    `\*\*kwargs`: a list of keyword arguments
+        &lt;code&gt;baseclass&lt;/code&gt;
+            If kwargs includes a &lt;code&gt;baseclass&lt;/code&gt; argument, this value will be
+            used for validation: `isinstance(value, kwargs['baseclass'])`.
+
+!!! warning "Warning"
+    To mark the property as changed, you must reassign a new python object.
+
+!!! versionchanged "Changed in version:&amp;ensp;1.9.0"
+    &lt;code&gt;rebind&lt;/code&gt; has been introduced.
+
+!!! versionchanged "Changed in version:&amp;ensp;1.7.0"
+    &lt;code&gt;baseclass&lt;/code&gt; parameter added.
+</code></pre></div>
+</dd>
+</dl>
+<h3>Methods</h3>
+<dl>
+<dt id="Client.app.LoginScreen.sign_in"><code class="name flex">
+<span>def <span class="ident">sign_in</span></span>(<span>self)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Авторизуется или регистрируется на сервере.
+При успехе входит в главное меню.</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def sign_in(self):
+    &#34;&#34;&#34;Авторизуется или регистрируется на сервере.
+    При успехе входит в главное меню.&#34;&#34;&#34;
+    def threaded_sign_in():
+        success = ClientApp.session.connect(self.login.text, self.password.text, self.check_box.active)
+        if success:
+            ClientApp.LOGIN = self.login.text
+            ClientApp.PASSWORD = self.password.text
+            ClientApp.session.login = ClientApp.LOGIN
+            ClientApp.session.password = ClientApp.PASSWORD
+            self.to_main_menu_screen()
+    threading.Thread(target=threaded_sign_in).start()</code></pre>
+</details>
+</dd>
+<dt id="Client.app.LoginScreen.to_main_menu_screen"><code class="name flex">
+<span>def <span class="ident">to_main_menu_screen</span></span>(<span>self)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Переход в главное меню.</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">@mainthread
+def to_main_menu_screen(self):
+    &#34;Переход в главное меню.&#34;
+    self.manager.current = &#34;main_menu&#34;</code></pre>
+</details>
+</dd>
+</dl>
+</dd>
+<dt id="Client.app.MainMenuScreen"><code class="flex name class">
+<span>class <span class="ident">MainMenuScreen</span></span>
+<span>(</span><span>**kw)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Screen is an element intended to be used with a :class:<code>ScreenManager</code>.
+Check module documentation for more information.</p>
+<p>:Events:
+<code>on_pre_enter</code>: ()
+Event fired when the screen is about to be used: the entering
+animation is started.
+<code>on_enter</code>: ()
+Event fired when the screen is displayed: the entering animation is
+complete.
+<code>on_pre_leave</code>: ()
+Event fired when the screen is about to be removed: the leaving
+animation is started.
+<code>on_leave</code>: ()
+Event fired when the screen is removed: the leaving animation is
+finished.</p>
+<div class="admonition versionchanged">
+<p class="admonition-title">Changed in version:&ensp;1.6.0</p>
+<p>Events <code>on_pre_enter</code>, <code>on_enter</code>, <code>on_pre_leave</code> and <code>on_leave</code> were
+added.</p>
+</div></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">class MainMenuScreen(Screen):
+    scroll: ScrollView = ObjectProperty(None)
+    finder_button: Button = ObjectProperty(None)
+
+    def on_enter(self, *args):
+        &#34;Начинает обновлять все свои чаты при входе в главное меню.&#34;
+        threading.Thread(target=self.update_chats).start()
+        
+    def on_leave(self, *args):
+        &#34;Прекращает обновлять чаты при выходе из главного меню.&#34;
+        self.updating = False
+    
+    def update_chats(self):
+        &#34;Обновление списка чатов.&#34;
+        self.updating = True
+        while True:
+            if not self.updating:
+                break
+            success, chat_names = ClientApp.session.get_all_chats()
+            if success:
+                self.add_chats_to_scroll(chat_names)
+            sleep(5)
+    
+    @mainthread
+    def add_chats_to_scroll(self, chat_names: list[str]):
+        &#34;&#34;&#34;Добавление чатов в прокручивающийся список по имени.
+        
+        :param chat_names: имена чатов
+        :type chat_names: list[str]
+        &#34;&#34;&#34;
+        for chat_name in chat_names:
+            if f&#34;Chat {chat_name}&#34; not in ClientApp.SM.screen_names:
+                self.scroll.children[0].add_widget(Chat(chat_name, &#39;enter&#39;))
+            
+    def to_find_chat_screen(self):
+        &#34;Переход в меню поиска чатов.&#34;
+        ClientApp.SM.transition.direction = &#34;down&#34;
+        ClientApp.SM.current = &#34;chat_finder&#34;</code></pre>
+</details>
+<h3>Ancestors</h3>
+<ul class="hlist">
+<li>kivy.uix.screenmanager.Screen</li>
+<li>kivy.uix.relativelayout.RelativeLayout</li>
+<li>kivy.uix.floatlayout.FloatLayout</li>
+<li>kivy.uix.layout.Layout</li>
+<li>kivy.uix.widget.Widget</li>
+<li>kivy.uix.widget.WidgetBase</li>
+<li>kivy._event.EventDispatcher</li>
+<li>kivy._event.ObjectWithUid</li>
+</ul>
+<h3>Instance variables</h3>
+<dl>
+<dt id="Client.app.MainMenuScreen.finder_button"><code class="name">var <span class="ident">finder_button</span> : kivy.uix.button.Button</code></dt>
+<dd>
+<div class="desc"><p>ObjectProperty(defaultvalue=None, rebind=False, **kw)
+Property that represents a Python object.</p>
+<pre><code>:Parameters:
+    &lt;code&gt;defaultvalue&lt;/code&gt;: object type
+        Specifies the default value of the property.
+    &lt;code&gt;rebind&lt;/code&gt;: bool, defaults to False
+        Whether kv rules using this object as an intermediate attribute
+        in a kv rule, will update the bound property when this object
+        changes.
+
+        That is the standard behavior is that if there's a kv rule
+        ``text: self.a.b.c.d``, where &lt;code&gt;a&lt;/code&gt;, &lt;code&gt;b&lt;/code&gt;, and &lt;code&gt;c&lt;/code&gt; are
+        properties with &lt;code&gt;rebind&lt;/code&gt; &lt;code&gt;False&lt;/code&gt; and &lt;code&gt;d&lt;/code&gt; is a
+        :class:&lt;code&gt;StringProperty&lt;/code&gt;. Then when the rule is applied, &lt;code&gt;text&lt;/code&gt;
+        becomes bound only to &lt;code&gt;d&lt;/code&gt;. If &lt;code&gt;a&lt;/code&gt;, &lt;code&gt;b&lt;/code&gt;, or &lt;code&gt;c&lt;/code&gt; change,
+        &lt;code&gt;text&lt;/code&gt; still remains bound to &lt;code&gt;d&lt;/code&gt;. Furthermore, if any of them
+        were &lt;code&gt;None&lt;/code&gt; when the rule was initially evaluated, e.g. &lt;code&gt;b&lt;/code&gt; was
+        &lt;code&gt;None&lt;/code&gt;; then &lt;code&gt;text&lt;/code&gt; is bound to &lt;code&gt;b&lt;/code&gt; and will not become bound
+        to &lt;code&gt;d&lt;/code&gt; even when &lt;code&gt;b&lt;/code&gt; is changed to not be &lt;code&gt;None&lt;/code&gt;.
+
+        By setting &lt;code&gt;rebind&lt;/code&gt; to &lt;code&gt;True&lt;/code&gt;, however, the rule will be
+        re-evaluated and all the properties rebound when that intermediate
+        property changes. E.g. in the example above, whenever &lt;code&gt;b&lt;/code&gt; changes
+        or becomes not &lt;code&gt;None&lt;/code&gt; if it was &lt;code&gt;None&lt;/code&gt; before, &lt;code&gt;text&lt;/code&gt; is
+        evaluated again and becomes rebound to &lt;code&gt;d&lt;/code&gt;. The overall result is
+        that &lt;code&gt;text&lt;/code&gt; is now bound to all the properties among &lt;code&gt;a&lt;/code&gt;,
+        &lt;code&gt;b&lt;/code&gt;, or &lt;code&gt;c&lt;/code&gt; that have &lt;code&gt;rebind&lt;/code&gt; set to &lt;code&gt;True&lt;/code&gt;.
+    `\*\*kwargs`: a list of keyword arguments
+        &lt;code&gt;baseclass&lt;/code&gt;
+            If kwargs includes a &lt;code&gt;baseclass&lt;/code&gt; argument, this value will be
+            used for validation: `isinstance(value, kwargs['baseclass'])`.
+
+!!! warning "Warning"
+    To mark the property as changed, you must reassign a new python object.
+
+!!! versionchanged "Changed in version:&amp;ensp;1.9.0"
+    &lt;code&gt;rebind&lt;/code&gt; has been introduced.
+
+!!! versionchanged "Changed in version:&amp;ensp;1.7.0"
+    &lt;code&gt;baseclass&lt;/code&gt; parameter added.
+</code></pre></div>
+</dd>
+<dt id="Client.app.MainMenuScreen.scroll"><code class="name">var <span class="ident">scroll</span> : kivy.uix.scrollview.ScrollView</code></dt>
+<dd>
+<div class="desc"><p>ObjectProperty(defaultvalue=None, rebind=False, **kw)
+Property that represents a Python object.</p>
+<pre><code>:Parameters:
+    &lt;code&gt;defaultvalue&lt;/code&gt;: object type
+        Specifies the default value of the property.
+    &lt;code&gt;rebind&lt;/code&gt;: bool, defaults to False
+        Whether kv rules using this object as an intermediate attribute
+        in a kv rule, will update the bound property when this object
+        changes.
+
+        That is the standard behavior is that if there's a kv rule
+        ``text: self.a.b.c.d``, where &lt;code&gt;a&lt;/code&gt;, &lt;code&gt;b&lt;/code&gt;, and &lt;code&gt;c&lt;/code&gt; are
+        properties with &lt;code&gt;rebind&lt;/code&gt; &lt;code&gt;False&lt;/code&gt; and &lt;code&gt;d&lt;/code&gt; is a
+        :class:&lt;code&gt;StringProperty&lt;/code&gt;. Then when the rule is applied, &lt;code&gt;text&lt;/code&gt;
+        becomes bound only to &lt;code&gt;d&lt;/code&gt;. If &lt;code&gt;a&lt;/code&gt;, &lt;code&gt;b&lt;/code&gt;, or &lt;code&gt;c&lt;/code&gt; change,
+        &lt;code&gt;text&lt;/code&gt; still remains bound to &lt;code&gt;d&lt;/code&gt;. Furthermore, if any of them
+        were &lt;code&gt;None&lt;/code&gt; when the rule was initially evaluated, e.g. &lt;code&gt;b&lt;/code&gt; was
+        &lt;code&gt;None&lt;/code&gt;; then &lt;code&gt;text&lt;/code&gt; is bound to &lt;code&gt;b&lt;/code&gt; and will not become bound
+        to &lt;code&gt;d&lt;/code&gt; even when &lt;code&gt;b&lt;/code&gt; is changed to not be &lt;code&gt;None&lt;/code&gt;.
+
+        By setting &lt;code&gt;rebind&lt;/code&gt; to &lt;code&gt;True&lt;/code&gt;, however, the rule will be
+        re-evaluated and all the properties rebound when that intermediate
+        property changes. E.g. in the example above, whenever &lt;code&gt;b&lt;/code&gt; changes
+        or becomes not &lt;code&gt;None&lt;/code&gt; if it was &lt;code&gt;None&lt;/code&gt; before, &lt;code&gt;text&lt;/code&gt; is
+        evaluated again and becomes rebound to &lt;code&gt;d&lt;/code&gt;. The overall result is
+        that &lt;code&gt;text&lt;/code&gt; is now bound to all the properties among &lt;code&gt;a&lt;/code&gt;,
+        &lt;code&gt;b&lt;/code&gt;, or &lt;code&gt;c&lt;/code&gt; that have &lt;code&gt;rebind&lt;/code&gt; set to &lt;code&gt;True&lt;/code&gt;.
+    `\*\*kwargs`: a list of keyword arguments
+        &lt;code&gt;baseclass&lt;/code&gt;
+            If kwargs includes a &lt;code&gt;baseclass&lt;/code&gt; argument, this value will be
+            used for validation: `isinstance(value, kwargs['baseclass'])`.
+
+!!! warning "Warning"
+    To mark the property as changed, you must reassign a new python object.
+
+!!! versionchanged "Changed in version:&amp;ensp;1.9.0"
+    &lt;code&gt;rebind&lt;/code&gt; has been introduced.
+
+!!! versionchanged "Changed in version:&amp;ensp;1.7.0"
+    &lt;code&gt;baseclass&lt;/code&gt; parameter added.
+</code></pre></div>
+</dd>
+</dl>
+<h3>Methods</h3>
+<dl>
+<dt id="Client.app.MainMenuScreen.add_chats_to_scroll"><code class="name flex">
+<span>def <span class="ident">add_chats_to_scroll</span></span>(<span>self, chat_names: list[str])</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Добавление чатов в прокручивающийся список по имени.</p>
+<p>:param chat_names: имена чатов
+:type chat_names: list[str]</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">@mainthread
+def add_chats_to_scroll(self, chat_names: list[str]):
+    &#34;&#34;&#34;Добавление чатов в прокручивающийся список по имени.
+    
+    :param chat_names: имена чатов
+    :type chat_names: list[str]
+    &#34;&#34;&#34;
+    for chat_name in chat_names:
+        if f&#34;Chat {chat_name}&#34; not in ClientApp.SM.screen_names:
+            self.scroll.children[0].add_widget(Chat(chat_name, &#39;enter&#39;))</code></pre>
+</details>
+</dd>
+<dt id="Client.app.MainMenuScreen.on_enter"><code class="name flex">
+<span>def <span class="ident">on_enter</span></span>(<span>self, *args)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Начинает обновлять все свои чаты при входе в главное меню.</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def on_enter(self, *args):
+    &#34;Начинает обновлять все свои чаты при входе в главное меню.&#34;
+    threading.Thread(target=self.update_chats).start()</code></pre>
+</details>
+</dd>
+<dt id="Client.app.MainMenuScreen.on_leave"><code class="name flex">
+<span>def <span class="ident">on_leave</span></span>(<span>self, *args)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Прекращает обновлять чаты при выходе из главного меню.</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def on_leave(self, *args):
+    &#34;Прекращает обновлять чаты при выходе из главного меню.&#34;
+    self.updating = False</code></pre>
+</details>
+</dd>
+<dt id="Client.app.MainMenuScreen.to_find_chat_screen"><code class="name flex">
+<span>def <span class="ident">to_find_chat_screen</span></span>(<span>self)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Переход в меню поиска чатов.</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def to_find_chat_screen(self):
+    &#34;Переход в меню поиска чатов.&#34;
+    ClientApp.SM.transition.direction = &#34;down&#34;
+    ClientApp.SM.current = &#34;chat_finder&#34;</code></pre>
+</details>
+</dd>
+<dt id="Client.app.MainMenuScreen.update_chats"><code class="name flex">
+<span>def <span class="ident">update_chats</span></span>(<span>self)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Обновление списка чатов.</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def update_chats(self):
+    &#34;Обновление списка чатов.&#34;
+    self.updating = True
+    while True:
+        if not self.updating:
+            break
+        success, chat_names = ClientApp.session.get_all_chats()
+        if success:
+            self.add_chats_to_scroll(chat_names)
+        sleep(5)</code></pre>
+</details>
+</dd>
+</dl>
+</dd>
+<dt id="Client.app.Message"><code class="flex name class">
+<span>class <span class="ident">Message</span></span>
+<span>(</span><span>text: str = '', sender: str = '', time: str = '', index: int = 0, **kwargs)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Виджет-сообщение. Имеет 3 строки: текст сообщения, отправитель, время отправки.</p>
+<p>Инициализация сообщения.</p>
+<p>:param text: текст сообщения (содержит максимум 200 символов)
+:type text: str</p>
+<p>:param sender: отправитель
+:type sender: str</p>
+<p>:param time: время отправки формата DD.MM.YYYY hh:mm
+:type time: str</p>
+<p>:param index: индекс сообщения
+:type index: int</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">class Message(Widget):
+    &#34;Виджет-сообщение. Имеет 3 строки: текст сообщения, отправитель, время отправки.&#34;
+    message_text: Label = ObjectProperty(None)
+    message_time: Label = ObjectProperty(None)
+    message_sender: Label = ObjectProperty(None)
+    
+    def __init__(self, text: str=&#39;&#39;, sender: str=&#39;&#39;, time: str=&#39;&#39;, index: int=0, **kwargs):
+        &#34;&#34;&#34;Инициализация сообщения.
+
+        :param text: текст сообщения (содержит максимум 200 символов)
+        :type text: str
+        
+        :param sender: отправитель
+        :type sender: str
+        
+        :param time: время отправки формата DD.MM.YYYY hh:mm
+        :type time: str
+        
+        :param index: индекс сообщения
+        :type index: int
+        &#34;&#34;&#34;
+        super().__init__(**kwargs)
+        if not isinstance(text, str):
+            raise TypeError(&#34;Argument text in message must be str.&#34;)
+        if len(text) &gt; 200:
+            raise ValueError(&#34;Argument text in message can&#39;t contain more than 200 chars.&#34;)
+        if not isinstance(sender, str):
+            raise TypeError(&#34;Argument sender in message must be str.&#34;)
+        if not isinstance(index, int):
+            raise TypeError(&#34;Argument index in message must be int.&#34;)
+        if not isinstance(time, str):
+            raise TypeError(&#34;Argument time in message must be str.&#34;)
+        if not is_valid_time_format(time):
+            raise ValueError(&#34;Invalid time format.&#34;)
+         
+        if text == &#39;&#39;:
+            self.message_text.text = &#34;Some text&#34;
+        else:
+            self.message_text.text = text
+        if sender:
+            self.message_sender.text = sender
+        else:
+            self.message_sender.text = &#34;Some sender&#34;
+        self.message_time.text = time
+        self.index = index
+        self.resize()
+            
+    def resize(self):
+        &#34;Подгоняет размер сообщения под размер окна приложения.&#34;
+        self.message_text.text_size[0] = Window.width - 20
+        self.message_text.texture_update()
+        self.height = self.message_text.height + 40</code></pre>
+</details>
+<h3>Ancestors</h3>
+<ul class="hlist">
+<li>kivy.uix.widget.Widget</li>
+<li>kivy.uix.widget.WidgetBase</li>
+<li>kivy._event.EventDispatcher</li>
+<li>kivy._event.ObjectWithUid</li>
+</ul>
+<h3>Instance variables</h3>
+<dl>
+<dt id="Client.app.Message.message_sender"><code class="name">var <span class="ident">message_sender</span> : kivy.uix.label.Label</code></dt>
+<dd>
+<div class="desc"><p>ObjectProperty(defaultvalue=None, rebind=False, **kw)
+Property that represents a Python object.</p>
+<pre><code>:Parameters:
+    &lt;code&gt;defaultvalue&lt;/code&gt;: object type
+        Specifies the default value of the property.
+    &lt;code&gt;rebind&lt;/code&gt;: bool, defaults to False
+        Whether kv rules using this object as an intermediate attribute
+        in a kv rule, will update the bound property when this object
+        changes.
+
+        That is the standard behavior is that if there's a kv rule
+        ``text: self.a.b.c.d``, where &lt;code&gt;a&lt;/code&gt;, &lt;code&gt;b&lt;/code&gt;, and &lt;code&gt;c&lt;/code&gt; are
+        properties with &lt;code&gt;rebind&lt;/code&gt; &lt;code&gt;False&lt;/code&gt; and &lt;code&gt;d&lt;/code&gt; is a
+        :class:&lt;code&gt;StringProperty&lt;/code&gt;. Then when the rule is applied, &lt;code&gt;text&lt;/code&gt;
+        becomes bound only to &lt;code&gt;d&lt;/code&gt;. If &lt;code&gt;a&lt;/code&gt;, &lt;code&gt;b&lt;/code&gt;, or &lt;code&gt;c&lt;/code&gt; change,
+        &lt;code&gt;text&lt;/code&gt; still remains bound to &lt;code&gt;d&lt;/code&gt;. Furthermore, if any of them
+        were &lt;code&gt;None&lt;/code&gt; when the rule was initially evaluated, e.g. &lt;code&gt;b&lt;/code&gt; was
+        &lt;code&gt;None&lt;/code&gt;; then &lt;code&gt;text&lt;/code&gt; is bound to &lt;code&gt;b&lt;/code&gt; and will not become bound
+        to &lt;code&gt;d&lt;/code&gt; even when &lt;code&gt;b&lt;/code&gt; is changed to not be &lt;code&gt;None&lt;/code&gt;.
+
+        By setting &lt;code&gt;rebind&lt;/code&gt; to &lt;code&gt;True&lt;/code&gt;, however, the rule will be
+        re-evaluated and all the properties rebound when that intermediate
+        property changes. E.g. in the example above, whenever &lt;code&gt;b&lt;/code&gt; changes
+        or becomes not &lt;code&gt;None&lt;/code&gt; if it was &lt;code&gt;None&lt;/code&gt; before, &lt;code&gt;text&lt;/code&gt; is
+        evaluated again and becomes rebound to &lt;code&gt;d&lt;/code&gt;. The overall result is
+        that &lt;code&gt;text&lt;/code&gt; is now bound to all the properties among &lt;code&gt;a&lt;/code&gt;,
+        &lt;code&gt;b&lt;/code&gt;, or &lt;code&gt;c&lt;/code&gt; that have &lt;code&gt;rebind&lt;/code&gt; set to &lt;code&gt;True&lt;/code&gt;.
+    `\*\*kwargs`: a list of keyword arguments
+        &lt;code&gt;baseclass&lt;/code&gt;
+            If kwargs includes a &lt;code&gt;baseclass&lt;/code&gt; argument, this value will be
+            used for validation: `isinstance(value, kwargs['baseclass'])`.
+
+!!! warning "Warning"
+    To mark the property as changed, you must reassign a new python object.
+
+!!! versionchanged "Changed in version:&amp;ensp;1.9.0"
+    &lt;code&gt;rebind&lt;/code&gt; has been introduced.
+
+!!! versionchanged "Changed in version:&amp;ensp;1.7.0"
+    &lt;code&gt;baseclass&lt;/code&gt; parameter added.
+</code></pre></div>
+</dd>
+<dt id="Client.app.Message.message_text"><code class="name">var <span class="ident">message_text</span> : kivy.uix.label.Label</code></dt>
+<dd>
+<div class="desc"><p>ObjectProperty(defaultvalue=None, rebind=False, **kw)
+Property that represents a Python object.</p>
+<pre><code>:Parameters:
+    &lt;code&gt;defaultvalue&lt;/code&gt;: object type
+        Specifies the default value of the property.
+    &lt;code&gt;rebind&lt;/code&gt;: bool, defaults to False
+        Whether kv rules using this object as an intermediate attribute
+        in a kv rule, will update the bound property when this object
+        changes.
+
+        That is the standard behavior is that if there's a kv rule
+        ``text: self.a.b.c.d``, where &lt;code&gt;a&lt;/code&gt;, &lt;code&gt;b&lt;/code&gt;, and &lt;code&gt;c&lt;/code&gt; are
+        properties with &lt;code&gt;rebind&lt;/code&gt; &lt;code&gt;False&lt;/code&gt; and &lt;code&gt;d&lt;/code&gt; is a
+        :class:&lt;code&gt;StringProperty&lt;/code&gt;. Then when the rule is applied, &lt;code&gt;text&lt;/code&gt;
+        becomes bound only to &lt;code&gt;d&lt;/code&gt;. If &lt;code&gt;a&lt;/code&gt;, &lt;code&gt;b&lt;/code&gt;, or &lt;code&gt;c&lt;/code&gt; change,
+        &lt;code&gt;text&lt;/code&gt; still remains bound to &lt;code&gt;d&lt;/code&gt;. Furthermore, if any of them
+        were &lt;code&gt;None&lt;/code&gt; when the rule was initially evaluated, e.g. &lt;code&gt;b&lt;/code&gt; was
+        &lt;code&gt;None&lt;/code&gt;; then &lt;code&gt;text&lt;/code&gt; is bound to &lt;code&gt;b&lt;/code&gt; and will not become bound
+        to &lt;code&gt;d&lt;/code&gt; even when &lt;code&gt;b&lt;/code&gt; is changed to not be &lt;code&gt;None&lt;/code&gt;.
+
+        By setting &lt;code&gt;rebind&lt;/code&gt; to &lt;code&gt;True&lt;/code&gt;, however, the rule will be
+        re-evaluated and all the properties rebound when that intermediate
+        property changes. E.g. in the example above, whenever &lt;code&gt;b&lt;/code&gt; changes
+        or becomes not &lt;code&gt;None&lt;/code&gt; if it was &lt;code&gt;None&lt;/code&gt; before, &lt;code&gt;text&lt;/code&gt; is
+        evaluated again and becomes rebound to &lt;code&gt;d&lt;/code&gt;. The overall result is
+        that &lt;code&gt;text&lt;/code&gt; is now bound to all the properties among &lt;code&gt;a&lt;/code&gt;,
+        &lt;code&gt;b&lt;/code&gt;, or &lt;code&gt;c&lt;/code&gt; that have &lt;code&gt;rebind&lt;/code&gt; set to &lt;code&gt;True&lt;/code&gt;.
+    `\*\*kwargs`: a list of keyword arguments
+        &lt;code&gt;baseclass&lt;/code&gt;
+            If kwargs includes a &lt;code&gt;baseclass&lt;/code&gt; argument, this value will be
+            used for validation: `isinstance(value, kwargs['baseclass'])`.
+
+!!! warning "Warning"
+    To mark the property as changed, you must reassign a new python object.
+
+!!! versionchanged "Changed in version:&amp;ensp;1.9.0"
+    &lt;code&gt;rebind&lt;/code&gt; has been introduced.
+
+!!! versionchanged "Changed in version:&amp;ensp;1.7.0"
+    &lt;code&gt;baseclass&lt;/code&gt; parameter added.
+</code></pre></div>
+</dd>
+<dt id="Client.app.Message.message_time"><code class="name">var <span class="ident">message_time</span> : kivy.uix.label.Label</code></dt>
+<dd>
+<div class="desc"><p>ObjectProperty(defaultvalue=None, rebind=False, **kw)
+Property that represents a Python object.</p>
+<pre><code>:Parameters:
+    &lt;code&gt;defaultvalue&lt;/code&gt;: object type
+        Specifies the default value of the property.
+    &lt;code&gt;rebind&lt;/code&gt;: bool, defaults to False
+        Whether kv rules using this object as an intermediate attribute
+        in a kv rule, will update the bound property when this object
+        changes.
+
+        That is the standard behavior is that if there's a kv rule
+        ``text: self.a.b.c.d``, where &lt;code&gt;a&lt;/code&gt;, &lt;code&gt;b&lt;/code&gt;, and &lt;code&gt;c&lt;/code&gt; are
+        properties with &lt;code&gt;rebind&lt;/code&gt; &lt;code&gt;False&lt;/code&gt; and &lt;code&gt;d&lt;/code&gt; is a
+        :class:&lt;code&gt;StringProperty&lt;/code&gt;. Then when the rule is applied, &lt;code&gt;text&lt;/code&gt;
+        becomes bound only to &lt;code&gt;d&lt;/code&gt;. If &lt;code&gt;a&lt;/code&gt;, &lt;code&gt;b&lt;/code&gt;, or &lt;code&gt;c&lt;/code&gt; change,
+        &lt;code&gt;text&lt;/code&gt; still remains bound to &lt;code&gt;d&lt;/code&gt;. Furthermore, if any of them
+        were &lt;code&gt;None&lt;/code&gt; when the rule was initially evaluated, e.g. &lt;code&gt;b&lt;/code&gt; was
+        &lt;code&gt;None&lt;/code&gt;; then &lt;code&gt;text&lt;/code&gt; is bound to &lt;code&gt;b&lt;/code&gt; and will not become bound
+        to &lt;code&gt;d&lt;/code&gt; even when &lt;code&gt;b&lt;/code&gt; is changed to not be &lt;code&gt;None&lt;/code&gt;.
+
+        By setting &lt;code&gt;rebind&lt;/code&gt; to &lt;code&gt;True&lt;/code&gt;, however, the rule will be
+        re-evaluated and all the properties rebound when that intermediate
+        property changes. E.g. in the example above, whenever &lt;code&gt;b&lt;/code&gt; changes
+        or becomes not &lt;code&gt;None&lt;/code&gt; if it was &lt;code&gt;None&lt;/code&gt; before, &lt;code&gt;text&lt;/code&gt; is
+        evaluated again and becomes rebound to &lt;code&gt;d&lt;/code&gt;. The overall result is
+        that &lt;code&gt;text&lt;/code&gt; is now bound to all the properties among &lt;code&gt;a&lt;/code&gt;,
+        &lt;code&gt;b&lt;/code&gt;, or &lt;code&gt;c&lt;/code&gt; that have &lt;code&gt;rebind&lt;/code&gt; set to &lt;code&gt;True&lt;/code&gt;.
+    `\*\*kwargs`: a list of keyword arguments
+        &lt;code&gt;baseclass&lt;/code&gt;
+            If kwargs includes a &lt;code&gt;baseclass&lt;/code&gt; argument, this value will be
+            used for validation: `isinstance(value, kwargs['baseclass'])`.
+
+!!! warning "Warning"
+    To mark the property as changed, you must reassign a new python object.
+
+!!! versionchanged "Changed in version:&amp;ensp;1.9.0"
+    &lt;code&gt;rebind&lt;/code&gt; has been introduced.
+
+!!! versionchanged "Changed in version:&amp;ensp;1.7.0"
+    &lt;code&gt;baseclass&lt;/code&gt; parameter added.
+</code></pre></div>
+</dd>
+</dl>
+<h3>Methods</h3>
+<dl>
+<dt id="Client.app.Message.resize"><code class="name flex">
+<span>def <span class="ident">resize</span></span>(<span>self)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Подгоняет размер сообщения под размер окна приложения.</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def resize(self):
+    &#34;Подгоняет размер сообщения под размер окна приложения.&#34;
+    self.message_text.text_size[0] = Window.width - 20
+    self.message_text.texture_update()
+    self.height = self.message_text.height + 40</code></pre>
+</details>
+</dd>
+</dl>
+</dd>
+</dl>
+</section>
+</article>
+<nav id="sidebar">
+<h1>Index</h1>
+<div class="toc">
+<ul></ul>
+</div>
+<ul id="index">
+<li><h3>Super-module</h3>
+<ul>
+<li><code><a title="Client" href="index.html">Client</a></code></li>
+</ul>
+</li>
+<li><h3><a href="#header-functions">Functions</a></h3>
+<ul class="">
+<li><code><a title="Client.app.is_valid_time_format" href="#Client.app.is_valid_time_format">is_valid_time_format</a></code></li>
+</ul>
+</li>
+<li><h3><a href="#header-classes">Classes</a></h3>
+<ul>
+<li>
+<h4><code><a title="Client.app.Chat" href="#Client.app.Chat">Chat</a></code></h4>
+<ul class="two-column">
+<li><code><a title="Client.app.Chat.activate" href="#Client.app.Chat.activate">activate</a></code></li>
+<li><code><a title="Client.app.Chat.add_chat" href="#Client.app.Chat.add_chat">add_chat</a></code></li>
+<li><code><a title="Client.app.Chat.chat_button" href="#Client.app.Chat.chat_button">chat_button</a></code></li>
+<li><code><a title="Client.app.Chat.chat_icon" href="#Client.app.Chat.chat_icon">chat_icon</a></code></li>
+<li><code><a title="Client.app.Chat.chat_name" href="#Client.app.Chat.chat_name">chat_name</a></code></li>
+<li><code><a title="Client.app.Chat.enter_chat" href="#Client.app.Chat.enter_chat">enter_chat</a></code></li>
+</ul>
+</li>
+<li>
+<h4><code><a title="Client.app.ChatFinderScreen" href="#Client.app.ChatFinderScreen">ChatFinderScreen</a></code></h4>
+<ul class="two-column">
+<li><code><a title="Client.app.ChatFinderScreen.add_chats_to_scroll" href="#Client.app.ChatFinderScreen.add_chats_to_scroll">add_chats_to_scroll</a></code></li>
+<li><code><a title="Client.app.ChatFinderScreen.back_button" href="#Client.app.ChatFinderScreen.back_button">back_button</a></code></li>
+<li><code><a title="Client.app.ChatFinderScreen.find_chat" href="#Client.app.ChatFinderScreen.find_chat">find_chat</a></code></li>
+<li><code><a title="Client.app.ChatFinderScreen.find_chat_button" href="#Client.app.ChatFinderScreen.find_chat_button">find_chat_button</a></code></li>
+<li><code><a title="Client.app.ChatFinderScreen.input_field" href="#Client.app.ChatFinderScreen.input_field">input_field</a></code></li>
+<li><code><a title="Client.app.ChatFinderScreen.return_back" href="#Client.app.ChatFinderScreen.return_back">return_back</a></code></li>
+<li><code><a title="Client.app.ChatFinderScreen.scroll" href="#Client.app.ChatFinderScreen.scroll">scroll</a></code></li>
+</ul>
+</li>
+<li>
+<h4><code><a title="Client.app.ChatScreen" href="#Client.app.ChatScreen">ChatScreen</a></code></h4>
+<ul class="">
+<li><code><a title="Client.app.ChatScreen.add_message" href="#Client.app.ChatScreen.add_message">add_message</a></code></li>
+<li><code><a title="Client.app.ChatScreen.back_button" href="#Client.app.ChatScreen.back_button">back_button</a></code></li>
+<li><code><a title="Client.app.ChatScreen.chat_name" href="#Client.app.ChatScreen.chat_name">chat_name</a></code></li>
+<li><code><a title="Client.app.ChatScreen.input_field" href="#Client.app.ChatScreen.input_field">input_field</a></code></li>
+<li><code><a title="Client.app.ChatScreen.is_file_check_box" href="#Client.app.ChatScreen.is_file_check_box">is_file_check_box</a></code></li>
+<li><code><a title="Client.app.ChatScreen.on_enter" href="#Client.app.ChatScreen.on_enter">on_enter</a></code></li>
+<li><code><a title="Client.app.ChatScreen.on_leave" href="#Client.app.ChatScreen.on_leave">on_leave</a></code></li>
+<li><code><a title="Client.app.ChatScreen.on_window_resize_messages" href="#Client.app.ChatScreen.on_window_resize_messages">on_window_resize_messages</a></code></li>
+<li><code><a title="Client.app.ChatScreen.resize_messages" href="#Client.app.ChatScreen.resize_messages">resize_messages</a></code></li>
+<li><code><a title="Client.app.ChatScreen.return_back" href="#Client.app.ChatScreen.return_back">return_back</a></code></li>
+<li><code><a title="Client.app.ChatScreen.scroll" href="#Client.app.ChatScreen.scroll">scroll</a></code></li>
+<li><code><a title="Client.app.ChatScreen.send" href="#Client.app.ChatScreen.send">send</a></code></li>
+<li><code><a title="Client.app.ChatScreen.send_button" href="#Client.app.ChatScreen.send_button">send_button</a></code></li>
+<li><code><a title="Client.app.ChatScreen.update_messages" href="#Client.app.ChatScreen.update_messages">update_messages</a></code></li>
+</ul>
+</li>
+<li>
+<h4><code><a title="Client.app.ClientApp" href="#Client.app.ClientApp">ClientApp</a></code></h4>
+<ul class="two-column">
+<li><code><a title="Client.app.ClientApp.LOGIN" href="#Client.app.ClientApp.LOGIN">LOGIN</a></code></li>
+<li><code><a title="Client.app.ClientApp.PASSWORD" href="#Client.app.ClientApp.PASSWORD">PASSWORD</a></code></li>
+<li><code><a title="Client.app.ClientApp.SM" href="#Client.app.ClientApp.SM">SM</a></code></li>
+<li><code><a title="Client.app.ClientApp.build" href="#Client.app.ClientApp.build">build</a></code></li>
+<li><code><a title="Client.app.ClientApp.on_stop" href="#Client.app.ClientApp.on_stop">on_stop</a></code></li>
+<li><code><a title="Client.app.ClientApp.title" href="#Client.app.ClientApp.title">title</a></code></li>
+</ul>
+</li>
+<li>
+<h4><code><a title="Client.app.LoginScreen" href="#Client.app.LoginScreen">LoginScreen</a></code></h4>
+<ul class="two-column">
+<li><code><a title="Client.app.LoginScreen.button" href="#Client.app.LoginScreen.button">button</a></code></li>
+<li><code><a title="Client.app.LoginScreen.check_box" href="#Client.app.LoginScreen.check_box">check_box</a></code></li>
+<li><code><a title="Client.app.LoginScreen.login" href="#Client.app.LoginScreen.login">login</a></code></li>
+<li><code><a title="Client.app.LoginScreen.password" href="#Client.app.LoginScreen.password">password</a></code></li>
+<li><code><a title="Client.app.LoginScreen.sign_in" href="#Client.app.LoginScreen.sign_in">sign_in</a></code></li>
+<li><code><a title="Client.app.LoginScreen.to_main_menu_screen" href="#Client.app.LoginScreen.to_main_menu_screen">to_main_menu_screen</a></code></li>
+</ul>
+</li>
+<li>
+<h4><code><a title="Client.app.MainMenuScreen" href="#Client.app.MainMenuScreen">MainMenuScreen</a></code></h4>
+<ul class="two-column">
+<li><code><a title="Client.app.MainMenuScreen.add_chats_to_scroll" href="#Client.app.MainMenuScreen.add_chats_to_scroll">add_chats_to_scroll</a></code></li>
+<li><code><a title="Client.app.MainMenuScreen.finder_button" href="#Client.app.MainMenuScreen.finder_button">finder_button</a></code></li>
+<li><code><a title="Client.app.MainMenuScreen.on_enter" href="#Client.app.MainMenuScreen.on_enter">on_enter</a></code></li>
+<li><code><a title="Client.app.MainMenuScreen.on_leave" href="#Client.app.MainMenuScreen.on_leave">on_leave</a></code></li>
+<li><code><a title="Client.app.MainMenuScreen.scroll" href="#Client.app.MainMenuScreen.scroll">scroll</a></code></li>
+<li><code><a title="Client.app.MainMenuScreen.to_find_chat_screen" href="#Client.app.MainMenuScreen.to_find_chat_screen">to_find_chat_screen</a></code></li>
+<li><code><a title="Client.app.MainMenuScreen.update_chats" href="#Client.app.MainMenuScreen.update_chats">update_chats</a></code></li>
+</ul>
+</li>
+<li>
+<h4><code><a title="Client.app.Message" href="#Client.app.Message">Message</a></code></h4>
+<ul class="">
+<li><code><a title="Client.app.Message.message_sender" href="#Client.app.Message.message_sender">message_sender</a></code></li>
+<li><code><a title="Client.app.Message.message_text" href="#Client.app.Message.message_text">message_text</a></code></li>
+<li><code><a title="Client.app.Message.message_time" href="#Client.app.Message.message_time">message_time</a></code></li>
+<li><code><a title="Client.app.Message.resize" href="#Client.app.Message.resize">resize</a></code></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</nav>
+</main>
+<footer id="footer">
+<p>Generated by <a href="https://pdoc3.github.io/pdoc" title="pdoc: Python API documentation generator"><cite>pdoc</cite> 0.10.0</a>.</p>
+</footer>
+</body>
+</html>

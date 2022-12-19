@@ -1,0 +1,1039 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1" />
+<meta name="generator" content="pdoc 0.10.0" />
+<title>Client.network API documentation</title>
+<meta name="description" content="" />
+<link rel="preload stylesheet" as="style" href="https://cdnjs.cloudflare.com/ajax/libs/10up-sanitize.css/11.0.1/sanitize.min.css" integrity="sha256-PK9q560IAAa6WVRRh76LtCaI8pjTJ2z11v0miyNNjrs=" crossorigin>
+<link rel="preload stylesheet" as="style" href="https://cdnjs.cloudflare.com/ajax/libs/10up-sanitize.css/11.0.1/typography.min.css" integrity="sha256-7l/o7C8jubJiy74VsKTidCy1yBkRtiUGbVkYBylBqUg=" crossorigin>
+<link rel="stylesheet preload" as="style" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.1.1/styles/github.min.css" crossorigin>
+<style>:root{--highlight-color:#fe9}.flex{display:flex !important}body{line-height:1.5em}#content{padding:20px}#sidebar{padding:30px;overflow:hidden}#sidebar > *:last-child{margin-bottom:2cm}.http-server-breadcrumbs{font-size:130%;margin:0 0 15px 0}#footer{font-size:.75em;padding:5px 30px;border-top:1px solid #ddd;text-align:right}#footer p{margin:0 0 0 1em;display:inline-block}#footer p:last-child{margin-right:30px}h1,h2,h3,h4,h5{font-weight:300}h1{font-size:2.5em;line-height:1.1em}h2{font-size:1.75em;margin:1em 0 .50em 0}h3{font-size:1.4em;margin:25px 0 10px 0}h4{margin:0;font-size:105%}h1:target,h2:target,h3:target,h4:target,h5:target,h6:target{background:var(--highlight-color);padding:.2em 0}a{color:#058;text-decoration:none;transition:color .3s ease-in-out}a:hover{color:#e82}.title code{font-weight:bold}h2[id^="header-"]{margin-top:2em}.ident{color:#900}pre code{background:#f8f8f8;font-size:.8em;line-height:1.4em}code{background:#f2f2f1;padding:1px 4px;overflow-wrap:break-word}h1 code{background:transparent}pre{background:#f8f8f8;border:0;border-top:1px solid #ccc;border-bottom:1px solid #ccc;margin:1em 0;padding:1ex}#http-server-module-list{display:flex;flex-flow:column}#http-server-module-list div{display:flex}#http-server-module-list dt{min-width:10%}#http-server-module-list p{margin-top:0}.toc ul,#index{list-style-type:none;margin:0;padding:0}#index code{background:transparent}#index h3{border-bottom:1px solid #ddd}#index ul{padding:0}#index h4{margin-top:.6em;font-weight:bold}@media (min-width:200ex){#index .two-column{column-count:2}}@media (min-width:300ex){#index .two-column{column-count:3}}dl{margin-bottom:2em}dl dl:last-child{margin-bottom:4em}dd{margin:0 0 1em 3em}#header-classes + dl > dd{margin-bottom:3em}dd dd{margin-left:2em}dd p{margin:10px 0}.name{background:#eee;font-weight:bold;font-size:.85em;padding:5px 10px;display:inline-block;min-width:40%}.name:hover{background:#e0e0e0}dt:target .name{background:var(--highlight-color)}.name > span:first-child{white-space:nowrap}.name.class > span:nth-child(2){margin-left:.4em}.inherited{color:#999;border-left:5px solid #eee;padding-left:1em}.inheritance em{font-style:normal;font-weight:bold}.desc h2{font-weight:400;font-size:1.25em}.desc h3{font-size:1em}.desc dt code{background:inherit}.source summary,.git-link-div{color:#666;text-align:right;font-weight:400;font-size:.8em;text-transform:uppercase}.source summary > *{white-space:nowrap;cursor:pointer}.git-link{color:inherit;margin-left:1em}.source pre{max-height:500px;overflow:auto;margin:0}.source pre code{font-size:12px;overflow:visible}.hlist{list-style:none}.hlist li{display:inline}.hlist li:after{content:',\2002'}.hlist li:last-child:after{content:none}.hlist .hlist{display:inline;padding-left:1em}img{max-width:100%}td{padding:0 .5em}.admonition{padding:.1em .5em;margin-bottom:1em}.admonition-title{font-weight:bold}.admonition.note,.admonition.info,.admonition.important{background:#aef}.admonition.todo,.admonition.versionadded,.admonition.tip,.admonition.hint{background:#dfd}.admonition.warning,.admonition.versionchanged,.admonition.deprecated{background:#fd4}.admonition.error,.admonition.danger,.admonition.caution{background:lightpink}</style>
+<style media="screen and (min-width: 700px)">@media screen and (min-width:700px){#sidebar{width:30%;height:100vh;overflow:auto;position:sticky;top:0}#content{width:70%;max-width:100ch;padding:3em 4em;border-left:1px solid #ddd}pre code{font-size:1em}.item .name{font-size:1em}main{display:flex;flex-direction:row-reverse;justify-content:flex-end}.toc ul ul,#index ul{padding-left:1.5em}.toc > ul > li{margin-top:.5em}}</style>
+<style media="print">@media print{#sidebar h1{page-break-before:always}.source{display:none}}@media print{*{background:transparent !important;color:#000 !important;box-shadow:none !important;text-shadow:none !important}a[href]:after{content:" (" attr(href) ")";font-size:90%}a[href][title]:after{content:none}abbr[title]:after{content:" (" attr(title) ")"}.ir a:after,a[href^="javascript:"]:after,a[href^="#"]:after{content:""}pre,blockquote{border:1px solid #999;page-break-inside:avoid}thead{display:table-header-group}tr,img{page-break-inside:avoid}img{max-width:100% !important}@page{margin:0.5cm}p,h2,h3{orphans:3;widows:3}h1,h2,h3,h4,h5,h6{page-break-after:avoid}}</style>
+<script defer src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.1.1/highlight.min.js" integrity="sha256-Uv3H6lx7dJmRfRvH8TH6kJD1TSK1aFcwgx+mdg3epi8=" crossorigin></script>
+<script>window.addEventListener('DOMContentLoaded', () => hljs.initHighlighting())</script>
+</head>
+<body>
+<main>
+<article id="content">
+<header>
+<h1 class="title">Module <code>Client.network</code></h1>
+</header>
+<section id="section-intro">
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">import requests
+import hashlib
+import os.path as path
+from os import mkdir
+import uuid
+from cryptography.fernet import Fernet
+import base64
+
+class Session():
+    &#34;Общается с сервером.&#34;
+    
+    def __init__(self, ip: str, port: str):
+        &#34;&#34;&#34;Инициализация сессии.
+
+        :param ip: ip-адрес сервера
+        :type ip: str
+        
+        :param port: порт сервера
+        :type port: str
+        &#34;&#34;&#34;
+        self.ip = ip
+        self.port = port
+        self.login = &#39;&#39;
+        self.password = &#39;&#39;
+        main_hash = hashlib.sha256()
+        mac_address = hex(uuid.getnode())[2:]
+        main_hash.update(mac_address.encode())
+        self.hashed_mac_address = main_hash.hexdigest()
+        if not path.isdir(&#34;keys&#34;):
+            mkdir(&#34;keys&#34;)
+    
+    def ping(self) -&gt; bool:
+        &#34;&#34;&#34;Проверяет доступность сервера.
+
+        :returns: True - сервер отвечает
+        :rtype: bool
+        &#34;&#34;&#34;
+        try:
+            requests.get(f&#34;http://{self.ip}:{self.port}/to_server&#34;)
+            return True
+        except (requests.exceptions.ConnectTimeout, requests.exceptions.ConnectionError):
+            return False
+    
+    def connect(self, login: str, password: str, is_registration: bool) -&gt; bool:
+        &#34;&#34;&#34;Авторизация или регистрация на сервере.
+
+        :param login: логин
+        :type login: str
+
+        :param password: пароль
+        :type password: str
+        
+        :param is_registration: True - для регистрации, False - для авторизации
+        :type is_registration: bool
+
+        :returns: ответ от сервера
+        :rtype: bool
+        &#34;&#34;&#34;
+        try:
+            answer: requests.Response = requests.post(f&#34;http://{self.ip}:{self.port}/get_info&#34;, 
+                                                      json={&#39;login&#39;: login, 
+                                                            &#39;password&#39;: password, 
+                                                            &#39;is_register&#39;: &#39;reg&#39; if is_registration else &#39;auth&#39;, 
+                                                            &#39;mac_address&#39;: self.hashed_mac_address})
+            print(&#34;My connect code: &#34;, answer.text)
+            return answer.text == &#39;OK&#39; or answer.text == &#39;yes&#39;
+        except (requests.exceptions.ConnectTimeout, requests.exceptions.ConnectionError):
+            print(&#34;No connection!&#34;)
+            return False
+
+    def get_new_messages(self, chat_name: str, last_message_id: int) -&gt; tuple[bool, list[list[int, str, str, str]]]:
+        &#34;&#34;&#34;Получение сообщений определённого чата, начиная с некоторого номера.
+
+        :param chat_name: чат
+        :type chat_name: str
+
+        :param last_message_id: номер последнего известного сообщения
+        :type last_message_id: int
+
+        :returns: Первое значение: True в случае успеха получения данных с сервера.
+        Второе значение: список состоящий из: индекс сообщения, текст, отправитель, время отправки.
+        :rtype: tuple[bool, list[list[int, str, str, str]]]:
+        &#34;&#34;&#34;
+        try:
+            answer: requests.Response = requests.get(f&#34;http://{self.ip}:{self.port}/check_new_messages&#34;, 
+                                                     json={&#34;login&#34;: self.login, 
+                                                           &#34;user2&#34;: chat_name, 
+                                                           &#34;id_last_message&#34;: last_message_id, 
+                                                           &#39;mac_address&#39;: self.hashed_mac_address})
+            messages = answer.json()
+            print(messages)
+            success = True
+            if not path.isfile(f&#34;keys/{chat_name}.txt&#34;):
+                success = self.update_keys()
+            if success:
+                if not path.isfile(f&#34;keys/{chat_name}.txt&#34;):
+                    if not self.send_key(chat_name):
+                        return (False, [])
+                key = &#39;&#39;
+                with open(f&#34;keys/{chat_name}.txt&#34;, &#39;rb&#39;) as f_key:
+                    key = f_key.read()
+                for list_index, (idx, ciphered_text, sender, time) in enumerate(messages.copy()):
+                    if ciphered_text.startswith(&#34;FILE&#34;):
+                        file_code = ciphered_text[4:]
+                        self.write_file(&#34;document1&#34;, file_code)
+                        messages[list_index][1] = f&#34;You got document from {sender}! Check folder &#39;files&#39;&#34;
+                    else:
+                        print(key, ciphered_text)
+                        text = str(Fernet(key).decrypt(bytes(ciphered_text, &#39;utf-8&#39;)), &#39;utf-8&#39;)
+                        messages[list_index][1] = text
+                return (True, messages)
+            else:
+                return (False, [])
+        except (requests.exceptions.ConnectTimeout, requests.exceptions.ConnectionError):
+            return (False, [])
+
+    def send_message(self, chat_name: str, text: str, time: str) -&gt; bool:
+        &#34;&#34;&#34;Отправка сообщения на сервер.
+
+        :param chat_name: чат
+        :type chat_name: str
+
+        :param text: текст сообщения
+        :type text: str
+        
+        :param time: время отправки
+        :type time: str
+
+        :returns: True в случае успеха отправки сообщения на сервер
+        :rtype: bool:
+        &#34;&#34;&#34;
+        try:
+            key = &#39;&#39;
+            self.update_keys()
+            if not path.isfile(f&#34;keys/{chat_name}.txt&#34;):
+                success = self.send_key(chat_name)
+                if not success:
+                    return success
+                
+            with open(f&#34;keys/{chat_name}.txt&#34;, &#39;rb&#39;) as f_key:
+                key = f_key.read()
+            
+            cipher = Fernet(key)
+            ciphered_text = str(cipher.encrypt(bytes(text, encoding=&#39;utf-8&#39;)), encoding=&#39;utf-8&#39;)
+            answer: requests.Response = requests.post(f&#34;http://{self.ip}:{self.port}/send_message&#34;, 
+                                                      json={&#34;login&#34;: self.login, 
+                                                            &#34;password&#34;: self.password, 
+                                                            &#34;receiver&#34;: chat_name, 
+                                                            &#34;message&#34;: ciphered_text, 
+                                                            &#34;time&#34;: time,
+                                                            &#39;mac_address&#39;: self.hashed_mac_address})
+            print(answer.text, &#34;status of sending&#34;)
+            return answer.text == &#39;ok&#39;
+        except (requests.exceptions.ConnectTimeout, requests.exceptions.ConnectionError):
+            return False
+
+    def find_chats(self, chat_name: str) -&gt; tuple[bool, list[str]]:
+        &#34;&#34;&#34;Поиск чата по части имени на сервере.
+
+        :param chat_name: чат
+        :type chat_name: str
+
+        :returns: Первое значение: True в случае успеха получения данных с сервера.
+        Второе значение: список найденных чатов. 
+        :rtype: tuple[bool, list[str]]:
+        &#34;&#34;&#34;
+        try:
+            answer: requests.Response = requests.get(f&#34;http://{self.ip}:{self.port}/find_users&#34;, 
+                                                     json={&#34;login&#34;: self.login, &#34;find_user&#34;: chat_name, &#39;mac_address&#39;: self.hashed_mac_address})
+            return (True, [element_list[0] for element_list in answer.json()])
+        except (requests.exceptions.ConnectTimeout, requests.exceptions.ConnectionError):
+            return (False, [])
+
+    def get_all_chats(self) -&gt; tuple[bool, list[str]]:
+        &#34;&#34;&#34;Получение всех чатов, с кем ведётся переписка.
+
+        :returns: Первое значение: True в случае успеха получения данных с сервера.
+        Второе значение: список своих чатов. 
+        :rtype: tuple[bool, list[str]]:
+        &#34;&#34;&#34;
+        try:
+            answer: requests.Response = requests.get(f&#34;http://{self.ip}:{self.port}/get_all_my_users&#34;, 
+                                                     json={&#34;login&#34;: self.login, &#39;mac_address&#39;: self.hashed_mac_address})
+            
+            return (True, answer.json())
+        except (requests.exceptions.ConnectTimeout, requests.exceptions.ConnectionError):
+            return (False, [])
+
+    def send_key(self, chat_name: str) -&gt; bool:
+        &#34;&#34;&#34;Отправляет ключа шифрования на сервер для конкретного пользователя.
+    
+        :param chat_name: чат
+        :type chat_name: str
+        
+        :returns: True - успешно отправил ключ на сервер
+        :rtype: bool:
+        &#34;&#34;&#34;
+        try:
+            key = Fernet.generate_key()
+            answer: requests.Response = requests.post(f&#34;http://{self.ip}:{self.port}/keys_exchange&#34;, 
+                                                     json={&#34;login&#34;: self.login, &#34;receiver&#34;: chat_name, &#39;mac_address&#39;: self.hashed_mac_address, &#39;key&#39;: key.decode(&#39;utf-8&#39;)})
+            print(f&#39;I sent key to {chat_name} and got {answer.content}&#39;)
+            if answer.content == b&#39;OK&#39;:
+                with open(f&#34;keys/{chat_name}.txt&#34;, &#39;wb&#39;) as f_key:
+                    f_key.write(key)
+                return True
+            else:
+                return False
+        except (requests.exceptions.ConnectTimeout, requests.exceptions.ConnectionError):
+            return False 
+
+    def update_keys(self) -&gt; bool:
+        &#34;&#34;&#34;Запрашивает с сервера ключи шифрования, 
+        которые клиенту оставили другие пользователи.
+        
+        :returns: True - успешно запросил ключи 
+        :rtype: bool:&#34;&#34;&#34;
+        try:
+            answer: requests.Response = requests.get(f&#34;http://{self.ip}:{self.port}/keys_exchange&#34;, 
+                                                     json={&#34;login&#34;: self.login, &#39;mac_address&#39;: self.hashed_mac_address})
+            for chat_name, key in answer.json():
+                key = bytes(key, encoding=&#39;utf-8&#39;)
+                with open(f&#34;keys/{chat_name}.txt&#34;, &#39;wb&#39;) as f_key:
+                    f_key.write(key)
+            return True
+        except (requests.exceptions.ConnectTimeout, requests.exceptions.ConnectionError):
+            return False
+
+    def send_file(self, chat_name: str, filename: str, time: str) -&gt; bool:
+        &#34;&#34;&#34;Шифрует и отправляет файл на сервер.
+        
+        :param chat_name: чат
+        :type chat_name: str
+        
+        :param filename: имя файла для отправки. Такой файл должен находится в папке files
+        :type filename: str
+        
+        :param time: время отправки
+        :type time: str
+        
+        :returns: True - успешная отправка файла на сервер
+        :rtype: bool:
+        &#34;&#34;&#34;
+        if not path.isfile(f&#34;files/{filename}&#34;):
+            return False
+
+        file = open(f&#34;files/{filename}&#34;, &#39;rb&#39;)
+        final = &#34;FILE&#34; + base64.b64encode(file.read()).decode()
+        file.close()
+        try:
+            answer: requests.Response = requests.post(f&#39;http://{self.ip}:{self.port}/send_message&#39;,
+                                                      json={&#39;login&#39;: self.login, 
+                                                            &#39;receiver&#39;: chat_name, 
+                                                            &#39;mac_address&#39;: self.hashed_mac_address, 
+                                                            &#39;message&#39;: final,
+                                                            &#39;time&#39;: time})
+            print(&#39;sending file ended with code &#39;, answer.content)
+            return answer.content == b&#39;ok&#39;
+        except (requests.exceptions.ConnectTimeout, requests.exceptions.ConnectionError):
+            return False
+        
+    def write_file(self, filename: str, code: str):
+        &#34;&#34;&#34;Записывает файл по пути files/имя файла с данными в code.
+        
+        :param filename: имя файла после записи
+        :type filename: str
+        
+        :param code: данные файла
+        :type code: str
+        &#34;&#34;&#34;
+        if not path.isdir(&#34;files&#34;):
+            mkdir(&#34;files&#34;)
+        file = open(f&#34;files/{filename}&#34;, &#39;wb&#39;)
+        file.write(base64.b64decode(code.encode()))
+        file.close()</code></pre>
+</details>
+</section>
+<section>
+</section>
+<section>
+</section>
+<section>
+</section>
+<section>
+<h2 class="section-title" id="header-classes">Classes</h2>
+<dl>
+<dt id="Client.network.Session"><code class="flex name class">
+<span>class <span class="ident">Session</span></span>
+<span>(</span><span>ip: str, port: str)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Общается с сервером.</p>
+<p>Инициализация сессии.</p>
+<p>:param ip: ip-адрес сервера
+:type ip: str</p>
+<p>:param port: порт сервера
+:type port: str</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">class Session():
+    &#34;Общается с сервером.&#34;
+    
+    def __init__(self, ip: str, port: str):
+        &#34;&#34;&#34;Инициализация сессии.
+
+        :param ip: ip-адрес сервера
+        :type ip: str
+        
+        :param port: порт сервера
+        :type port: str
+        &#34;&#34;&#34;
+        self.ip = ip
+        self.port = port
+        self.login = &#39;&#39;
+        self.password = &#39;&#39;
+        main_hash = hashlib.sha256()
+        mac_address = hex(uuid.getnode())[2:]
+        main_hash.update(mac_address.encode())
+        self.hashed_mac_address = main_hash.hexdigest()
+        if not path.isdir(&#34;keys&#34;):
+            mkdir(&#34;keys&#34;)
+    
+    def ping(self) -&gt; bool:
+        &#34;&#34;&#34;Проверяет доступность сервера.
+
+        :returns: True - сервер отвечает
+        :rtype: bool
+        &#34;&#34;&#34;
+        try:
+            requests.get(f&#34;http://{self.ip}:{self.port}/to_server&#34;)
+            return True
+        except (requests.exceptions.ConnectTimeout, requests.exceptions.ConnectionError):
+            return False
+    
+    def connect(self, login: str, password: str, is_registration: bool) -&gt; bool:
+        &#34;&#34;&#34;Авторизация или регистрация на сервере.
+
+        :param login: логин
+        :type login: str
+
+        :param password: пароль
+        :type password: str
+        
+        :param is_registration: True - для регистрации, False - для авторизации
+        :type is_registration: bool
+
+        :returns: ответ от сервера
+        :rtype: bool
+        &#34;&#34;&#34;
+        try:
+            answer: requests.Response = requests.post(f&#34;http://{self.ip}:{self.port}/get_info&#34;, 
+                                                      json={&#39;login&#39;: login, 
+                                                            &#39;password&#39;: password, 
+                                                            &#39;is_register&#39;: &#39;reg&#39; if is_registration else &#39;auth&#39;, 
+                                                            &#39;mac_address&#39;: self.hashed_mac_address})
+            print(&#34;My connect code: &#34;, answer.text)
+            return answer.text == &#39;OK&#39; or answer.text == &#39;yes&#39;
+        except (requests.exceptions.ConnectTimeout, requests.exceptions.ConnectionError):
+            print(&#34;No connection!&#34;)
+            return False
+
+    def get_new_messages(self, chat_name: str, last_message_id: int) -&gt; tuple[bool, list[list[int, str, str, str]]]:
+        &#34;&#34;&#34;Получение сообщений определённого чата, начиная с некоторого номера.
+
+        :param chat_name: чат
+        :type chat_name: str
+
+        :param last_message_id: номер последнего известного сообщения
+        :type last_message_id: int
+
+        :returns: Первое значение: True в случае успеха получения данных с сервера.
+        Второе значение: список состоящий из: индекс сообщения, текст, отправитель, время отправки.
+        :rtype: tuple[bool, list[list[int, str, str, str]]]:
+        &#34;&#34;&#34;
+        try:
+            answer: requests.Response = requests.get(f&#34;http://{self.ip}:{self.port}/check_new_messages&#34;, 
+                                                     json={&#34;login&#34;: self.login, 
+                                                           &#34;user2&#34;: chat_name, 
+                                                           &#34;id_last_message&#34;: last_message_id, 
+                                                           &#39;mac_address&#39;: self.hashed_mac_address})
+            messages = answer.json()
+            print(messages)
+            success = True
+            if not path.isfile(f&#34;keys/{chat_name}.txt&#34;):
+                success = self.update_keys()
+            if success:
+                if not path.isfile(f&#34;keys/{chat_name}.txt&#34;):
+                    if not self.send_key(chat_name):
+                        return (False, [])
+                key = &#39;&#39;
+                with open(f&#34;keys/{chat_name}.txt&#34;, &#39;rb&#39;) as f_key:
+                    key = f_key.read()
+                for list_index, (idx, ciphered_text, sender, time) in enumerate(messages.copy()):
+                    if ciphered_text.startswith(&#34;FILE&#34;):
+                        file_code = ciphered_text[4:]
+                        self.write_file(&#34;document1&#34;, file_code)
+                        messages[list_index][1] = f&#34;You got document from {sender}! Check folder &#39;files&#39;&#34;
+                    else:
+                        print(key, ciphered_text)
+                        text = str(Fernet(key).decrypt(bytes(ciphered_text, &#39;utf-8&#39;)), &#39;utf-8&#39;)
+                        messages[list_index][1] = text
+                return (True, messages)
+            else:
+                return (False, [])
+        except (requests.exceptions.ConnectTimeout, requests.exceptions.ConnectionError):
+            return (False, [])
+
+    def send_message(self, chat_name: str, text: str, time: str) -&gt; bool:
+        &#34;&#34;&#34;Отправка сообщения на сервер.
+
+        :param chat_name: чат
+        :type chat_name: str
+
+        :param text: текст сообщения
+        :type text: str
+        
+        :param time: время отправки
+        :type time: str
+
+        :returns: True в случае успеха отправки сообщения на сервер
+        :rtype: bool:
+        &#34;&#34;&#34;
+        try:
+            key = &#39;&#39;
+            self.update_keys()
+            if not path.isfile(f&#34;keys/{chat_name}.txt&#34;):
+                success = self.send_key(chat_name)
+                if not success:
+                    return success
+                
+            with open(f&#34;keys/{chat_name}.txt&#34;, &#39;rb&#39;) as f_key:
+                key = f_key.read()
+            
+            cipher = Fernet(key)
+            ciphered_text = str(cipher.encrypt(bytes(text, encoding=&#39;utf-8&#39;)), encoding=&#39;utf-8&#39;)
+            answer: requests.Response = requests.post(f&#34;http://{self.ip}:{self.port}/send_message&#34;, 
+                                                      json={&#34;login&#34;: self.login, 
+                                                            &#34;password&#34;: self.password, 
+                                                            &#34;receiver&#34;: chat_name, 
+                                                            &#34;message&#34;: ciphered_text, 
+                                                            &#34;time&#34;: time,
+                                                            &#39;mac_address&#39;: self.hashed_mac_address})
+            print(answer.text, &#34;status of sending&#34;)
+            return answer.text == &#39;ok&#39;
+        except (requests.exceptions.ConnectTimeout, requests.exceptions.ConnectionError):
+            return False
+
+    def find_chats(self, chat_name: str) -&gt; tuple[bool, list[str]]:
+        &#34;&#34;&#34;Поиск чата по части имени на сервере.
+
+        :param chat_name: чат
+        :type chat_name: str
+
+        :returns: Первое значение: True в случае успеха получения данных с сервера.
+        Второе значение: список найденных чатов. 
+        :rtype: tuple[bool, list[str]]:
+        &#34;&#34;&#34;
+        try:
+            answer: requests.Response = requests.get(f&#34;http://{self.ip}:{self.port}/find_users&#34;, 
+                                                     json={&#34;login&#34;: self.login, &#34;find_user&#34;: chat_name, &#39;mac_address&#39;: self.hashed_mac_address})
+            return (True, [element_list[0] for element_list in answer.json()])
+        except (requests.exceptions.ConnectTimeout, requests.exceptions.ConnectionError):
+            return (False, [])
+
+    def get_all_chats(self) -&gt; tuple[bool, list[str]]:
+        &#34;&#34;&#34;Получение всех чатов, с кем ведётся переписка.
+
+        :returns: Первое значение: True в случае успеха получения данных с сервера.
+        Второе значение: список своих чатов. 
+        :rtype: tuple[bool, list[str]]:
+        &#34;&#34;&#34;
+        try:
+            answer: requests.Response = requests.get(f&#34;http://{self.ip}:{self.port}/get_all_my_users&#34;, 
+                                                     json={&#34;login&#34;: self.login, &#39;mac_address&#39;: self.hashed_mac_address})
+            
+            return (True, answer.json())
+        except (requests.exceptions.ConnectTimeout, requests.exceptions.ConnectionError):
+            return (False, [])
+
+    def send_key(self, chat_name: str) -&gt; bool:
+        &#34;&#34;&#34;Отправляет ключа шифрования на сервер для конкретного пользователя.
+    
+        :param chat_name: чат
+        :type chat_name: str
+        
+        :returns: True - успешно отправил ключ на сервер
+        :rtype: bool:
+        &#34;&#34;&#34;
+        try:
+            key = Fernet.generate_key()
+            answer: requests.Response = requests.post(f&#34;http://{self.ip}:{self.port}/keys_exchange&#34;, 
+                                                     json={&#34;login&#34;: self.login, &#34;receiver&#34;: chat_name, &#39;mac_address&#39;: self.hashed_mac_address, &#39;key&#39;: key.decode(&#39;utf-8&#39;)})
+            print(f&#39;I sent key to {chat_name} and got {answer.content}&#39;)
+            if answer.content == b&#39;OK&#39;:
+                with open(f&#34;keys/{chat_name}.txt&#34;, &#39;wb&#39;) as f_key:
+                    f_key.write(key)
+                return True
+            else:
+                return False
+        except (requests.exceptions.ConnectTimeout, requests.exceptions.ConnectionError):
+            return False 
+
+    def update_keys(self) -&gt; bool:
+        &#34;&#34;&#34;Запрашивает с сервера ключи шифрования, 
+        которые клиенту оставили другие пользователи.
+        
+        :returns: True - успешно запросил ключи 
+        :rtype: bool:&#34;&#34;&#34;
+        try:
+            answer: requests.Response = requests.get(f&#34;http://{self.ip}:{self.port}/keys_exchange&#34;, 
+                                                     json={&#34;login&#34;: self.login, &#39;mac_address&#39;: self.hashed_mac_address})
+            for chat_name, key in answer.json():
+                key = bytes(key, encoding=&#39;utf-8&#39;)
+                with open(f&#34;keys/{chat_name}.txt&#34;, &#39;wb&#39;) as f_key:
+                    f_key.write(key)
+            return True
+        except (requests.exceptions.ConnectTimeout, requests.exceptions.ConnectionError):
+            return False
+
+    def send_file(self, chat_name: str, filename: str, time: str) -&gt; bool:
+        &#34;&#34;&#34;Шифрует и отправляет файл на сервер.
+        
+        :param chat_name: чат
+        :type chat_name: str
+        
+        :param filename: имя файла для отправки. Такой файл должен находится в папке files
+        :type filename: str
+        
+        :param time: время отправки
+        :type time: str
+        
+        :returns: True - успешная отправка файла на сервер
+        :rtype: bool:
+        &#34;&#34;&#34;
+        if not path.isfile(f&#34;files/{filename}&#34;):
+            return False
+
+        file = open(f&#34;files/{filename}&#34;, &#39;rb&#39;)
+        final = &#34;FILE&#34; + base64.b64encode(file.read()).decode()
+        file.close()
+        try:
+            answer: requests.Response = requests.post(f&#39;http://{self.ip}:{self.port}/send_message&#39;,
+                                                      json={&#39;login&#39;: self.login, 
+                                                            &#39;receiver&#39;: chat_name, 
+                                                            &#39;mac_address&#39;: self.hashed_mac_address, 
+                                                            &#39;message&#39;: final,
+                                                            &#39;time&#39;: time})
+            print(&#39;sending file ended with code &#39;, answer.content)
+            return answer.content == b&#39;ok&#39;
+        except (requests.exceptions.ConnectTimeout, requests.exceptions.ConnectionError):
+            return False
+        
+    def write_file(self, filename: str, code: str):
+        &#34;&#34;&#34;Записывает файл по пути files/имя файла с данными в code.
+        
+        :param filename: имя файла после записи
+        :type filename: str
+        
+        :param code: данные файла
+        :type code: str
+        &#34;&#34;&#34;
+        if not path.isdir(&#34;files&#34;):
+            mkdir(&#34;files&#34;)
+        file = open(f&#34;files/{filename}&#34;, &#39;wb&#39;)
+        file.write(base64.b64decode(code.encode()))
+        file.close()</code></pre>
+</details>
+<h3>Methods</h3>
+<dl>
+<dt id="Client.network.Session.connect"><code class="name flex">
+<span>def <span class="ident">connect</span></span>(<span>self, login: str, password: str, is_registration: bool) ‑> bool</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Авторизация или регистрация на сервере.</p>
+<p>:param login: логин
+:type login: str</p>
+<p>:param password: пароль
+:type password: str</p>
+<p>:param is_registration: True - для регистрации, False - для авторизации
+:type is_registration: bool</p>
+<p>:returns: ответ от сервера
+:rtype: bool</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def connect(self, login: str, password: str, is_registration: bool) -&gt; bool:
+    &#34;&#34;&#34;Авторизация или регистрация на сервере.
+
+    :param login: логин
+    :type login: str
+
+    :param password: пароль
+    :type password: str
+    
+    :param is_registration: True - для регистрации, False - для авторизации
+    :type is_registration: bool
+
+    :returns: ответ от сервера
+    :rtype: bool
+    &#34;&#34;&#34;
+    try:
+        answer: requests.Response = requests.post(f&#34;http://{self.ip}:{self.port}/get_info&#34;, 
+                                                  json={&#39;login&#39;: login, 
+                                                        &#39;password&#39;: password, 
+                                                        &#39;is_register&#39;: &#39;reg&#39; if is_registration else &#39;auth&#39;, 
+                                                        &#39;mac_address&#39;: self.hashed_mac_address})
+        print(&#34;My connect code: &#34;, answer.text)
+        return answer.text == &#39;OK&#39; or answer.text == &#39;yes&#39;
+    except (requests.exceptions.ConnectTimeout, requests.exceptions.ConnectionError):
+        print(&#34;No connection!&#34;)
+        return False</code></pre>
+</details>
+</dd>
+<dt id="Client.network.Session.find_chats"><code class="name flex">
+<span>def <span class="ident">find_chats</span></span>(<span>self, chat_name: str) ‑> tuple[bool, list[str]]</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Поиск чата по части имени на сервере.</p>
+<p>:param chat_name: чат
+:type chat_name: str</p>
+<p>:returns: Первое значение: True в случае успеха получения данных с сервера.
+Второе значение: список найденных чатов.
+:rtype: tuple[bool, list[str]]:</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def find_chats(self, chat_name: str) -&gt; tuple[bool, list[str]]:
+    &#34;&#34;&#34;Поиск чата по части имени на сервере.
+
+    :param chat_name: чат
+    :type chat_name: str
+
+    :returns: Первое значение: True в случае успеха получения данных с сервера.
+    Второе значение: список найденных чатов. 
+    :rtype: tuple[bool, list[str]]:
+    &#34;&#34;&#34;
+    try:
+        answer: requests.Response = requests.get(f&#34;http://{self.ip}:{self.port}/find_users&#34;, 
+                                                 json={&#34;login&#34;: self.login, &#34;find_user&#34;: chat_name, &#39;mac_address&#39;: self.hashed_mac_address})
+        return (True, [element_list[0] for element_list in answer.json()])
+    except (requests.exceptions.ConnectTimeout, requests.exceptions.ConnectionError):
+        return (False, [])</code></pre>
+</details>
+</dd>
+<dt id="Client.network.Session.get_all_chats"><code class="name flex">
+<span>def <span class="ident">get_all_chats</span></span>(<span>self) ‑> tuple[bool, list[str]]</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Получение всех чатов, с кем ведётся переписка.</p>
+<p>:returns: Первое значение: True в случае успеха получения данных с сервера.
+Второе значение: список своих чатов.
+:rtype: tuple[bool, list[str]]:</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def get_all_chats(self) -&gt; tuple[bool, list[str]]:
+    &#34;&#34;&#34;Получение всех чатов, с кем ведётся переписка.
+
+    :returns: Первое значение: True в случае успеха получения данных с сервера.
+    Второе значение: список своих чатов. 
+    :rtype: tuple[bool, list[str]]:
+    &#34;&#34;&#34;
+    try:
+        answer: requests.Response = requests.get(f&#34;http://{self.ip}:{self.port}/get_all_my_users&#34;, 
+                                                 json={&#34;login&#34;: self.login, &#39;mac_address&#39;: self.hashed_mac_address})
+        
+        return (True, answer.json())
+    except (requests.exceptions.ConnectTimeout, requests.exceptions.ConnectionError):
+        return (False, [])</code></pre>
+</details>
+</dd>
+<dt id="Client.network.Session.get_new_messages"><code class="name flex">
+<span>def <span class="ident">get_new_messages</span></span>(<span>self, chat_name: str, last_message_id: int) ‑> tuple[bool, list[list[int, str, str, str]]]</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Получение сообщений определённого чата, начиная с некоторого номера.</p>
+<p>:param chat_name: чат
+:type chat_name: str</p>
+<p>:param last_message_id: номер последнего известного сообщения
+:type last_message_id: int</p>
+<p>:returns: Первое значение: True в случае успеха получения данных с сервера.
+Второе значение: список состоящий из: индекс сообщения, текст, отправитель, время отправки.
+:rtype: tuple[bool, list[list[int, str, str, str]]]:</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def get_new_messages(self, chat_name: str, last_message_id: int) -&gt; tuple[bool, list[list[int, str, str, str]]]:
+    &#34;&#34;&#34;Получение сообщений определённого чата, начиная с некоторого номера.
+
+    :param chat_name: чат
+    :type chat_name: str
+
+    :param last_message_id: номер последнего известного сообщения
+    :type last_message_id: int
+
+    :returns: Первое значение: True в случае успеха получения данных с сервера.
+    Второе значение: список состоящий из: индекс сообщения, текст, отправитель, время отправки.
+    :rtype: tuple[bool, list[list[int, str, str, str]]]:
+    &#34;&#34;&#34;
+    try:
+        answer: requests.Response = requests.get(f&#34;http://{self.ip}:{self.port}/check_new_messages&#34;, 
+                                                 json={&#34;login&#34;: self.login, 
+                                                       &#34;user2&#34;: chat_name, 
+                                                       &#34;id_last_message&#34;: last_message_id, 
+                                                       &#39;mac_address&#39;: self.hashed_mac_address})
+        messages = answer.json()
+        print(messages)
+        success = True
+        if not path.isfile(f&#34;keys/{chat_name}.txt&#34;):
+            success = self.update_keys()
+        if success:
+            if not path.isfile(f&#34;keys/{chat_name}.txt&#34;):
+                if not self.send_key(chat_name):
+                    return (False, [])
+            key = &#39;&#39;
+            with open(f&#34;keys/{chat_name}.txt&#34;, &#39;rb&#39;) as f_key:
+                key = f_key.read()
+            for list_index, (idx, ciphered_text, sender, time) in enumerate(messages.copy()):
+                if ciphered_text.startswith(&#34;FILE&#34;):
+                    file_code = ciphered_text[4:]
+                    self.write_file(&#34;document1&#34;, file_code)
+                    messages[list_index][1] = f&#34;You got document from {sender}! Check folder &#39;files&#39;&#34;
+                else:
+                    print(key, ciphered_text)
+                    text = str(Fernet(key).decrypt(bytes(ciphered_text, &#39;utf-8&#39;)), &#39;utf-8&#39;)
+                    messages[list_index][1] = text
+            return (True, messages)
+        else:
+            return (False, [])
+    except (requests.exceptions.ConnectTimeout, requests.exceptions.ConnectionError):
+        return (False, [])</code></pre>
+</details>
+</dd>
+<dt id="Client.network.Session.ping"><code class="name flex">
+<span>def <span class="ident">ping</span></span>(<span>self) ‑> bool</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Проверяет доступность сервера.</p>
+<p>:returns: True - сервер отвечает
+:rtype: bool</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def ping(self) -&gt; bool:
+    &#34;&#34;&#34;Проверяет доступность сервера.
+
+    :returns: True - сервер отвечает
+    :rtype: bool
+    &#34;&#34;&#34;
+    try:
+        requests.get(f&#34;http://{self.ip}:{self.port}/to_server&#34;)
+        return True
+    except (requests.exceptions.ConnectTimeout, requests.exceptions.ConnectionError):
+        return False</code></pre>
+</details>
+</dd>
+<dt id="Client.network.Session.send_file"><code class="name flex">
+<span>def <span class="ident">send_file</span></span>(<span>self, chat_name: str, filename: str, time: str) ‑> bool</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Шифрует и отправляет файл на сервер.</p>
+<p>:param chat_name: чат
+:type chat_name: str</p>
+<p>:param filename: имя файла для отправки. Такой файл должен находится в папке files
+:type filename: str</p>
+<p>:param time: время отправки
+:type time: str</p>
+<p>:returns: True - успешная отправка файла на сервер
+:rtype: bool:</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def send_file(self, chat_name: str, filename: str, time: str) -&gt; bool:
+    &#34;&#34;&#34;Шифрует и отправляет файл на сервер.
+    
+    :param chat_name: чат
+    :type chat_name: str
+    
+    :param filename: имя файла для отправки. Такой файл должен находится в папке files
+    :type filename: str
+    
+    :param time: время отправки
+    :type time: str
+    
+    :returns: True - успешная отправка файла на сервер
+    :rtype: bool:
+    &#34;&#34;&#34;
+    if not path.isfile(f&#34;files/{filename}&#34;):
+        return False
+
+    file = open(f&#34;files/{filename}&#34;, &#39;rb&#39;)
+    final = &#34;FILE&#34; + base64.b64encode(file.read()).decode()
+    file.close()
+    try:
+        answer: requests.Response = requests.post(f&#39;http://{self.ip}:{self.port}/send_message&#39;,
+                                                  json={&#39;login&#39;: self.login, 
+                                                        &#39;receiver&#39;: chat_name, 
+                                                        &#39;mac_address&#39;: self.hashed_mac_address, 
+                                                        &#39;message&#39;: final,
+                                                        &#39;time&#39;: time})
+        print(&#39;sending file ended with code &#39;, answer.content)
+        return answer.content == b&#39;ok&#39;
+    except (requests.exceptions.ConnectTimeout, requests.exceptions.ConnectionError):
+        return False</code></pre>
+</details>
+</dd>
+<dt id="Client.network.Session.send_key"><code class="name flex">
+<span>def <span class="ident">send_key</span></span>(<span>self, chat_name: str) ‑> bool</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Отправляет ключа шифрования на сервер для конкретного пользователя.</p>
+<p>:param chat_name: чат
+:type chat_name: str</p>
+<p>:returns: True - успешно отправил ключ на сервер
+:rtype: bool:</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def send_key(self, chat_name: str) -&gt; bool:
+    &#34;&#34;&#34;Отправляет ключа шифрования на сервер для конкретного пользователя.
+
+    :param chat_name: чат
+    :type chat_name: str
+    
+    :returns: True - успешно отправил ключ на сервер
+    :rtype: bool:
+    &#34;&#34;&#34;
+    try:
+        key = Fernet.generate_key()
+        answer: requests.Response = requests.post(f&#34;http://{self.ip}:{self.port}/keys_exchange&#34;, 
+                                                 json={&#34;login&#34;: self.login, &#34;receiver&#34;: chat_name, &#39;mac_address&#39;: self.hashed_mac_address, &#39;key&#39;: key.decode(&#39;utf-8&#39;)})
+        print(f&#39;I sent key to {chat_name} and got {answer.content}&#39;)
+        if answer.content == b&#39;OK&#39;:
+            with open(f&#34;keys/{chat_name}.txt&#34;, &#39;wb&#39;) as f_key:
+                f_key.write(key)
+            return True
+        else:
+            return False
+    except (requests.exceptions.ConnectTimeout, requests.exceptions.ConnectionError):
+        return False </code></pre>
+</details>
+</dd>
+<dt id="Client.network.Session.send_message"><code class="name flex">
+<span>def <span class="ident">send_message</span></span>(<span>self, chat_name: str, text: str, time: str) ‑> bool</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Отправка сообщения на сервер.</p>
+<p>:param chat_name: чат
+:type chat_name: str</p>
+<p>:param text: текст сообщения
+:type text: str</p>
+<p>:param time: время отправки
+:type time: str</p>
+<p>:returns: True в случае успеха отправки сообщения на сервер
+:rtype: bool:</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def send_message(self, chat_name: str, text: str, time: str) -&gt; bool:
+    &#34;&#34;&#34;Отправка сообщения на сервер.
+
+    :param chat_name: чат
+    :type chat_name: str
+
+    :param text: текст сообщения
+    :type text: str
+    
+    :param time: время отправки
+    :type time: str
+
+    :returns: True в случае успеха отправки сообщения на сервер
+    :rtype: bool:
+    &#34;&#34;&#34;
+    try:
+        key = &#39;&#39;
+        self.update_keys()
+        if not path.isfile(f&#34;keys/{chat_name}.txt&#34;):
+            success = self.send_key(chat_name)
+            if not success:
+                return success
+            
+        with open(f&#34;keys/{chat_name}.txt&#34;, &#39;rb&#39;) as f_key:
+            key = f_key.read()
+        
+        cipher = Fernet(key)
+        ciphered_text = str(cipher.encrypt(bytes(text, encoding=&#39;utf-8&#39;)), encoding=&#39;utf-8&#39;)
+        answer: requests.Response = requests.post(f&#34;http://{self.ip}:{self.port}/send_message&#34;, 
+                                                  json={&#34;login&#34;: self.login, 
+                                                        &#34;password&#34;: self.password, 
+                                                        &#34;receiver&#34;: chat_name, 
+                                                        &#34;message&#34;: ciphered_text, 
+                                                        &#34;time&#34;: time,
+                                                        &#39;mac_address&#39;: self.hashed_mac_address})
+        print(answer.text, &#34;status of sending&#34;)
+        return answer.text == &#39;ok&#39;
+    except (requests.exceptions.ConnectTimeout, requests.exceptions.ConnectionError):
+        return False</code></pre>
+</details>
+</dd>
+<dt id="Client.network.Session.update_keys"><code class="name flex">
+<span>def <span class="ident">update_keys</span></span>(<span>self) ‑> bool</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Запрашивает с сервера ключи шифрования,
+которые клиенту оставили другие пользователи.</p>
+<p>:returns: True - успешно запросил ключи
+:rtype: bool:</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def update_keys(self) -&gt; bool:
+    &#34;&#34;&#34;Запрашивает с сервера ключи шифрования, 
+    которые клиенту оставили другие пользователи.
+    
+    :returns: True - успешно запросил ключи 
+    :rtype: bool:&#34;&#34;&#34;
+    try:
+        answer: requests.Response = requests.get(f&#34;http://{self.ip}:{self.port}/keys_exchange&#34;, 
+                                                 json={&#34;login&#34;: self.login, &#39;mac_address&#39;: self.hashed_mac_address})
+        for chat_name, key in answer.json():
+            key = bytes(key, encoding=&#39;utf-8&#39;)
+            with open(f&#34;keys/{chat_name}.txt&#34;, &#39;wb&#39;) as f_key:
+                f_key.write(key)
+        return True
+    except (requests.exceptions.ConnectTimeout, requests.exceptions.ConnectionError):
+        return False</code></pre>
+</details>
+</dd>
+<dt id="Client.network.Session.write_file"><code class="name flex">
+<span>def <span class="ident">write_file</span></span>(<span>self, filename: str, code: str)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Записывает файл по пути files/имя файла с данными в code.</p>
+<p>:param filename: имя файла после записи
+:type filename: str</p>
+<p>:param code: данные файла
+:type code: str</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def write_file(self, filename: str, code: str):
+    &#34;&#34;&#34;Записывает файл по пути files/имя файла с данными в code.
+    
+    :param filename: имя файла после записи
+    :type filename: str
+    
+    :param code: данные файла
+    :type code: str
+    &#34;&#34;&#34;
+    if not path.isdir(&#34;files&#34;):
+        mkdir(&#34;files&#34;)
+    file = open(f&#34;files/{filename}&#34;, &#39;wb&#39;)
+    file.write(base64.b64decode(code.encode()))
+    file.close()</code></pre>
+</details>
+</dd>
+</dl>
+</dd>
+</dl>
+</section>
+</article>
+<nav id="sidebar">
+<h1>Index</h1>
+<div class="toc">
+<ul></ul>
+</div>
+<ul id="index">
+<li><h3>Super-module</h3>
+<ul>
+<li><code><a title="Client" href="index.html">Client</a></code></li>
+</ul>
+</li>
+<li><h3><a href="#header-classes">Classes</a></h3>
+<ul>
+<li>
+<h4><code><a title="Client.network.Session" href="#Client.network.Session">Session</a></code></h4>
+<ul class="two-column">
+<li><code><a title="Client.network.Session.connect" href="#Client.network.Session.connect">connect</a></code></li>
+<li><code><a title="Client.network.Session.find_chats" href="#Client.network.Session.find_chats">find_chats</a></code></li>
+<li><code><a title="Client.network.Session.get_all_chats" href="#Client.network.Session.get_all_chats">get_all_chats</a></code></li>
+<li><code><a title="Client.network.Session.get_new_messages" href="#Client.network.Session.get_new_messages">get_new_messages</a></code></li>
+<li><code><a title="Client.network.Session.ping" href="#Client.network.Session.ping">ping</a></code></li>
+<li><code><a title="Client.network.Session.send_file" href="#Client.network.Session.send_file">send_file</a></code></li>
+<li><code><a title="Client.network.Session.send_key" href="#Client.network.Session.send_key">send_key</a></code></li>
+<li><code><a title="Client.network.Session.send_message" href="#Client.network.Session.send_message">send_message</a></code></li>
+<li><code><a title="Client.network.Session.update_keys" href="#Client.network.Session.update_keys">update_keys</a></code></li>
+<li><code><a title="Client.network.Session.write_file" href="#Client.network.Session.write_file">write_file</a></code></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</nav>
+</main>
+<footer id="footer">
+<p>Generated by <a href="https://pdoc3.github.io/pdoc" title="pdoc: Python API documentation generator"><cite>pdoc</cite> 0.10.0</a>.</p>
+</footer>
+</body>
+</html>

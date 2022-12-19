@@ -1,0 +1,663 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1" />
+<meta name="generator" content="pdoc 0.10.0" />
+<title>Server.main API documentation</title>
+<meta name="description" content="" />
+<link rel="preload stylesheet" as="style" href="https://cdnjs.cloudflare.com/ajax/libs/10up-sanitize.css/11.0.1/sanitize.min.css" integrity="sha256-PK9q560IAAa6WVRRh76LtCaI8pjTJ2z11v0miyNNjrs=" crossorigin>
+<link rel="preload stylesheet" as="style" href="https://cdnjs.cloudflare.com/ajax/libs/10up-sanitize.css/11.0.1/typography.min.css" integrity="sha256-7l/o7C8jubJiy74VsKTidCy1yBkRtiUGbVkYBylBqUg=" crossorigin>
+<link rel="stylesheet preload" as="style" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.1.1/styles/github.min.css" crossorigin>
+<style>:root{--highlight-color:#fe9}.flex{display:flex !important}body{line-height:1.5em}#content{padding:20px}#sidebar{padding:30px;overflow:hidden}#sidebar > *:last-child{margin-bottom:2cm}.http-server-breadcrumbs{font-size:130%;margin:0 0 15px 0}#footer{font-size:.75em;padding:5px 30px;border-top:1px solid #ddd;text-align:right}#footer p{margin:0 0 0 1em;display:inline-block}#footer p:last-child{margin-right:30px}h1,h2,h3,h4,h5{font-weight:300}h1{font-size:2.5em;line-height:1.1em}h2{font-size:1.75em;margin:1em 0 .50em 0}h3{font-size:1.4em;margin:25px 0 10px 0}h4{margin:0;font-size:105%}h1:target,h2:target,h3:target,h4:target,h5:target,h6:target{background:var(--highlight-color);padding:.2em 0}a{color:#058;text-decoration:none;transition:color .3s ease-in-out}a:hover{color:#e82}.title code{font-weight:bold}h2[id^="header-"]{margin-top:2em}.ident{color:#900}pre code{background:#f8f8f8;font-size:.8em;line-height:1.4em}code{background:#f2f2f1;padding:1px 4px;overflow-wrap:break-word}h1 code{background:transparent}pre{background:#f8f8f8;border:0;border-top:1px solid #ccc;border-bottom:1px solid #ccc;margin:1em 0;padding:1ex}#http-server-module-list{display:flex;flex-flow:column}#http-server-module-list div{display:flex}#http-server-module-list dt{min-width:10%}#http-server-module-list p{margin-top:0}.toc ul,#index{list-style-type:none;margin:0;padding:0}#index code{background:transparent}#index h3{border-bottom:1px solid #ddd}#index ul{padding:0}#index h4{margin-top:.6em;font-weight:bold}@media (min-width:200ex){#index .two-column{column-count:2}}@media (min-width:300ex){#index .two-column{column-count:3}}dl{margin-bottom:2em}dl dl:last-child{margin-bottom:4em}dd{margin:0 0 1em 3em}#header-classes + dl > dd{margin-bottom:3em}dd dd{margin-left:2em}dd p{margin:10px 0}.name{background:#eee;font-weight:bold;font-size:.85em;padding:5px 10px;display:inline-block;min-width:40%}.name:hover{background:#e0e0e0}dt:target .name{background:var(--highlight-color)}.name > span:first-child{white-space:nowrap}.name.class > span:nth-child(2){margin-left:.4em}.inherited{color:#999;border-left:5px solid #eee;padding-left:1em}.inheritance em{font-style:normal;font-weight:bold}.desc h2{font-weight:400;font-size:1.25em}.desc h3{font-size:1em}.desc dt code{background:inherit}.source summary,.git-link-div{color:#666;text-align:right;font-weight:400;font-size:.8em;text-transform:uppercase}.source summary > *{white-space:nowrap;cursor:pointer}.git-link{color:inherit;margin-left:1em}.source pre{max-height:500px;overflow:auto;margin:0}.source pre code{font-size:12px;overflow:visible}.hlist{list-style:none}.hlist li{display:inline}.hlist li:after{content:',\2002'}.hlist li:last-child:after{content:none}.hlist .hlist{display:inline;padding-left:1em}img{max-width:100%}td{padding:0 .5em}.admonition{padding:.1em .5em;margin-bottom:1em}.admonition-title{font-weight:bold}.admonition.note,.admonition.info,.admonition.important{background:#aef}.admonition.todo,.admonition.versionadded,.admonition.tip,.admonition.hint{background:#dfd}.admonition.warning,.admonition.versionchanged,.admonition.deprecated{background:#fd4}.admonition.error,.admonition.danger,.admonition.caution{background:lightpink}</style>
+<style media="screen and (min-width: 700px)">@media screen and (min-width:700px){#sidebar{width:30%;height:100vh;overflow:auto;position:sticky;top:0}#content{width:70%;max-width:100ch;padding:3em 4em;border-left:1px solid #ddd}pre code{font-size:1em}.item .name{font-size:1em}main{display:flex;flex-direction:row-reverse;justify-content:flex-end}.toc ul ul,#index ul{padding-left:1.5em}.toc > ul > li{margin-top:.5em}}</style>
+<style media="print">@media print{#sidebar h1{page-break-before:always}.source{display:none}}@media print{*{background:transparent !important;color:#000 !important;box-shadow:none !important;text-shadow:none !important}a[href]:after{content:" (" attr(href) ")";font-size:90%}a[href][title]:after{content:none}abbr[title]:after{content:" (" attr(title) ")"}.ir a:after,a[href^="javascript:"]:after,a[href^="#"]:after{content:""}pre,blockquote{border:1px solid #999;page-break-inside:avoid}thead{display:table-header-group}tr,img{page-break-inside:avoid}img{max-width:100% !important}@page{margin:0.5cm}p,h2,h3{orphans:3;widows:3}h1,h2,h3,h4,h5,h6{page-break-after:avoid}}</style>
+<script defer src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.1.1/highlight.min.js" integrity="sha256-Uv3H6lx7dJmRfRvH8TH6kJD1TSK1aFcwgx+mdg3epi8=" crossorigin></script>
+<script>window.addEventListener('DOMContentLoaded', () => hljs.initHighlighting())</script>
+</head>
+<body>
+<main>
+<article id="content">
+<header>
+<h1 class="title">Module <code>Server.main</code></h1>
+</header>
+<section id="section-intro">
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">import json
+
+from flask import Flask, request, jsonify
+from flask_mysqldb import MySQL
+
+import threading
+from random import randint as rnd
+import sys
+
+from db_control_file import check_user, check_time_format
+
+
+app = Flask(__name__)
+
+app.config[&#39;SECRET_KEY&#39;] = &#39;EYE_OF_DEVIL&#39;
+
+app.config[&#39;MYSQL_USER&#39;] = &#39;RIPPER&#39;
+app.config[&#39;MYSQL_DB&#39;] = &#39;users&#39;
+app.config[&#39;MYSQL_PASSWORD&#39;] = &#39;&#39;
+app.config[&#39;JSONIFY_PRETTYPRINT_REGULAR&#39;] = False
+
+mysql = MySQL(app)
+
+
+@app.route(&#39;/to_server&#39;)
+def ping():  # Проверка сервера на работоспособность
+    return &#39;SERVER WORKS&#39;
+
+
+@app.route(&#39;/keys_exchange&#39;, methods=[&#39;GET&#39;, &#39;POST&#39;])
+def exchange_keys():
+    &#39;&#39;&#39;
+    Функция для обмена ключами. отправляет в виде json логины отправителя, получателя, ключ
+
+    :return:
+    &#39;&#39;&#39;
+    try:
+        if not check_user(mysql, special_flag=False):
+            return &#39;ACCESS DENIED&#39;
+
+        cursor = mysql.connection.cursor()
+
+        login = request.json[&#39;login&#39;]
+
+        if request.method == &#39;POST&#39;:
+            receiver = request.json[&#39;receiver&#39;]
+            key = request.json[&#39;key&#39;]
+
+            cursor.execute(
+                &#39;&#39;&#39;INSERT INTO UsersKey (login1, login2, cipher_key_12) VALUES (&#39;{0}&#39;, &#39;{1}&#39;, &#39;{2}&#39;)&#39;&#39;&#39;.format(login,
+                                                                                                               receiver,
+                                                                                                               key))
+            mysql.connection.commit()
+
+            cursor.close()
+
+            return &#39;OK&#39;
+        elif request.method == &#39;GET&#39;:
+            sql = &#39;&#39;&#39;
+                SELECT login1, cipher_key_12 FROM UsersKey WHERE login2 = &#39;{0}&#39;
+            &#39;&#39;&#39;
+
+            cursor.execute(sql.format(login))
+            base = cursor.fetchall()
+
+            return jsonify(base)
+    except BaseException:
+        return &#39;ERROR&#39;
+
+
+@app.route(&#39;/get_info&#39;, methods=[&#39;POST&#39;])
+def authorization_func():  # Авторизация и регистрация
+    &#39;&#39;&#39;
+    Реализует авторизацию при auth-запросе и регистрацию при reg-запросе
+    При помощи json может принимать логин, пароль, хешированный MAC-адресс
+
+    :return: отчет о выполнении запроса
+    &#39;&#39;&#39;
+    if request.method == &#39;POST&#39;:
+        try:
+            is_register = request.json[&#39;is_register&#39;]
+            if is_register == &#39;reg&#39;:
+                login = request.json[&#39;login&#39;]
+                password = request.json[&#39;password&#39;]
+                mac_address = request.json[&#39;mac_address&#39;]
+                cursor = mysql.connection.cursor()
+
+                cursor.execute(&#39;&#39;&#39;INSERT INTO UsersBase (login, password, mac_address) VALUES (&#39;{0}&#39;, &#39;{1}&#39;, &#39;{2}&#39;)&#39;&#39;&#39;.format(login, password, mac_address))
+
+                mysql.connection.commit()
+
+                cursor.close()
+            elif is_register == &#39;auth&#39;:
+                user = request.json[&#39;login&#39;]
+                password = request.json[&#39;password&#39;]
+
+                cursor = mysql.connection.cursor()
+                sql = &#39;&#39;&#39;
+                                SELECT login, password FROM UsersBase WHERE login = &#39;{0}&#39; AND password = &#39;{1}&#39;
+                            &#39;&#39;&#39;.format(user, password)
+                cursor.execute(sql)
+                if len(cursor.fetchall()) != 0:
+                    return &#39;yes&#39;
+                else:
+                    return &#39;no&#39;
+
+            return &#39;OK&#39;
+        except BaseException as error:
+            return &#39;ERROR OF AUTHORIZATION&#39;
+    else:
+        return None
+
+
+@app.route(&#39;/send_message&#39;, methods=[&#39;POST&#39;])
+def get_user_message():  # Получение на сервер сообщения отправленного пользователем
+    &#39;&#39;&#39;
+    Получение на сервер сообщения отправленного пользователем
+    При помощи json принимает логины отправителя и получателя, а также сообщение
+
+    :return: при успешной отправке на сервер сообщения, возвращает &#39;ok&#39;
+    &#39;&#39;&#39;
+    if not check_user(mysql, special_flag=False):
+        return &#39;ACCESS DENIED&#39;
+    if request.method == &#39;POST&#39;:
+        try:
+            login = request.json[&#39;login&#39;]
+            receiver = request.json[&#39;receiver&#39;]
+            message = request.json[&#39;message&#39;]
+
+            if sys.getsizeof(message) &gt;= 200000:
+                return &#39;FILE IS TOO LARGE&#39;
+
+            print(len(message))
+            time = request.json[&#39;time&#39;]
+            # 11.11.1111 11:11
+
+            if not check_time_format(time):
+                return &#39;ERROR OF TIME FORMAT&#39;
+
+            cursor = mysql.connection.cursor()
+
+            cursor.execute(&#39;&#39;&#39;INSERT INTO MessageBase (login, sender, message, chat_id, time) VALUES (&#39;{1}&#39;, &#34;{0}&#34;, &#34;{2}&#34;, {3}, &#39;{4}&#39;)&#39;&#39;&#39;.format(login, receiver, message, rnd(0, 10), time))
+
+            mysql.connection.commit()
+
+            cursor.close()
+
+            return &#39;ok&#39;
+        except BaseException as error:
+            print(error)
+            return &#39;ERROR&#39;
+
+
+@app.route(&#39;/check_new_messages&#39;, methods=[&#39;GET&#39;])
+def check_new_messages():  # проверка наличия на сервере новых сообщений
+    &#39;&#39;&#39;
+    Проверка наличия на сервере новых сообщений
+    При помощи json принимает логины отправителя и получателя сообщения, а также id
+    последнего сообщения
+
+    :return: возвращает json, содержащий новые сообщения заданного пользователя
+    &#39;&#39;&#39;
+    if not check_user(mysql, special_flag=False):
+        return &#39;ACCESS DENIED. YOU ARE NOT AUTHENTICATE USER!&#39;
+    if request.method == &#39;GET&#39;:
+        try:
+            user = request.json[&#39;login&#39;]
+            user2 = request.json[&#39;user2&#39;]
+            id_last_message = request.json[&#39;id_last_message&#39;]
+
+            sql = &#39;&#39;&#39;SELECT id, message, sender, time FROM MessageBase
+             WHERE id &gt; {0} AND (login = &#34;{1}&#34; AND sender = &#34;{2}&#34; OR login = &#34;{2}&#34; AND sender = &#34;{1}&#34;)
+            &#39;&#39;&#39;
+
+            cursor = mysql.connection.cursor()
+            cursor.execute(sql.format(id_last_message, user, user2))
+            base = cursor.fetchall()
+            return json.dumps(base)
+        except BaseException as error:
+            return &#39;ERROR&#39;
+
+
+
+@app.route(&#39;/find_users&#39;, methods=[&#39;GET&#39;])
+def find_user():  # Поиск пользователей по логину
+    &#39;&#39;&#39;
+    Поиск пользователей по логину
+    При помощи json отправляетя приблизительный логин искомого пользователя
+
+    :return: возвращает список людей с указанным логином
+    &#39;&#39;&#39;
+    if not check_user(mysql, special_flag=False):
+        return &#39;ACCESS DENIED&#39;
+    if request.method == &#39;GET&#39;:
+        find_user = request.json[&#39;find_user&#39;]
+
+        cursor = mysql.connection.cursor()
+        sql = &#39;&#39;&#39;
+            SELECT login FROM UsersBase WHERE login LIKE &#39;{0}%&#39;
+        &#39;&#39;&#39;.format(find_user)
+        cursor.execute(sql)
+
+        return jsonify(cursor.fetchall())
+
+
+
+@app.route(&#39;/get_all_my_users&#39;, methods=[&#39;GET&#39;])
+def get_all_my_users():  # Поиск всех людей, с кем общается пользователь
+    &#39;&#39;&#39;
+    Поиск всех людей, с кем общается пользователь
+    Данный поиск осуществляется по логину пользовтеля, который отправляется при помощи json
+
+    :return: Возвращает список людей, с кем общается пользователь или ответ, что пользователей
+    нет, если пользователь не имеет ни одного чата
+    &#39;&#39;&#39;
+    if not check_user(mysql, special_flag=False):
+        return &#39;ACCESS DENIED&#39;
+    if request.method == &#39;GET&#39;:
+        try:
+            login = request.json[&#39;login&#39;]
+
+            cursor = mysql.connection.cursor()
+            sql = &#39;&#39;&#39;
+                SELECT login, sender FROM MessageBase WHERE sender = &#39;{0}&#39; OR login = &#39;{0}&#39;
+            &#39;&#39;&#39;.format(login)
+            cursor.execute(sql)
+            base_unique = set()
+            base = cursor.fetchall()
+
+            if len(base) == 0:
+                return jsonify(list())
+
+            for el1, el2 in base:
+                base_unique.add(el1)
+                base_unique.add(el2)
+            base_unique.remove(login)
+
+            return jsonify(list(base_unique))
+
+        except BaseException as error:
+            print(error)
+            return &#39;ERROR&#39;
+
+
+if __name__ == &#39;__main__&#39;:
+    threading.Thread(target=lambda: app.run(host=&#39;0.0.0.0&#39;, port=8080, debug=True, use_reloader=False)).start()
+    #app.run(host=&#39;localhost&#39;, port=8080, debug=True, use_reloader=False)
+
+
+&#39;&#39;&#39;
+login:RIPPER
+password:123
+&#39;&#39;&#39;
+
+&#39;&#39;&#39;
+request.post(&#39;http://127.0.0.1/get_info&#39;, json={&#39;login&#39;: login, &#39;password&#39;: password})
+request.post(&#39;http://127.0.0.1/send_message&#39;, json={&#39;login&#39;: login, &#39;sender&#39;: sender, &#39;chat_id&#39;: chat_id})
+
+requests.get(&#39;http://10.110.127.80:8080/check_new_messages&#39;, json={&#39;user&#39;: &#39;RIPPER&#39;, &#39;id_last_message&#39;: 0, &#39;chat_id&#39;: 1}).content
+
+&#39;&#39;&#39;
+
+
+&#39;&#39;&#39;
+import hashlib
+main_hash = hashlib.sha256()
+mac_address = &#39;your_mac_address&#39;
+main_hash.update(mac_address.encode())
+final_hash = main_hash().hexdigest()
+&#39;&#39;&#39;
+
+&#39;&#39;&#39;
+TESTS
+**********
+
+post(&#39;http://127.0.0.1:8080/get_info&#39;, json={&#39;is_register&#39;: &#39;reg&#39;, &#39;login&#39;: &#39;RIPPER&#39;, &#39;password&#39;: &#39;hack123&#39;, &#39;mac_address&#39;: &#39;secret&#39;})
+
+post(&#39;http://127.0.0.1:8080/send_message&#39;, json={&#39;login&#39;: &#39;RIPPER&#39;, &#39;sender&#39;: &#39;hacker111&#39;, &#39;mac_address&#39;: &#39;secret&#39;, &#39;message&#39;: &#39;hello&#39;, &#39;time&#39;: &#39;11.11.1111 11:11&#39;})
+
+
+post(&#39;http://127.0.0.1:8080/send_message&#39;, json={&#39;login&#39;: &#39;RIPPER&#39;, &#39;sender&#39;: &#39;hacker111&#39;, &#39;hash&#39;: &#39;secret&#39;, &#39;message&#39;: &#39;hello&#39;, &#39;time&#39;: &#39;11.11.1111 11:11&#39;})
+
+
+post(&#39;http://127.0.0.1:8080/send_message&#39;, json={&#39;login&#39;: &#39;RIPPER&#39;, &#39;sender&#39;: &#39;hacker111&#39;, &#39;hash&#39;: &#39;secret&#39;, &#39;message&#39;: &#39;hello&#39;, &#39;time&#39;: &#39;11.11.1111 11:11&#39;})
+
+
+post(&#39;http://127.0.0.1:8080/send_message&#39;, json={&#39;login&#39;: &#39;RIPPER&#39;, &#39;sender&#39;: &#39;hacker111&#39;, &#39;hash&#39;: &#39;secret&#39;, &#39;message&#39;: &#39;hello&#39;, &#39;time&#39;: &#39;11.11.1111 11:11&#39;})
+
+
+post(&#39;http://127.0.0.1:8080/send_message&#39;, json={&#39;login&#39;: &#39;RIPPER&#39;, &#39;sender&#39;: &#39;hacker111&#39;, &#39;hash&#39;: &#39;secret&#39;, &#39;message&#39;: &#39;hello&#39;, &#39;time&#39;: &#39;11.11.1111 11:111&#39;})
+
+post(&#39;http://127.0.0.1:8080/send_message&#39;, json={&#39;login&#39;: &#39;RIPPER&#39;, &#39;sender&#39;: &#39;hacker111&#39;, &#39;hash&#39;: &#39;secret&#39;, &#39;message&#39;: &#39;hello&#39;, &#39;time&#39;: &#39;11.11.1111 11:111&#39;})
+
+post(&#39;http://127.0.0.1:8080/send_message&#39;, json={&#39;login&#39;: &#39;RIPPER&#39;, &#39;sender&#39;: &#39;hacker111&#39;, &#39;hash&#39;: &#39;secre1t&#39;, &#39;message&#39;: &#39;hello&#39;, &#39;time&#39;: &#39;11.11.1111 11:11&#39;})
+
+get(&#39;http://127.0.0.1:8080/get_all_my_users&#39;, json={&#39;login&#39;: &#39;wolf&#39;, &#39;hash&#39;: &#39;mac&#39;}).content
+&#39;&#39;&#39;</code></pre>
+</details>
+</section>
+<section>
+</section>
+<section>
+</section>
+<section>
+<h2 class="section-title" id="header-functions">Functions</h2>
+<dl>
+<dt id="Server.main.authorization_func"><code class="name flex">
+<span>def <span class="ident">authorization_func</span></span>(<span>)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Реализует авторизацию при auth-запросе и регистрацию при reg-запросе
+При помощи json может принимать логин, пароль, хешированный MAC-адресс</p>
+<p>:return: отчет о выполнении запроса</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">@app.route(&#39;/get_info&#39;, methods=[&#39;POST&#39;])
+def authorization_func():  # Авторизация и регистрация
+    &#39;&#39;&#39;
+    Реализует авторизацию при auth-запросе и регистрацию при reg-запросе
+    При помощи json может принимать логин, пароль, хешированный MAC-адресс
+
+    :return: отчет о выполнении запроса
+    &#39;&#39;&#39;
+    if request.method == &#39;POST&#39;:
+        try:
+            is_register = request.json[&#39;is_register&#39;]
+            if is_register == &#39;reg&#39;:
+                login = request.json[&#39;login&#39;]
+                password = request.json[&#39;password&#39;]
+                mac_address = request.json[&#39;mac_address&#39;]
+                cursor = mysql.connection.cursor()
+
+                cursor.execute(&#39;&#39;&#39;INSERT INTO UsersBase (login, password, mac_address) VALUES (&#39;{0}&#39;, &#39;{1}&#39;, &#39;{2}&#39;)&#39;&#39;&#39;.format(login, password, mac_address))
+
+                mysql.connection.commit()
+
+                cursor.close()
+            elif is_register == &#39;auth&#39;:
+                user = request.json[&#39;login&#39;]
+                password = request.json[&#39;password&#39;]
+
+                cursor = mysql.connection.cursor()
+                sql = &#39;&#39;&#39;
+                                SELECT login, password FROM UsersBase WHERE login = &#39;{0}&#39; AND password = &#39;{1}&#39;
+                            &#39;&#39;&#39;.format(user, password)
+                cursor.execute(sql)
+                if len(cursor.fetchall()) != 0:
+                    return &#39;yes&#39;
+                else:
+                    return &#39;no&#39;
+
+            return &#39;OK&#39;
+        except BaseException as error:
+            return &#39;ERROR OF AUTHORIZATION&#39;
+    else:
+        return None</code></pre>
+</details>
+</dd>
+<dt id="Server.main.check_new_messages"><code class="name flex">
+<span>def <span class="ident">check_new_messages</span></span>(<span>)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Проверка наличия на сервере новых сообщений
+При помощи json принимает логины отправителя и получателя сообщения, а также id
+последнего сообщения</p>
+<p>:return: возвращает json, содержащий новые сообщения заданного пользователя</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">@app.route(&#39;/check_new_messages&#39;, methods=[&#39;GET&#39;])
+def check_new_messages():  # проверка наличия на сервере новых сообщений
+    &#39;&#39;&#39;
+    Проверка наличия на сервере новых сообщений
+    При помощи json принимает логины отправителя и получателя сообщения, а также id
+    последнего сообщения
+
+    :return: возвращает json, содержащий новые сообщения заданного пользователя
+    &#39;&#39;&#39;
+    if not check_user(mysql, special_flag=False):
+        return &#39;ACCESS DENIED. YOU ARE NOT AUTHENTICATE USER!&#39;
+    if request.method == &#39;GET&#39;:
+        try:
+            user = request.json[&#39;login&#39;]
+            user2 = request.json[&#39;user2&#39;]
+            id_last_message = request.json[&#39;id_last_message&#39;]
+
+            sql = &#39;&#39;&#39;SELECT id, message, sender, time FROM MessageBase
+             WHERE id &gt; {0} AND (login = &#34;{1}&#34; AND sender = &#34;{2}&#34; OR login = &#34;{2}&#34; AND sender = &#34;{1}&#34;)
+            &#39;&#39;&#39;
+
+            cursor = mysql.connection.cursor()
+            cursor.execute(sql.format(id_last_message, user, user2))
+            base = cursor.fetchall()
+            return json.dumps(base)
+        except BaseException as error:
+            return &#39;ERROR&#39;</code></pre>
+</details>
+</dd>
+<dt id="Server.main.exchange_keys"><code class="name flex">
+<span>def <span class="ident">exchange_keys</span></span>(<span>)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Функция для обмена ключами. отправляет в виде json логины отправителя, получателя, ключ</p>
+<p>:return:</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">@app.route(&#39;/keys_exchange&#39;, methods=[&#39;GET&#39;, &#39;POST&#39;])
+def exchange_keys():
+    &#39;&#39;&#39;
+    Функция для обмена ключами. отправляет в виде json логины отправителя, получателя, ключ
+
+    :return:
+    &#39;&#39;&#39;
+    try:
+        if not check_user(mysql, special_flag=False):
+            return &#39;ACCESS DENIED&#39;
+
+        cursor = mysql.connection.cursor()
+
+        login = request.json[&#39;login&#39;]
+
+        if request.method == &#39;POST&#39;:
+            receiver = request.json[&#39;receiver&#39;]
+            key = request.json[&#39;key&#39;]
+
+            cursor.execute(
+                &#39;&#39;&#39;INSERT INTO UsersKey (login1, login2, cipher_key_12) VALUES (&#39;{0}&#39;, &#39;{1}&#39;, &#39;{2}&#39;)&#39;&#39;&#39;.format(login,
+                                                                                                               receiver,
+                                                                                                               key))
+            mysql.connection.commit()
+
+            cursor.close()
+
+            return &#39;OK&#39;
+        elif request.method == &#39;GET&#39;:
+            sql = &#39;&#39;&#39;
+                SELECT login1, cipher_key_12 FROM UsersKey WHERE login2 = &#39;{0}&#39;
+            &#39;&#39;&#39;
+
+            cursor.execute(sql.format(login))
+            base = cursor.fetchall()
+
+            return jsonify(base)
+    except BaseException:
+        return &#39;ERROR&#39;</code></pre>
+</details>
+</dd>
+<dt id="Server.main.find_user"><code class="name flex">
+<span>def <span class="ident">find_user</span></span>(<span>)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Поиск пользователей по логину
+При помощи json отправляетя приблизительный логин искомого пользователя</p>
+<p>:return: возвращает список людей с указанным логином</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">@app.route(&#39;/find_users&#39;, methods=[&#39;GET&#39;])
+def find_user():  # Поиск пользователей по логину
+    &#39;&#39;&#39;
+    Поиск пользователей по логину
+    При помощи json отправляетя приблизительный логин искомого пользователя
+
+    :return: возвращает список людей с указанным логином
+    &#39;&#39;&#39;
+    if not check_user(mysql, special_flag=False):
+        return &#39;ACCESS DENIED&#39;
+    if request.method == &#39;GET&#39;:
+        find_user = request.json[&#39;find_user&#39;]
+
+        cursor = mysql.connection.cursor()
+        sql = &#39;&#39;&#39;
+            SELECT login FROM UsersBase WHERE login LIKE &#39;{0}%&#39;
+        &#39;&#39;&#39;.format(find_user)
+        cursor.execute(sql)
+
+        return jsonify(cursor.fetchall())</code></pre>
+</details>
+</dd>
+<dt id="Server.main.get_all_my_users"><code class="name flex">
+<span>def <span class="ident">get_all_my_users</span></span>(<span>)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Поиск всех людей, с кем общается пользователь
+Данный поиск осуществляется по логину пользовтеля, который отправляется при помощи json</p>
+<p>:return: Возвращает список людей, с кем общается пользователь или ответ, что пользователей
+нет, если пользователь не имеет ни одного чата</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">@app.route(&#39;/get_all_my_users&#39;, methods=[&#39;GET&#39;])
+def get_all_my_users():  # Поиск всех людей, с кем общается пользователь
+    &#39;&#39;&#39;
+    Поиск всех людей, с кем общается пользователь
+    Данный поиск осуществляется по логину пользовтеля, который отправляется при помощи json
+
+    :return: Возвращает список людей, с кем общается пользователь или ответ, что пользователей
+    нет, если пользователь не имеет ни одного чата
+    &#39;&#39;&#39;
+    if not check_user(mysql, special_flag=False):
+        return &#39;ACCESS DENIED&#39;
+    if request.method == &#39;GET&#39;:
+        try:
+            login = request.json[&#39;login&#39;]
+
+            cursor = mysql.connection.cursor()
+            sql = &#39;&#39;&#39;
+                SELECT login, sender FROM MessageBase WHERE sender = &#39;{0}&#39; OR login = &#39;{0}&#39;
+            &#39;&#39;&#39;.format(login)
+            cursor.execute(sql)
+            base_unique = set()
+            base = cursor.fetchall()
+
+            if len(base) == 0:
+                return jsonify(list())
+
+            for el1, el2 in base:
+                base_unique.add(el1)
+                base_unique.add(el2)
+            base_unique.remove(login)
+
+            return jsonify(list(base_unique))
+
+        except BaseException as error:
+            print(error)
+            return &#39;ERROR&#39;</code></pre>
+</details>
+</dd>
+<dt id="Server.main.get_user_message"><code class="name flex">
+<span>def <span class="ident">get_user_message</span></span>(<span>)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Получение на сервер сообщения отправленного пользователем
+При помощи json принимает логины отправителя и получателя, а также сообщение</p>
+<p>:return: при успешной отправке на сервер сообщения, возвращает 'ok'</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">@app.route(&#39;/send_message&#39;, methods=[&#39;POST&#39;])
+def get_user_message():  # Получение на сервер сообщения отправленного пользователем
+    &#39;&#39;&#39;
+    Получение на сервер сообщения отправленного пользователем
+    При помощи json принимает логины отправителя и получателя, а также сообщение
+
+    :return: при успешной отправке на сервер сообщения, возвращает &#39;ok&#39;
+    &#39;&#39;&#39;
+    if not check_user(mysql, special_flag=False):
+        return &#39;ACCESS DENIED&#39;
+    if request.method == &#39;POST&#39;:
+        try:
+            login = request.json[&#39;login&#39;]
+            receiver = request.json[&#39;receiver&#39;]
+            message = request.json[&#39;message&#39;]
+
+            if sys.getsizeof(message) &gt;= 200000:
+                return &#39;FILE IS TOO LARGE&#39;
+
+            print(len(message))
+            time = request.json[&#39;time&#39;]
+            # 11.11.1111 11:11
+
+            if not check_time_format(time):
+                return &#39;ERROR OF TIME FORMAT&#39;
+
+            cursor = mysql.connection.cursor()
+
+            cursor.execute(&#39;&#39;&#39;INSERT INTO MessageBase (login, sender, message, chat_id, time) VALUES (&#39;{1}&#39;, &#34;{0}&#34;, &#34;{2}&#34;, {3}, &#39;{4}&#39;)&#39;&#39;&#39;.format(login, receiver, message, rnd(0, 10), time))
+
+            mysql.connection.commit()
+
+            cursor.close()
+
+            return &#39;ok&#39;
+        except BaseException as error:
+            print(error)
+            return &#39;ERROR&#39;</code></pre>
+</details>
+</dd>
+<dt id="Server.main.ping"><code class="name flex">
+<span>def <span class="ident">ping</span></span>(<span>)</span>
+</code></dt>
+<dd>
+<div class="desc"></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">@app.route(&#39;/to_server&#39;)
+def ping():  # Проверка сервера на работоспособность
+    return &#39;SERVER WORKS&#39;</code></pre>
+</details>
+</dd>
+</dl>
+</section>
+<section>
+</section>
+</article>
+<nav id="sidebar">
+<h1>Index</h1>
+<div class="toc">
+<ul></ul>
+</div>
+<ul id="index">
+<li><h3>Super-module</h3>
+<ul>
+<li><code><a title="Server" href="index.html">Server</a></code></li>
+</ul>
+</li>
+<li><h3><a href="#header-functions">Functions</a></h3>
+<ul class="two-column">
+<li><code><a title="Server.main.authorization_func" href="#Server.main.authorization_func">authorization_func</a></code></li>
+<li><code><a title="Server.main.check_new_messages" href="#Server.main.check_new_messages">check_new_messages</a></code></li>
+<li><code><a title="Server.main.exchange_keys" href="#Server.main.exchange_keys">exchange_keys</a></code></li>
+<li><code><a title="Server.main.find_user" href="#Server.main.find_user">find_user</a></code></li>
+<li><code><a title="Server.main.get_all_my_users" href="#Server.main.get_all_my_users">get_all_my_users</a></code></li>
+<li><code><a title="Server.main.get_user_message" href="#Server.main.get_user_message">get_user_message</a></code></li>
+<li><code><a title="Server.main.ping" href="#Server.main.ping">ping</a></code></li>
+</ul>
+</li>
+</ul>
+</nav>
+</main>
+<footer id="footer">
+<p>Generated by <a href="https://pdoc3.github.io/pdoc" title="pdoc: Python API documentation generator"><cite>pdoc</cite> 0.10.0</a>.</p>
+</footer>
+</body>
+</html>
